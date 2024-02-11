@@ -3,46 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>國二智班</title>
+    <title>國二智班網</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: #f4f4f4;
         }
 
         header {
-            background-color: #4CAF50;
-            padding: 20px;
-            color: white;
-            text-align: center;
-        }
-
-        nav {
             background-color: #333;
-            color: white;
-            padding: 10px;
+            color: #fff;
             text-align: center;
+            padding: 1em;
         }
 
-        nav a {
-            color: white;
+        .activity {
+            overflow: hidden; /* 清除浮動，避免高度塌陷 */
+            margin-bottom: 20px; /* 調整活動之間的垂直外邊距 */
+        }
+
+        .activity img {
+            float: left; /* 左浮動 */
+            margin-right: 20px; /* 調整圖片和文字之間的水平外邊距 */
+            border-radius: 8px; /* 圖片邊角的圓角效果 */
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* 圖片的陰影效果 */
+        }
+
+        .activity .description {
+            overflow: hidden; /* 清除浮動 */
+        }
+
+        a{
             text-decoration: none;
-            padding: 10px;
-            margin: 0 10px;
+            color: black;
         }
 
-        main {
+        a:hover{
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto; /* 調整圖片的上下外邊距 */
+            border-radius: 8px; /* 圖片邊角的圓角效果 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 圖片的陰影效果 */
+        }
+
+        section {
             padding: 20px;
+            margin: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         footer {
             background-color: #333;
-            color: white;
-            padding: 10px;
+            color: #fff;
             text-align: center;
-            position: fixed;
+            padding: 1em;
             bottom: 0;
             width: 100%;
         }
@@ -51,51 +74,89 @@
 <body>
 
     <header>
-        <h1>國二智班</h1>
+        <h1>國二智班網</h1>
     </header>
 
-    <nav>
-        <a href="#home">首頁</a>
-        <a href="#announcements">最新公告</a>
-        <a href="#schedule">課表</a>
-        <a href="#gallery">相簿</a>
-        <a href="#contact">聯絡我們</a>
-    </nav>
+    <section id="home">
+        <h2>歡迎來到國二智班網</h2>
+        <p>這裡是智班同學們的線上家園，探索知識的舞台。</p>
+        <a href="https://boys-n-girls-in-213.blogspot.com/">班導網站</a>
+        <h2>公告</h2>
+        <ul>
+            <li><a href="國二智幹部選舉.pdf">國二智112年度下學期幹部分配表</a>(2024/2/11)</li>
+        </ul>
+    </section>
 
-    <main>
-        <section id="home">
-            <h2>歡迎來到國二智班網站</h2>
-            <p>這裡是我們班的專屬網站，提供最新的公告、課表、相簿等資訊。</p>
-        </section>
+    <section id="about">
+        <h2>關於我們</h2>
+        <p>我們是一個充滿活力的國二智班，致力於提供優質的教育和學習環境。</p>
+        <p>以下圖片取自國二上職涯參訪</p>
+        <ol>
+            <li>蔡秉錞<img src="1.png" alt=""></li>
+            <li>張育程<img src="2.png" alt=""></li>
+            <li>蔡孟宸<img src="3.png" alt=""></li>
+            <li>顏誠寬<img src="4.png" alt=""></li>
+            <li>陳垣澔<img src="5.png" alt=""></li>
+            <li>張庭碩<img src="6.png" alt=""></li>
+            <li>賴言亦<img src="7.png" alt=""></li>
+            <li>查無此人<img src="8.png" alt=""></li>
+            <li>楊凱元<img src="9.png" alt=""></li>
+            <li>許元洧<img src="10.png" alt=""></li>
+            <li>王鈞頡<img src="11.png" alt=""></li>
+            <li>江宗旺<img src="12.png" alt=""></li>
+            <li>羅懿音<img src="13.png" alt=""></li>
+            <li>唐家葦<img src="14.png" alt=""></li>
+            <li>曾筠<img src="15.png" alt=""></li>
+            <li>林智一<img src="16.png" alt=""></li>
+            <li>林玟妡<img src="17.png" alt=""></li>
+            <li>洪羽忻<img src="18.png" alt=""></li>
+            <li>查無此人<img src="19.png" alt=""></li>
+            <li>凃宥瑄<img src="20.png" alt=""></li>
+            <li>宋昱瑤<img src="21.png" alt=""></li>
+            <li>陳姿諭<img src="22.png" alt=""></li>
+            <li>班導:陳世懷 老師<img src="23.png" alt=""></li>
+        </ol>
+    </section>
 
-        <section id="announcements">
-            <h2>最新公告</h2>
-            <p>班級重要通知和公告將會在這裡發布，請大家常來查看。</p>
-            <ul>這個網站將轉移存取權</ul>
-        </section>
+    <section id="courses">
+        <h2>課程</h2>
+        <p>探索我們豐富的課程，培養多方面的知識和技能。</p>
+        <h3>理念:</h3>
+        <p>落實品德教育與生活教育<br>涵養純善溫厚的胸襟</p>
+        <br>
+        <p>重視經典教育與藝術人文<br>學習多元智識與能力</p>
+        <br>   
+        <p>實施一貫理念的領域教學<br>達成全人教育的目標</p>
+        <br>
+        <p>詳情請看:<a href="http://www.holdmean.org.tw/index.php/school-profile.html">弘明實驗高級中學-創校理念</a></p>
+    </section>
 
-        <section id="schedule">
-            <h2>課表</h2>
-            <p>我們的課表安排如下：</p>
-            <p>pls wait next term</p>
-        </section>
+    <section id="events">
+        <h2>活動</h2>
+        <p>參與各種精彩的活動，豐富你的校園生活。</p>
+        <div class="activity">
+            <h3>國二上路跑</h3>
+            <img src="路跑.png" alt="">
+        </div>
+        <div class="activity">
+            <h3>國二上職涯參訪</h3>
+            <img src="職涯參訪.png" alt="">
+        </div>
+    </section>
 
-        <section id="gallery">
-            <h2>相簿</h2>
-            <p>班級活動和照片將會在這裡分享，讓大家一起回顧美好時光。</p>
-            <p>pls wait next term</p>
-        </section>
-
-        <section id="contact">
-            <h2>聯絡我們</h2>
-            <p>pls wait next term</p>
-            <br>
-            <br>
-        </section>
-    </main>
+    <section id="contact">
+        <h2>聯絡我們</h2>
+        <p>有任何問題或建議嗎？歡迎聯絡我們。</p>
+        <ul>
+            <li><a href="https://www.facebook.com/ivan.chen.798">班導messenger</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=100079768687131">班長messenger</a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=100052990835926">回報網頁問題</a></li>
+        </ul>
+        <!-- 可以在這裡加入聯絡方式或表單 -->
+    </section>
 
     <footer>
-        <p>&copy; 2024 國二智班</p>
+        <p>&copy; 2024 國二智班網 | 許元洧製作、維護、更新</p>
     </footer>
 
 </body>
