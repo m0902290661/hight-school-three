@@ -21,25 +21,38 @@
     <hr>
     <div class="body">
         <h2>個人資料</h2>
-        <p>密碼登入:</p>
-        <input type="password" id="password">
-        <input type="button" value="登入" onclick="login()">
-        <p id="end" style="color: red;"></p>
+        <p>帳戶名稱</p>
+        <input type="text" id="name" required>
+        <p>密碼</p>
+        <input type="password" id="password" required>
+        <br>
+        <br>
+        <input type="submit" onclick="login()">
+        <p><a href="https://forms.gle/HAqoBfZzpnudDkGg9">註冊</a> | <a href="fp.htm">忘記密碼</a></p>
+        <p id="out" style="color: red;"></p>
     </div>
     <hr>
     <div class="footer">
         <p>&copy; 許元洧製作 版權所有</p>
     </div>
+
     <script>
+        document.addEventListener('contextmenu', function (e) {
+         e.preventDefault();
+        });
+        
         function login(){
+            var name = document.getElementById('name').value;
             var password = document.getElementById('password').value;
-            var really = 'hm221';
-            if(password ===really){
-                document.getElementById('end').innerHTML='登入成功!';
-                location.href='et2.htm';
+            if(password === '?=2 ??!=24' && name === '某楊'){
+                document.getElementById('out').innerHTML='登入成功!';
+                location.href='09.htm';
+            }
+            else if(password==='we990607'&&name===xu2010){
+                location.href='10.htm';
             }
             else{
-                document.getElementById('end').innerHTML='登入失敗!';
+                document.getElementById('out').innerHTML='登入失敗!';
             }
         }
     </script>

@@ -25,3 +25,17 @@ img{
     border: 1px solid black;
     padding: 3px;
 }
+.name{
+    width: 410px;
+    height: 270px;
+    border: 1px solid black;
+    border-radius: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.right{
+    padding: 30px;
+}
+.left{
+    padding: 5px;
+}
