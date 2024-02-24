@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>註冊帳號</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="head">
+        <h1>國二智 帳號註冊</h1>
+        <hr>
+    </div>
+    <div class="menu">
+        <p>選單</p>
+        <a href="index.htm">返回</a>
+        <hr>
+    </div>
+    <div class="body">
+        <p>註冊請求發送後，登入至系統需要一段時間</p>
+        <form action="send_email.php" method="post">
+            <p>您的真實姓名</p>
+            <input type="text" id="rname" name="rname">
+            <p>帳號名稱</p>
+            <input type="text" id="name" name="name">
+            <p>密碼</p>
+            <input type="password" id="password" name="password">
+            <br>
+            <br>
+            <input type="submit" value="註冊">
+            <p><a href="et.htm">登入</a> | <a href="fp.htm">忘記密碼</a></p>
+            <p id="out"></p>
+        </form>
+    </div>
+    <div class="footer">
+        <hr>
+        <p>&copy; 許元洧製作 版權所有</p>
+    </div>
+
+    <script>
+        document.addEventListener('contextmenu', function (e) {
+         e.preventDefault();
+        });
+        function join(){
+            document.getElementById('out').innerHTML='註冊請求已發送，但登入至系統需要一段時間'
+        }
+    </script>
+</body>
+</html>
