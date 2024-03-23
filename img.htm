@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zn-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>國二智</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="head">
+        <h1>國二智</h1>
+        <p>國二智的網路小家園</p>
+        <h2>圖片</h2>
+    </div>
+    <div class="body">
+        <div class="d1">
+            <a href="index.htm">首頁</a>
+            <a href="img.htm">圖片</a>
+            <a href="about.htm">關於我們</a>
+        </div>
+        <div class="img">
+            <div class="si" id="sd">
+                <h2>搜尋照片(輸入活動關鍵字 EX:路跑、採茶)</h2>
+                <input type="text" id="si">
+                <button onclick="s()">搜尋</button>
+                <h2>為你推薦:</h2>
+                <a href="#run">路跑</a> <a href="#tea">採茶</a> <a href="#do1">國一職涯參訪</a>
+            </div>
+            <br>
+            <br>
+            <div id="do1" class="imgdiv">
+                <h2>國一職涯參訪</h2>
+                <img src="do1 (1).jpg" alt="">
+                <img src="do1 (2).jpg" alt="">
+                <img src="do1 (3).jpg" alt="">
+                <img src="do1 (4).jpg" alt="">
+                <img src="do1 (5).jpg" alt="">
+                <img src="do1 (6).jpg" alt="">
+                <img src="do1 (7).jpg" alt="">
+                <img src="do1 (8).jpg" alt="">
+                <img src="do1 (9).jpg" alt="">
+                <img src="do1 (10).jpg" alt="">
+                <img src="do1 (11).jpg" alt="">
+                <img src="do1 (12).jpg" alt="">
+                <img src="do1 (13).jpg" alt="">
+                <img src="do1 (14).jpg" alt="">
+                <img src="do1 (15).jpg" alt="">
+                <img src="do1 (16).jpg" alt="">
+                <img src="do1 (17).jpg" alt="">
+                <img src="do1 (18).jpg" alt="">
+            </div>
+            <div id="run" class="imgdiv">
+                <h2>路跑</h2>
+                <img src="run (1).jpg" alt="">
+                <img src="run (2).jpg" alt="">
+            </div>
+            <div id="tea" class="imgdiv">
+                <h2>採茶</h2>
+              <img src="IMG (1).JPG" alt=""> 
+              <img src="IMG (2).JPG" alt=""> 
+              <img src="IMG (3).JPG" alt="">
+              <img src="IMG (4).JPG" alt="">
+              <img src="IMG (5).JPG" alt="">
+              <img src="IMG (6).JPG" alt="">
+              <img src="IMG (7).JPG" alt="">
+              <img src="IMG (8).JPG" alt="">
+              <img src="IMG (9).JPG" alt="">
+              <img src="IMG (10).JPG" alt="">
+            </div>
+        </div>
+    </div>
+    <div id="circleButton" onclick="handleButtonClick()">
+        <span>↑</span>
+      </div>
+    <div class="footer">
+        <p>&copy;許元洧製作 版權所有</p>
+    </div>
+
+    <script>
+        function s(){
+            var si = document.getElementById('si').value ;
+            if(si === '路跑'){
+                location.href='#run';
+            }
+            else if(si==='採茶'){
+                location.href='#tea';
+            }
+            else if(si==='國一職涯參訪'){
+                location.href='#do1';
+            }
+            else{
+                alert('查無資料');
+            }
+        }
+        function handleButtonClick() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
