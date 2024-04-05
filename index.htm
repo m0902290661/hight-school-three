@@ -1,43 +1,88 @@
 <!DOCTYPE html>
-<html lang="zn-tw">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>國二智</title>
+    <title>國二智班網</title>
     <link rel="stylesheet" href="index.css">
+    <script>
+        const targetDate = new Date('2024-05-18T00:00:00').getTime();
+
+// 更新倒计时
+function updateCountdown() {
+  // 当前日期的毫秒数
+  const now = new Date().getTime();
+  
+  // 距离目标日期的毫秒数
+  const distance = targetDate - now;
+  
+  // 计算剩余时间
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+  // 更新页面上的倒计时
+  document.getElementById('time').innerHTML = `
+    距離會考還有：
+    ${days} 天
+    ${hours} 小時
+    ${minutes} 分鐘
+    ${seconds} 秒
+    （本屆113國三）
+  `;
+}
+
+// 每秒钟更新一次倒计时
+setInterval(updateCountdown, 1000);
+
+// 页面加载时立即更新一次倒计时
+updateCountdown();
+    </script>
 </head>
 <body>
     <div class="head">
-        <h1>國二智</h1>
-        <p>國二智的網路小家園</p>
+        <h1>國二智班網</h1>
+        <p>國二智的線上家園</p>
     </div>
     <div class="body">
-        <div class="d1">
-            <a href="index.htm">首頁</a>
-            <a href="img.htm">圖片</a>
-            <a href="about.htm">關於我們</a>
+        <div class="d">
+            <p>前往班導網站</p>
+            <a href="https://boys-n-girls-in-213.blogspot.com">GO</a>
         </div>
-        <div class="ae">
-            <h2>歡迎來到國二智</h2>
-            <p>國二智班是一個專為具有特殊才能或智力的學生而設立的特殊班級。我們致力於提供一個豐富多彩、挑戰性和充滿激勵的學習環境，以滿足學生的學術需求並促進他們的全面發展。</p>
-            <h2>我們的特色</h2>
+        <div class="d">
+            <h2>我們參與過的活動：</h2>
+            <h3>武林大會（國二）</h3>
+            <img src="武林大會（國二）.JPG" alt="">
+            <br>
+            <a href="c2.htm">瞭解更多</a>
+        </div>
+        <div class="d">
+            <h2>我們的領導團隊：</h2>
             <ul>
-                <li>精心設計的課程：我們的課程設計更深入、更具挑戰性，涵蓋了高層次的數學、科學、文學等學科，並提供更多的研究性學習和專題探究機會。</li>
-                <li>多元學習機會：我們鼓勵學生參加各種學術競賽、科學研究項目、文學創作比賽等，拓展他們的學術興趣和能力。</li>
-                <li>專業教師團隊：我們擁有經驗豐富且專業的教師團隊，能夠提供個性化的教學，激發學生的學習潛力。</li>
-                <li>專題研究和科學實驗：我們鼓勵學生進行專題研究和科學實驗，培養他們的獨立思考能力和解決問題的能力。</li>
-            </ul>  
+                <li><a href="https://www.facebook.com/ivan.chen.798">班導</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100079768687131">班長</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100093318699571">副班長</a></li>
+                <li><a href="https://forms.gle/QpbZTmHF43g6ddeXA">回報網站問題</a></li>
+            </ul>
         </div>
-        <div class="jp">
-        <h2>加入我們</h2>
-        <p>如果你是一個充滿好奇心、熱愛學習的學生，歡迎加入我們的國二智班！在這裡，你將會遇到一群志同道合的同學，和一個致力於啟發你潛力的教育團隊。</p>
-
-        <h2><a href="about.htm">聯繫我們</a></h2>
-        <p>如果您對我們的國二智班有任何問題或想了解更多信息，請隨時聯繫我們。我们期待著與您一起建立一個充滿學術挑戰和成長機會的學習環境。</p>
+        <div class="d">
+            <h2>班級經營：</h2>
+            <ul>
+                <li><a href="https://boys-n-girls-in-213.blogspot.com/2023/04/112415.html">武林大會（國一）</a></li>
+                <li><a href="https://boys-n-girls-in-213.blogspot.com/2022/12/1111210.html">職涯參訪（國一）</a></li>
+                <li><a href="https://boys-n-girls-in-213.blogspot.com/2023/11/1121118_17.html">職涯參訪（國二）</a></li>
+                <li><a href="https://boys-n-girls-in-213.blogspot.com/2023/11/1121125.html">路跑（國二）</a></li>
+                <li><a href="https://boys-n-girls-in-213.blogspot.com/2023/09/112928.html">教師節特別篇（國二）</a></li>
+                <li><a href="https://boys-n-girls-in-213.blogspot.com/2023/10/1121014.html">食農教育（國二）</a></li>
+                <li><a href="https://boys-n-girls-in-213.blogspot.com/2023/04/112422.html">日月潭喝喝茶</a></li>
+                <li>目前沒有更多了</li>
+            </ul>
         </div>
+        <div class="d" id="time"></div>
     </div>
     <div class="footer">
-        <p>&copy;許元洧製作 版權所有</p>
+        <p>&copy;許元洧 製作、維護</p>
     </div>
 </body>
 </html>
