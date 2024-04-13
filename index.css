@@ -1,15 +1,36 @@
-body{
-    text-align: center;
+#mb{
+    text-decoration: none;
+    background-color: white;
     border: 1px solid black;
-    padding: 15px;
-    background-color: aliceblue;
+    height: 35px;
+    margin-top: 30px;
+}
+.head{
+    display: flex;
+    justify-content: space-between;
+}
+.inimg video{
+    height: 300px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    text-decoration: underline;
 }
 .d{
-    border: 1px solid black;
-    text-align: left;
-    margin: 15px;
-    background-color: white;
+    text-align: center;
 }
-.d img{
-    width: 300px;
+.body{
+    text-align: center;
+}
+.footer{
+    text-align: center;
+}
+#menu{
+    text-align: center;
+    border: 1px solid black;
+    margin: 0 0 15px 0;
+    padding: 15px;
 }
