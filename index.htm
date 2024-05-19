@@ -3,58 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>國二智</title>
-    <link rel="stylesheet" href="index.css">
+    <title>國二智班網</title>
+    <style>
+        .head{
+            text-align: center;
+        }
+        .dc{
+            border-radius: 5px;
+            border: 1px solid black;
+            margin: 15px;
+            padding: 15px;
+            height: 300px;
+            text-align: center;
+            background-color: rgb(245, 240, 240);
+        }
+        .dc button{
+            text-decoration: none;
+            border: 1px solid black;
+            background-color: white;
+            border-radius: 5px;
+            height: 35px;
+        }
+        .footer{
+            border-radius: 5px;
+            text-align: center;
+            margin: 15px;
+            background-color: gainsboro;
+            padding: 15px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 5px;
+            background-color: white;
+        }
+    </style>
 </head>
 <body>
     <div class="head">
-        <h1><a href="index.htm">國二智</a></h1>
-        <button id="mb" onclick="iopen()">選單</button>
+        <h1>國二智班網</h1>
+        <p>獻給準國三生的你</p>
     </div>
     <hr>
-    <div id="menu">
-        <h2>選單</h2>
-        <h3>內部連結</h3>
-        <li><a href="index.htm">首頁</a></li>
-        <li><a href="im.htm">公告</a></li>
-        <li><a href="+.htm">附件</a></li>
-        <h3>外部連結</h3>
-        <li><a href="https://boys-n-girls-in-213.blogspot.com/">班導網站</a></li>
-        <li><a href="http://www.holdmean.org.tw/">弘明校網</a></li>
-        <button onclick="iclose()">關閉</button>
+    <div class="dc">
+        <h2>會考倒數！！</h2>
+        <p id="countdown"></p>
     </div>
-    <div class="body">
-        <div class="inimg">
-            
-        </div>
-        <div class="d">
-            <h2>優良傳統</h2>
-            <p>我們雖是學校中的一個班級，卻也背負著創新的使命。</p>
-            <img src="img/creat.jpeg" alt="">
-        </div>
-        <div class="d">
-            <h2>獨具風格</h2>
-            <p>打造出和別人不一樣的風格，獨具個人品味。</p>
-            <img src="img/style.jpeg" alt="">
-        </div>
+    <div class="dc" id="o1">
+        <h2>班級公告</h2>
+        <details>
+            <summary>了解</summary>
+            <div>
+                <p>沒有東西</p>
+            </div>
+        </details>
     </div>
-    <hr>
+    <div class="dc" id="o2">
+        <h2>班級附件</h2>
+        <details>
+            <summary>了解</summary>
+            <div>
+                <p>沒有東西</p>
+            </div>
+        </details>
+    </div>
+    <div class="dc" id="o3">
+        <h2>更多內容</h2>
+        <details>
+            <summary>了解</summary>
+            <div>
+                <br>
+                <li><a href="https://boys-n-girls-in-213.blogspot.com/">班導網站</a></li>
+                <br>
+                <li><a href="http://www.holdmean.org.tw/">弘明校網</a></li>
+            </div>
+        </details>
+    </div>
     <div class="footer">
-        <p>&copy;許元洧製作</p>
-        <button onclick="iopen()">探索</button>
+        <p><strong>&copy;國二智 許元洧製作 弘明實驗高級中學 附設國中國小</strong></p>
     </div>
 
     <script>
-        function iopen(){
-            document.getElementById('menu').style.display='block';
-            location.href='#menu';
+        function updateCountdown() {
+            const targetDate = new Date('2025-05-17T00:00:00');
+            const now = new Date();
+            const difference = targetDate - now;
+
+            if (difference <= 0) {
+                document.getElementById('countdown').innerHTML = "倒數計時結束";
+                return;
+            }
+
+            const years = Math.floor(difference / (1000 * 60 * 60 * 24 * 365));
+            const months = Math.floor((difference % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+            const days = Math.floor((difference % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown').innerHTML =  
+                months + "月 " + 
+                days + "日 " + 
+                hours + "小時 " + 
+                minutes + "分鐘 " + 
+                seconds + "秒";
         }
-        function iclose(){
-            document.getElementById('menu').style.display='none';
-        }
-        window.onload=function(){
-            iclose();
-        }
+
+        setInterval(updateCountdown, 1000);
+        
+        
     </script>
 </body>
 </html>
