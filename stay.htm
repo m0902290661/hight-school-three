@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索功能示例</title>
+    <style>
+        #results {
+            margin-top: 20px;
+        }
+        .result-item {
+            margin-bottom: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>搜索功能示例</h1>
+    <input type="text" id="searchInput" placeholder="请输入关键词">
+    <button onclick="search()">搜索</button>
+    
+    <div id="content">
+        <div class="searchable">这是第一条记录</div>
+        <div class="searchable">这是第二条记录，包含一些关键词</div>
+        <div class="searchable">这里是第三条记录</div>
+        <div class="searchable">搜索功能示例记录</div>
+    </div>
+
+    <div id="results"></div>
+
+    <script>
+        // 搜索函数
+        function search() {
+            // 获取输入框的值
+            const query = document.getElementById('searchInput').value.trim();
+
+            // 获取所有搜索目标div元素
+            const divs = document.querySelectorAll('#content .searchable');
+            
+            // 计数变量用于记录匹配结果数量
+            let matchCount = 0;
+
+            // 遍历所有div元素
+            divs.forEach(div => {
+                // 获取div中的文本并转换为小写
+                const text = div.textContent.trim();
+
+                // 检查文本是否包含搜索关键词
+                if (text.includes(query)) {
+                    // 如果包含，则显示该div
+                    div.classList.remove('hidden');
+                    matchCount++;
+                } else {
+                    // 如果不包含，则隐藏该div
+                    div.classList.add('hidden');
+                }
+            });
+
+            // 显示匹配结果数量
+            const resultsDiv = document.getElementById('results');
+            if (matchCount === 0) {
+                resultsDiv.innerHTML = '<p>未找到匹配结果。</p>';
+            } else {
+                resultsDiv.innerHTML = `<p>找到 ${matchCount} 条匹配结果。</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
