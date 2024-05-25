@@ -54,9 +54,19 @@
         body{
             text-align: center;
         }
+        .d11{
+            display: none;
+        }
+        .d11b{
+            background-color: white;
+        }
+        .d11b:hover{
+            background-color: red;
+        }
     </style>
 </head>
 <body>
+    <div class="common" id="common">
     <div class="head">
         <h1>國二智班網</h1>
         <p>獻給準國三生的你</p>
@@ -65,6 +75,7 @@
     <div class="dc">
         <h2>會考倒數！！</h2>
         <p id="countdown"></p>
+        <button onclick="sd11()" class="d11b">了解會考</button>
     </div>
     <div class="dc" id="o1">
         <h2>班級公告</h2>
@@ -122,36 +133,87 @@
     <div class="footer">
         <p><strong>&copy;國二智 許元洧製作 弘明實驗高級中學 附設國中國小</strong></p>
     </div>
+    </div>
+
+    <div class="d11" id="d11">
+        
+        <div class="d111" style="text-align: left;">
+            <button style="text-decoration: none; border: 1px solid black; border-radius: 50px; background-color: white; text-align: right;" onclick="cd11()" class="d11b">&times;</button>
+            <hr>
+            <h1 style="text-align: center;">台灣國中教育會考介紹</h1>
+
+    <h2>1. 歷史背景</h2>
+    <p>國中教育會考是從2014年開始實施，取代了之前的「基測」（國中基本學力測驗）。會考的設立是為了配合十二年國民基本教育政策，減少考試壓力，並且提升國民教育素質。</p>
+
+    <h2>2. 考試科目</h2>
+    <p>會考包含以下五個主要科目：</p>
+    <ul>
+        <li><strong>國語文</strong>：包括閱讀理解、寫作等。</li>
+        <li><strong>數學</strong>：測試學生的數學知識和應用能力。</li>
+        <li><strong>英文</strong>：包括閱讀、文法和詞彙運用。</li>
+        <li><strong>自然科學</strong>：涵蓋物理、化學、生物、地科等基礎科學知識。</li>
+        <li><strong>社會科學</strong>：包括歷史、地理、公民與社會。</li>
+    </ul>
+
+    <h2>3. 考試方式</h2>
+    <p>每個科目的考試時間和題型各不相同，通常包含選擇題和非選擇題（如填空題、短答題）。考試內容主要是根據國中教育課程大綱設計，注重考察學生的基本學力和綜合運用能力。</p>
+
+    <h2>4. 成績計算</h2>
+    <p>會考成績分為標準分數和常模參照分數。每科成績會依據全體考生的表現進行標準化，並分成多個等第，供高級中等學校在招生時參考。</p>
+
+    <h2>5. 報名與考試</h2>
+    <p>會考通常在每年五月份舉行。國中三年級的學生在學校的協助下完成報名程序，考試後數週內會公布成績。</p>
+
+    <h2>6. 成績運用</h2>
+    <p>會考成績是學生申請高級中等學校的重要依據之一。除了會考成績，招生學校還會考量學生的在校成績、課外活動表現和其他綜合表現。</p>
+
+    <h2>7. 影響和評價</h2>
+    <p>國中教育會考旨在減少學生的考試壓力，推動多元入學管道。然而，部分家長和學生仍對考試結果有很高期望，考試壓力依然存在。整體來說，會考被視為臺灣教育體系中的一個重要環節，對學生的學業和未來發展具有深遠影響。</p>
+
+    <h2>8. 改進和展望</h2>
+    <p>隨著社會和教育環境的變遷，會考制度也在不斷調整和改進，以更好地符合教育目標和學生需求。政府和教育機構持續努力，尋求減少考試壓力、提升教育質量的方法，期望能為每個學生提供公平、公正和多元的學習和發展機會。</p>
+
+    <p>總結來說，臺灣的國中教育會考是學生升學過程中的一個重要步驟，對學生的學習生涯有重要的影響。通過不斷的改進和調整，會考制度正努力為學生提供更加公平和有效的評價機制。</p>
+        </div>
+    </div>
 
     <script>
-        function updateCountdown() {
-            const targetDate = new Date('2025-05-17T00:00:00');
-            const now = new Date();
-            const difference = targetDate - now;
+        // 設置倒計時的目標日期和時間
+        const targetDate = new Date("2025-05-17T00:00:00").getTime();
 
-            if (difference <= 0) {
-                document.getElementById('countdown').innerHTML = "倒數計時結束";
+        // 更新倒計時的函數
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "倒計時結束";
                 return;
             }
 
-            const years = Math.floor(difference / (1000 * 60 * 60 * 24 * 365));
-            const months = Math.floor((difference % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
-            const days = Math.floor((difference % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            document.getElementById('countdown').innerHTML =  
-                months + "月 " + 
-                days + "日 " + 
-                hours + "小時 " + 
-                minutes + "分鐘 " + 
-                seconds + "秒";
+            document.getElementById("countdown").innerHTML = days + "天 " + hours + "小時 " + seconds + "秒";
+            
         }
 
+        // 每秒更新一次倒計時
         setInterval(updateCountdown, 1000);
-        
-        
+
+        // 初始化倒計時顯示
+        updateCountdown();
+
+        function sd11(){
+            document.getElementById('d11').style.display='block';
+            document.getElementById('common').style.display='none';
+        }
+        function cd11(){
+            document.getElementById('d11').style.display='none';
+            document.getElementById('common').style.display='block';
+        }
+
     </script>
 </body>
 </html>
