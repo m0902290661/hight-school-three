@@ -1,37 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>國二智班網</title>
     <style>
-        .head{
+        .head {
+            text-align: center;
+            background-image: url(國二智.JPG);
+            background-size: cover;
+            width: 370px;
+            height: 300px;
             text-align: center;
         }
-        .dc{
+        .head h1{
+            background-color: white;
+        }
+        .head p{
+            background-color: white;
+        }
+        .dc, .dcc {
             border-radius: 5px;
             border: 1px solid black;
             margin: 15px;
             padding: 15px;
-            height: 300px ;
             text-align: center;
-            background-color: rgb(245, 240, 240);
+            background-color: rgb(247, 211, 147);
         }
-        .dc button{
+        .dc button, .d11b {
             text-decoration: none;
             border: 1px solid black;
             background-color: white;
             border-radius: 5px;
             height: 35px;
         }
-        .footer{
+        .footer {
             border-radius: 5px;
             text-align: center;
             margin: 15px;
             background-color: gainsboro;
             padding: 15px;
         }
-        a{
+        a {
             text-decoration: none;
             color: black;
             border: 1px solid black;
@@ -39,142 +49,242 @@
             padding: 5px;
             background-color: white;
         }
-        img{
+        img {
             width: 300px;
         }
-        .dcc{
-            border-radius: 5px;
-            border: 1px solid black;
-            margin: 15px;
-            padding: 15px;
-            height: 300px auto;
-            text-align: center;
-            background-color: rgb(245, 240, 240);
-        }
-        body{
+        body {
             text-align: center;
         }
-        .d11{
+        .d11 {
             display: none;
         }
-        .d11b{
+        .d11b:hover {
+            background-color: red;
+        }
+        .search-bar {
+            margin: 20px 0;
+        }
+        .search-bar input {
+            padding: 10px;
+            font-size: 1em;
+            width: 80%;
+            max-width: 400px;
+            margin: 0 auto;
+            display: block;
+        }
+        .wj{
+            text-align: left;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px;
+            width: auto;
+            position:fixed; 
+            top:10px;
             background-color: white;
         }
-        .d11b:hover{
-            background-color: red;
+        .common{
+            display: none;
         }
     </style>
 </head>
 <body>
     <div class="common" id="common">
-    <div class="head">
-        <h1>國二智班網</h1>
-        <p>獻給準國三生的你</p>
-    </div>
-    <hr>
-    <div class="dc">
-        <h2>會考倒數！！</h2>
-        <p id="countdown"></p>
-        <button onclick="sd11()" class="d11b">了解會考</button>
-    </div>
-    <div class="dc" id="o1">
-        <h2>班級公告</h2>
-        <details>
-            <summary>了解</summary>
-            <div>
-                <p>沒有東西</p>
-            </div>
-        </details>
-    </div>
-    <div class="dcc" id="o2">
-        <h2>班級附件</h2>
-        <details>
-            <summary>了解</summary>
-            <div>
-                <div class="search">
-                    
-                    <details>
-                        <summary>浴佛祈福</summary>
-                        <div>
-                            <img src="浴佛祈福/img1.jpg" alt="">
-                            <img src="浴佛祈福/img2.jpg" alt="">
-                            <img src="浴佛祈福/img3.jpg" alt="">
-                            <img src="浴佛祈福/img4.jpg" alt="">
-                            <img src="浴佛祈福/img5.jpg" alt="">
-                            <img src="浴佛祈福/img6.jpg" alt="">
-                            <img src="浴佛祈福/img7.JPG" alt="">
-                            <img src="浴佛祈福/img8.JPG" alt="">
-                            <img src="浴佛祈福/img9.JPG" alt="">
-                            <img src="浴佛祈福/img10.JPG" alt="">
-                            <img src="浴佛祈福/img11.JPG" alt="">
-                            <img src="浴佛祈福/img12.jpg" alt="">
-                            <img src="浴佛祈福/img13.jpg" alt="">
-                            <img src="浴佛祈福/img14.jpg" alt="">
-                            <img src="浴佛祈福/img15.jpg" alt="">
-                        </div>
-                    </details>
-                    
+        <div class="head">
+            <h1>國二智班網</h1>
+            <p>獻給準國三生的你</p>
+        </div>
+        <hr>
+        <div class="search-bar">
+            <input type="text" id="searchInput" onkeyup="filterContent()" placeholder="輸入關鍵字進行搜索">
+        </div>
+        <div class="dc">
+            <h2>會考倒數！！</h2>
+            <p id="countdown"></p>
+            <button onclick="sd11()" class="d11b">了解會考</button>
+        </div>
+        <div class="dc" id="o1">
+            <h2>班級公告</h2>
+            <details>
+                <summary>了解</summary>
+                <div>
+                    <p>沒有東西</p>
                 </div>
-            </div>
-        </details>
-    </div>
-    <div class="dc" id="o3">
-        <h2>更多內容</h2>
-        <details>
-            <summary>了解</summary>
-            <div>
-                <br>
-                <li><a href="https://boys-n-girls-in-213.blogspot.com/">班導網站</a></li>
-                <br>
-                <li><a href="http://www.holdmean.org.tw/">弘明校網</a></li>
-            </div>
-        </details>
-    </div>
-    <div class="footer">
-        <p><strong>&copy;國二智 許元洧製作 弘明實驗高級中學 附設國中國小</strong></p>
-    </div>
+            </details>
+        </div>
+        <div class="dcc" id="o2">
+            <h2>班級附件</h2>
+            <details>
+                <summary>了解</summary>
+                <div>
+                    <div class="search">
+                        <details class="det">
+                            <summary>113/5/1 浴佛祈福</summary>
+                            <div>
+                                <img src="浴佛祈福/img1.jpg" alt="">
+                                <img src="浴佛祈福/img2.jpg" alt="">
+                                <img src="浴佛祈福/img3.jpg" alt="">
+                                <img src="浴佛祈福/img4.jpg" alt="">
+                                <img src="浴佛祈福/img5.jpg" alt="">
+                                <img src="浴佛祈福/img6.jpg" alt="">
+                                <img src="浴佛祈福/img7.JPG" alt="">
+                                <img src="浴佛祈福/img8.JPG" alt="">
+                                <img src="浴佛祈福/img9.JPG" alt="">
+                                <img src="浴佛祈福/img10.JPG" alt="">
+                                <img src="浴佛祈福/img11.JPG" alt="">
+                                <img src="浴佛祈福/img12.jpg" alt="">
+                                <img src="浴佛祈福/img13.jpg" alt="">
+                                <img src="浴佛祈福/img14.jpg" alt="">
+                                <img src="浴佛祈福/img15.jpg" alt="">
+                            </div>
+                        </details>
+                        <details class="det">
+                            <summary>113/4/25 職涯參訪＿網路線＋房務體驗</summary>
+                            <div>
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img1.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img2.jpg" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img3.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img4.jpg" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img5.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img6.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img7.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img8.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img9.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img10.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img11.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img12.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img13.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img14.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img15.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img16.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img17.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img18.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img19.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img20.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img21.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img22.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img23.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img24.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img25.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img26.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img27.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img28.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img29.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img30.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img31.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img32.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img33.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img34.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img35.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img36.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img37.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img38.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img39.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img40.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img41.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img42.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img43.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img44.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img45.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img46.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img47.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img48.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img49.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img50.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img51.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img52.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img53.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img54.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img55.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img56.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img57.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img58.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img59.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img60.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img61.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img62.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img63.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img64.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img65.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img66.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img67.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img68.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img69.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img70.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img71.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img72.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img73.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img74.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img75.JPG" alt="">
+                                <img src="113.4.25 職涯參訪＿網路線＋房務體驗/img76.JPG" alt="">
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </details>
+        </div>
+        <div class="dc" id="o3">
+            <h2>更多內容</h2>
+            <details>
+                <summary>了解</summary>
+                <div>
+                    <br>
+                    <li><a href="https://boys-n-girls-in-213.blogspot.com/">班導網站</a></li>
+                    <br>
+                    <li><a href="http://www.holdmean.org.tw/">弘明校網</a></li>
+                </div>
+            </details>
+        </div>
+        <div class="footer">
+            <p><strong>&copy;國二智 許元洧製作 弘明實驗高級中學 附設國中國小</strong></p>
+        </div>
     </div>
 
     <div class="d11" id="d11">
-        
         <div class="d111" style="text-align: left;">
             <button style="text-decoration: none; border: 1px solid black; border-radius: 50px; background-color: white; text-align: right;" onclick="cd11()" class="d11b">&times;</button>
             <hr>
             <h1 style="text-align: center;">台灣國中教育會考介紹</h1>
-
-    <h2>1. 歷史背景</h2>
-    <p>國中教育會考是從2014年開始實施，取代了之前的「基測」（國中基本學力測驗）。會考的設立是為了配合十二年國民基本教育政策，減少考試壓力，並且提升國民教育素質。</p>
-
-    <h2>2. 考試科目</h2>
-    <p>會考包含以下五個主要科目：</p>
-    <ul>
-        <li><strong>國語文</strong>：包括閱讀理解、寫作等。</li>
-        <li><strong>數學</strong>：測試學生的數學知識和應用能力。</li>
-        <li><strong>英文</strong>：包括閱讀、文法和詞彙運用。</li>
-        <li><strong>自然科學</strong>：涵蓋物理、化學、生物、地科等基礎科學知識。</li>
-        <li><strong>社會科學</strong>：包括歷史、地理、公民與社會。</li>
-    </ul>
-
-    <h2>3. 考試方式</h2>
-    <p>每個科目的考試時間和題型各不相同，通常包含選擇題和非選擇題（如填空題、短答題）。考試內容主要是根據國中教育課程大綱設計，注重考察學生的基本學力和綜合運用能力。</p>
-
-    <h2>4. 成績計算</h2>
-    <p>會考成績分為標準分數和常模參照分數。每科成績會依據全體考生的表現進行標準化，並分成多個等第，供高級中等學校在招生時參考。</p>
-
-    <h2>5. 報名與考試</h2>
-    <p>會考通常在每年五月份舉行。國中三年級的學生在學校的協助下完成報名程序，考試後數週內會公布成績。</p>
-
-    <h2>6. 成績運用</h2>
-    <p>會考成績是學生申請高級中等學校的重要依據之一。除了會考成績，招生學校還會考量學生的在校成績、課外活動表現和其他綜合表現。</p>
-
-    <h2>7. 影響和評價</h2>
-    <p>國中教育會考旨在減少學生的考試壓力，推動多元入學管道。然而，部分家長和學生仍對考試結果有很高期望，考試壓力依然存在。整體來說，會考被視為臺灣教育體系中的一個重要環節，對學生的學業和未來發展具有深遠影響。</p>
-
-    <h2>8. 改進和展望</h2>
-    <p>隨著社會和教育環境的變遷，會考制度也在不斷調整和改進，以更好地符合教育目標和學生需求。政府和教育機構持續努力，尋求減少考試壓力、提升教育質量的方法，期望能為每個學生提供公平、公正和多元的學習和發展機會。</p>
-
-    <p>總結來說，臺灣的國中教育會考是學生升學過程中的一個重要步驟，對學生的學習生涯有重要的影響。通過不斷的改進和調整，會考制度正努力為學生提供更加公平和有效的評價機制。</p>
+            <h2>1. 歷史背景</h2>
+            <p>國中教育會考是從2014年開始實施，取代了之前的「基測」（國中基本學力測驗）。會考的設立是為了配合十二年國民基本教育政策，減少考試壓力，並且提升國民教育素質。</p>
+            <h2>2. 考試科目</h2>
+            <p>會考包含以下五個主要科目：</p>
+            <ul>
+                <li><strong>國語文</strong>：包括閱讀理解、寫作等。</li>
+                <li><strong>數學</strong>：測試學生的數學知識和應用能力。</li>
+                <li><strong>英文</strong>：包括閱讀、文法和詞彙運用。</li>
+                <li><strong>自然科學</strong>：涵蓋物理、化學、生物、地科等基礎科學知識。</li>
+                <li><strong>社會科學</strong>：包括歷史、地理、公民與社會。</li>
+            </ul>
+            <h2>3. 考試方式</h2>
+            <p>每個科目的考試時間和題型各不相同，通常包含選擇題和非選擇題（如填空題、短答題）。考試內容主要是根據國中教育課程大綱設計，注重考察學生的基本學力和綜合運用能力。</p>
+            <h2>4. 成績計算</h2>
+            <p>會考成績分為標準分數和常模參照分數。每科成績會依據全體考生的表現進行標準化，並分成多個等第，供高級中等學校在招生時參考。</p>
+            <h2>5. 報名與考試</h2>
+            <p>會考通常在每年五月份舉行。國中三年級的學生在學校的協助下完成報名程序，考試後數週內會公布成績。</p>
+            <h2>6. 成績運用</h2>
+            <p>會考成績是學生申請高級中等學校的重要依據之一。除了會考成績，招生學校還會考量學生的在校成績、課外活動表現和其他綜合表現。</p>
+            <h2>7. 影響和評價</h2>
+            <p>國中教育會考旨在減少學生的考試壓力，推動多元入學管道。然而，部分家長和學生仍對考試結果有很高期望，考試壓力依然存在。整體來說，會考被視為臺灣教育體系中的一個重要環節，對學生的學業和未來發展具有深遠影響。</p>
+            <h2>8. 改進和展望</h2>
+            <p>隨著社會和教育環境的變遷，會考制度也在不斷調整和改進，以更好地符合教育目標和學生需求。政府和教育機構持續努力，尋求減少考試壓力、提升教育質量的方法，期望能為每個學生提供公平、公正和多元的學習和發展機會。</p>
+            <p>總結來說，臺灣的國中教育會考是學生升學過程中的一個重要步驟，對學生的學習生涯有重要的影響。通過不斷的改進和調整，會考制度正努力為學生提供更加公平和有效的評價機制。</p>
         </div>
+    </div>
+    <div class="wj" id="wj">
+        <button style="border-radius: 50px;" onclick="cwj()">&times;</button>
+        <h2>國二智班網更新項目：</h2>
+        <li>版本號：1.0.7.5</li>
+        <li>更新時間：113.5.26</li>
+        <li>更新者：許元洧</li>
+        <li>更新類別：<strong style="color: red;">重大類型更新</strong></li>
+        <li>更新項目：</li>
+        <p>於會考倒數區新增「了解會考」按鈕，並新增新區塊元素，不破壞一頁式網站的特性。
+            <br>
+            更改標題樣式。<br>
+            增加搜尋系統，利用獲取div元素中的文本進行關鍵字比對。<br>
+            於班級附件中新增職涯參訪分區。<br>
+            新增登入時提示視窗。</p>
     </div>
 
     <script>
@@ -196,7 +306,6 @@
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
             document.getElementById("countdown").innerHTML = days + "天 " + hours + "小時 " + seconds + "秒";
-            
         }
 
         // 每秒更新一次倒計時
@@ -205,15 +314,35 @@
         // 初始化倒計時顯示
         updateCountdown();
 
-        function sd11(){
-            document.getElementById('d11').style.display='block';
-            document.getElementById('common').style.display='none';
-        }
-        function cd11(){
-            document.getElementById('d11').style.display='none';
-            document.getElementById('common').style.display='block';
+        function sd11() {
+            document.getElementById('d11').style.display = 'block';
+            document.getElementById('common').style.display = 'none';
         }
 
+        function cd11() {
+            document.getElementById('d11').style.display = 'none';
+            document.getElementById('common').style.display = 'block';
+        }
+        
+        function cwj() {
+            document.getElementById('wj').style.display = 'none';
+            document.getElementById('common').style.display = 'block';
+        }
+
+        function filterContent() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase();
+            const divs = document.querySelectorAll('.dc, .dcc,.det');
+
+            divs.forEach(div => {
+                const text = div.textContent || div.innerText;
+                if (text.toLowerCase().indexOf(filter) > -1) {
+                    div.style.display = "";
+                } else {
+                    div.style.display = "none";
+                }
+            });
+        }
     </script>
 </body>
 </html>

@@ -1,6 +1,222 @@
-<details>
-    <summary>打開彈出框</summary>
-    <div class="popup-content">
-        <p>這是一個簡易的 HTML5 彈出框。</p>
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>國二智班網</title>
+    <style>
+        .head {
+            text-align: center;
+        }
+        .dc, .dcc {
+            border-radius: 5px;
+            border: 1px solid black;
+            margin: 15px;
+            padding: 15px;
+            text-align: center;
+            background-color: rgb(245, 240, 240);
+        }
+        .dc button, .d11b {
+            text-decoration: none;
+            border: 1px solid black;
+            background-color: white;
+            border-radius: 5px;
+            height: 35px;
+        }
+        .footer {
+            border-radius: 5px;
+            text-align: center;
+            margin: 15px;
+            background-color: gainsboro;
+            padding: 15px;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 5px;
+            background-color: white;
+        }
+        img {
+            width: 300px;
+        }
+        body {
+            text-align: center;
+        }
+        .d11 {
+            display: none;
+        }
+        .d11b:hover {
+            background-color: red;
+        }
+        .search-bar {
+            margin: 20px 0;
+        }
+        .search-bar input {
+            padding: 10px;
+            font-size: 1em;
+            width: 80%;
+            max-width: 400px;
+            margin: 0 auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="common" id="common">
+        <div class="head">
+            <h1>國二智班網</h1>
+            <p>獻給準國三生的你</p>
+        </div>
+        <hr>
+        <div class="search-bar">
+            <input type="text" id="searchInput" onkeyup="filterContent()" placeholder="輸入關鍵字進行搜索">
+        </div>
+        <div class="dc">
+            <h2>會考倒數！！</h2>
+            <p id="countdown"></p>
+            <button onclick="sd11()" class="d11b">了解會考</button>
+        </div>
+        <div class="dc" id="o1">
+            <h2>班級公告</h2>
+            <details>
+                <summary>了解</summary>
+                <div>
+                    <p>沒有東西</p>
+                </div>
+            </details>
+        </div>
+        <div class="dcc" id="o2">
+            <h2>班級附件</h2>
+            <details>
+                <summary>了解</summary>
+                <div>
+                    <div class="search">
+                        <details class="det">
+                            <summary>浴佛祈福</summary>
+                            <div>
+                                <img src="浴佛祈福/img1.jpg" alt="">
+                                <img src="浴佛祈福/img2.jpg" alt="">
+                                <img src="浴佛祈福/img3.jpg" alt="">
+                                <img src="浴佛祈福/img4.jpg" alt="">
+                                <img src="浴佛祈福/img5.jpg" alt="">
+                                <img src="浴佛祈福/img6.jpg" alt="">
+                                <img src="浴佛祈福/img7.JPG" alt="">
+                                <img src="浴佛祈福/img8.JPG" alt="">
+                                <img src="浴佛祈福/img9.JPG" alt="">
+                                <img src="浴佛祈福/img10.JPG" alt="">
+                                <img src="浴佛祈福/img11.JPG" alt="">
+                                <img src="浴佛祈福/img12.jpg" alt="">
+                                <img src="浴佛祈福/img13.jpg" alt="">
+                                <img src="浴佛祈福/img14.jpg" alt="">
+                                <img src="浴佛祈福/img15.jpg" alt="">
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </details>
+        </div>
+        <div class="dc" id="o3">
+            <h2>更多內容</h2>
+            <details>
+                <summary>了解</summary>
+                <div>
+                    <br>
+                    <li><a href="https://boys-n-girls-in-213.blogspot.com/">班導網站</a></li>
+                    <br>
+                    <li><a href="http://www.holdmean.org.tw/">弘明校網</a></li>
+                </div>
+            </details>
+        </div>
+        <div class="footer">
+            <p><strong>&copy;國二智 許元洧製作 弘明實驗高級中學 附設國中國小</strong></p>
+        </div>
     </div>
-</details>
+
+    <div class="d11" id="d11">
+        <div class="d111" style="text-align: left;">
+            <button style="text-decoration: none; border: 1px solid black; border-radius: 50px; background-color: white; text-align: right;" onclick="cd11()" class="d11b">&times;</button>
+            <hr>
+            <h1 style="text-align: center;">台灣國中教育會考介紹</h1>
+            <h2>1. 歷史背景</h2>
+            <p>國中教育會考是從2014年開始實施，取代了之前的「基測」（國中基本學力測驗）。會考的設立是為了配合十二年國民基本教育政策，減少考試壓力，並且提升國民教育素質。</p>
+            <h2>2. 考試科目</h2>
+            <p>會考包含以下五個主要科目：</p>
+            <ul>
+                <li><strong>國語文</strong>：包括閱讀理解、寫作等。</li>
+                <li><strong>數學</strong>：測試學生的數學知識和應用能力。</li>
+                <li><strong>英文</strong>：包括閱讀、文法和詞彙運用。</li>
+                <li><strong>自然科學</strong>：涵蓋物理、化學、生物、地科等基礎科學知識。</li>
+                <li><strong>社會科學</strong>：包括歷史、地理、公民與社會。</li>
+            </ul>
+            <h2>3. 考試方式</h2>
+            <p>每個科目的考試時間和題型各不相同，通常包含選擇題和非選擇題（如填空題、短答題）。考試內容主要是根據國中教育課程大綱設計，注重考察學生的基本學力和綜合運用能力。</p>
+            <h2>4. 成績計算</h2>
+            <p>會考成績分為標準分數和常模參照分數。每科成績會依據全體考生的表現進行標準化，並分成多個等第，供高級中等學校在招生時參考。</p>
+            <h2>5. 報名與考試</h2>
+            <p>會考通常在每年五月份舉行。國中三年級的學生在學校的協助下完成報名程序，考試後數週內會公布成績。</p>
+            <h2>6. 成績運用</h2>
+            <p>會考成績是學生申請高級中等學校的重要依據之一。除了會考成績，招生學校還會考量學生的在校成績、課外活動表現和其他綜合表現。</p>
+            <h2>7. 影響和評價</h2>
+            <p>國中教育會考旨在減少學生的考試壓力，推動多元入學管道。然而，部分家長和學生仍對考試結果有很高期望，考試壓力依然存在。整體來說，會考被視為臺灣教育體系中的一個重要環節，對學生的學業和未來發展具有深遠影響。</p>
+            <h2>8. 改進和展望</h2>
+            <p>隨著社會和教育環境的變遷，會考制度也在不斷調整和改進，以更好地符合教育目標和學生需求。政府和教育機構持續努力，尋求減少考試壓力、提升教育質量的方法，期望能為每個學生提供公平、公正和多元的學習和發展機會。</p>
+            <p>總結來說，臺灣的國中教育會考是學生升學過程中的一個重要步驟，對學生的學習生涯有重要的影響。通過不斷的改進和調整，會考制度正努力為學生提供更加公平和有效的評價機制。</p>
+        </div>
+    </div>
+
+    <script>
+        // 設置倒計時的目標日期和時間
+        const targetDate = new Date("2025-05-17T00:00:00").getTime();
+
+        // 更新倒計時的函數
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "倒計時結束";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = days + "天 " + hours + "小時 " + seconds + "秒";
+        }
+
+        // 每秒更新一次倒計時
+        setInterval(updateCountdown, 1000);
+
+        // 初始化倒計時顯示
+        updateCountdown();
+
+        function sd11() {
+            document.getElementById('d11').style.display = 'block';
+            document.getElementById('common').style.display = 'none';
+        }
+
+        function cd11() {
+            document.getElementById('d11').style.display = 'none';
+            document.getElementById('common').style.display = 'block';
+        }
+
+        function filterContent() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase();
+            const divs = document.querySelectorAll('.dc, .dcc,.det');
+
+            divs.forEach(div => {
+                const text = div.textContent || div.innerText;
+                if (text.toLowerCase().indexOf(filter) > -1) {
+                    div.style.display = "";
+                } else {
+                    div.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
