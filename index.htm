@@ -34,6 +34,7 @@
         button{
             text-decoration: none;
             border: none;
+            margin: 5px;
         }
         button:hover{
             background-color: black;
@@ -41,7 +42,7 @@
         .head,.if,.menu{
             text-align: center;
         }
-        .if,.menu,.dc{
+        .if,.menu,.dc,.set{
             border: 0.5px solid black;
             border-radius: 10px;
             padding: 15px;
@@ -53,7 +54,7 @@
         }
         img{
             width: auto;
-            height: 300px;
+            height: 250px;
         }
         summary:hover{
             text-decoration: underline;
@@ -67,9 +68,27 @@
         .d0{
             background-image: url(國二智.JPG);
         }
+        pre{
+            white-space: pre-wrap;
+        }
+        .testm{
+            border: 0.5px solid black;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px;
+            display: none;
+        }
+        .set0b{
+            color: green;
+            background-color: green;
+        }
+        .set{
+            display: none;
+        }
     </style>
 </head>
-<body>
+<body id="body">
+    <div id="index">
     <div class="d0">
     <div class="search-bar">
         <button class="button" id="osb" onclick="osb()">打開搜尋欄</button>
@@ -77,16 +96,27 @@
         <button class="button" id="sb" onclick="csb()">關閉搜尋欄</button>
     </div>
     <div class="head">
-        <h1><a href="index.htm">國二智</a></h1>
-        <a href="國二智.JPG">查看完整背景圖片</a>
+        <h1><a href="index.htm" title="重置網頁">國二智</a></h1>
+        <a href="國二智.JPG">查看完整背景圖片</a><br>
+        <button onclick="document.getElementById('set').style.display='block';">網頁設定</button>
     </div></div>
+    <div class="set" id="set">
+        <button onclick="document.getElementById('set').style.display='none';">&times;</button><h2>網頁設定</h2>
+        <h2>風格：</h2>
+        <button class="set0b" id="setw" onclick="setw()">淺色</button><button id="setb" onclick="setb()">深色</button>
+        <h2>會考倒數：</h2>
+        <button class="set0b" id="seti" onclick="seti()">詳細</button><button id="sete" onclick="sete()">精簡</button><br>
+        <p>你的時間：<p id="outt"></p></p>
+        <a href="#tt" onclick="document.getElementById('tt').style.display='block';">這串數字是什麼？</a><br>
+        <a href="index.htm">重置設定</a>
+    </div>
     <div class="if">
-        <h2 style="display: inline;">會考倒數 <h2 style="display: inline;" id="countdown"></h2></h2>
+        <h2 style="display: inline;">會考倒數 <h2 style="display: inline;" id="countdown"></h2></h2><button onclick="document.getElementById('testm').style.display='block';location.href='#testm'">了解會考</button>
     </div>
     <div class="menu">
         <h2 style="display: inline;">選單：</h2>
         <button class="button" id="mob" onclick="om()">打開</button>
-        <p id="menui" > <a href="https://boys-n-girls-in-213.blogspot.com/">班導網站</a> <a href="http://www.holdmean.org.tw/">弘明校網</a></p>
+        <p id="menui" > <a href="#imt">班級（校園）公告</a> <a href="#classt">班級附件</a> <a href="https://boys-n-girls-in-213.blogspot.com/">班導網站</a> <a href="http://www.holdmean.org.tw/">弘明校網</a></p>
         <button class="button" id="menub" onclick="cm()">關閉</button>
     </div>
 
@@ -225,12 +255,61 @@
         <a href="https://boys-n-girls-in-213.blogspot.com/2024/05/11351.html" title="查看更多"><img src="IMG_0943.jpg" alt=""></a>
     </div>
     <a href="https://boys-n-girls-in-213.blogspot.com/search?updated-max=2024-04-25T02:16:00-07:00&max-results=7&start=1&by-date=false">更多內容</a>
-    <div class="footer"><p>&copy;<a href="index.htm">國二智班網</a> 許元洧製作</p></div>
+    <div class="dc" id="imt">
+        <h2>班級（校園）公告</h2>
+        <li>[學校]112-2（國二下）學期結束時間於6/28。請注意，於8/4返校開始新學期（113-1）</li>
+    </div>
+    <div class="dc" id="classt">
+        <h2>班級附件</h2>
+        <details>
+            <summary>112-2國二智班課表（國二下，第六週修訂版）</summary>
+            <div>
+                <img src="112-2classsu.jpeg">
+                <a href="112-2classsu.jpeg">放大查看</a>
+            </div>
+        </details>
+        <details>
+            <summary>112-2行事曆（國二下）</summary>
+            <div>
+                <img src="112-2ss.jpeg">
+                <a href="112-2ss.jpeg">放大查看</a>
+            </div>
+        </details>
+    </div>
+    <div class="testm" id="testm">
+        <button onclick="document.getElementById('testm').style.display='none';">&times;</button>
+        <h1>國中教育會考</h1>
+        <pre>
+一、依據：國民小學及國民中學學生成績評量準則第14條（中華民國108年6月28日教育部臺教授國部字第1080065377B號令修正）
+ 
+二、相關規定：國中教育會考推動會設置要點108年7月29日臺教授國部字第1080079209號函修正）
+             
+三、目的：為確保學生學習品質並輔導學生適性入學。
+             
+四、業務重點：
+國中教育會考的目的除了讓學生、教師、學校、家長和主管機關了解學生的學習品質外；國中可參酌國中教育會考的結果，提供學生升學選擇之建議，輔導學生適性入學；並可作為高中、高職或五專新生學習輔導的參據。
+國中教育會考是在對國三學生基本、必要之學科能力門檻進行檢定，評量科目包含國文、英語、數學、社會、自然及寫作測驗，除國文與寫作測驗同屬語文學習領域本國語文（國語文）外，各科不跨學習領域，皆以十二年國民基本教育課程綱要學習表現與學習內容。國文、英語、數學、社會、自然五科之題型以選擇題為主，非選擇題為輔。教育會考英語科包含聽力試題，以進行國中生英語閱讀與聽力綜合評量，此將有助於提升英語科測驗評量效度，亦對國中英語教育產生正面影響。
+國中教育會考難易度為「難易適中」，並屬標準參照測驗，每一科目成績分為「精熟」、「基礎」及「待加強」3個等級，藉由各科成績等級減少來達到適度減低考試壓力的目的；透過標準參照的作法達到學力監控與提供具體學力訊息的目標。
+            
+為辦理國中教育會考各項工作規劃、協調及執行作業，教育部、各直轄市、縣（市）政府與臺師大心測中心組成教育會考推動會負責教育會考重要事項之審議、協調及指導。其推動會下設全國試務會，負責訂定各項全國試務工作規範、執行試務相關事宜及解決考試實施中所發生之問題等。至考區試務工作，則由考區所在地之直轄市、縣（市）政府辦理，並得委由考區所在地之學校設教育會考考區試務會辦理之。
+自民國103年起實施的教育會考，規劃於每年5月擇一周六、日實施，為期2天，由國立臺灣師範大學心理與教育測驗研究發展中心（以下簡稱臺師大心測中心）負責命題、組卷、閱卷、計分、題庫建置、試題研發等相關事宜，並自109年起由臺師大心測中心辦理國中教育會考全國試務會之全國試務會工作以達公平客觀並實踐國家課程目標。
+            
+相關連結：<a href="https://cap.rcpet.edu.tw/">國中教育會考網址</a>
+        </pre>
+    </div>    
 
 
+    <div class="dc" id="tt" style="display: none;">
+        <button onclick="document.getElementById('tt').style.display='none';">&times;</button>
+        <p>此數字為自1970年1月1日00:00:00 UTC以來的毫秒數</p>
+    </div>
+    <div class="footer"><p>&copy;<a href="index.htm">國二智班網</a> 許元洧製作 最後更新時間：中華台北標準時間2024/6/8 16:40</p></div>
+    </div>
+    
     <script>
          // 設置倒計時的目標日期和時間
-         const targetDate = new Date("2025-05-17T00:00:00").getTime();
+const targetDate = new Date("2025-05-17T00:00:00").getTime();
+let detailedMode = true;
 
 // 更新倒計時的函數
 function updateCountdown() {
@@ -244,9 +323,21 @@ function updateCountdown() {
 
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById("countdown").innerHTML = days + "天 " + hours + "小時 " + seconds + "秒";
+    if (detailedMode) {
+        document.getElementById("countdown").innerHTML = days + "天 " + hours + "小時 " + minutes + "分鐘 " + seconds + "秒";
+    } else {
+        document.getElementById("countdown").innerHTML = days + "天";
+    }
+    document.getElementById('outt').innerHTML=now;
+}
+
+// 切換倒計時顯示模式的函數
+function toggleCountdownMode() {
+    detailedMode = !detailedMode;
+    updateCountdown();
 }
 
 // 每秒更新一次倒計時
@@ -294,6 +385,40 @@ function filterContent() {
             document.getElementById('menui').style.display='none';
             document.getElementById('menub').style.display='none';
             document.getElementById('mob').style.display='block';
+        }
+        function setb(){
+            document.getElementById('index').style.backgroundColor='black';
+            document.getElementById('index').style.color='white';
+            document.getElementById('setb').style.color='green';  
+            document.getElementById('setb').style.backgroundColor='green';
+            document.getElementById('setw').style.color='black';
+            document.getElementById('setw').style.backgroundColor='white';
+            document.getElementById('body').style.backgroundColor='black';
+            document.getElementById('testm').style.color='white';
+        }
+        function setw(){
+            document.getElementById('index').style.backgroundColor='white';
+            document.getElementById('index').style.color='black';
+            document.getElementById('setw').style.color='green';  
+            document.getElementById('setw').style.backgroundColor='green';
+            document.getElementById('setb').style.color='black';
+            document.getElementById('setb').style.backgroundColor='white';
+            document.getElementById('body').style.backgroundColor='white';
+            document.getElementById('testm').style.color='black';
+        }
+        function sete(){
+            document.getElementById('sete').style.color='green';  
+            document.getElementById('sete').style.backgroundColor='green';
+            document.getElementById('seti').style.color='black';
+            document.getElementById('seti').style.backgroundColor='white';
+            toggleCountdownMode();
+        }
+        function seti(){
+            document.getElementById('seti').style.color='green';  
+            document.getElementById('seti').style.backgroundColor='green';
+            document.getElementById('sete').style.color='black';
+            document.getElementById('sete').style.backgroundColor='white';
+            toggleCountdownMode();
         }
     </script>
 </body>
