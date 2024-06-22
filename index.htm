@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>國二智</title>
     <style>
+        button{
+            text-decoration: none;
+            color: black;
+        }
         .d0{
             overflow: auto;
-        }
-        .head a{
-            color: white;
         }
         .search-bar {
             text-align: center;
@@ -69,9 +70,6 @@
             overflow: auto;
             max-width: 100%;
             text-align: left;
-        }
-        .d0{
-            background-image: url(國二智.JPG);
         }
         pre{
             white-space: pre-wrap;
@@ -133,15 +131,33 @@
         div{
             overflow: auto;
         }
+        .dc0{
+            height: 300px;
+            overflow: auto;
+            border: 0.5px solid black;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px;
+            text-align: center;
+        }
+        .dc1{
+            height: 300px;
+            overflow: auto;
+            border: 0.5px solid black;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px;
+            text-align: center;
+        }
     </style>        
 </head>
 <body id="body">
     <div id="index">
         <div id="popup" class="popup">
             <div class="popup-content">
-                <span class="close-btn" id="close-btn">&times;</span>
+                <span class="close-btn" id="close-btn" onclick="location.href='#d0'">&times;</span>
                 <h2>公告（點擊空白處關閉）</h2>
-                <img src="29.弘明實中_普通科_page-0001.jpg" class="hm113hse">
+                <img src="1122大學榜單.jpg" class="hm113hse">
             </div>
         </div>
     <div class="d0" id="d0">
@@ -153,8 +169,6 @@
     <div class="head">
         <h1><a href="index.htm" title="重置網頁">國二智</a></h1>
         <button onclick="cpopa()">再次顯示公告</button>
-        <button onclick="cbi()">查看完整背景圖片</button>
-        <button onclick="cbin()">縮小完整背景圖片（若已查看完整背景圖片）</button>
         <button onclick="document.getElementById('set').style.display='block';">網頁設定</button>
     </div></div>
     <div class="set" id="set">
@@ -175,7 +189,18 @@
         <details>
             <summary>開關選單</summary>
             <div>
-                <p class="mp"> <li><a href="#imt">班級（校園）公告</a></li> <li><a href="#classt">班級附件</a></li> <li><a href="https://boys-n-girls-in-213.blogspot.com/">班導網站</a></li> <li><a href="http://www.holdmean.org.tw/">弘明校網</a></li></p>
+                <p class="mp"> <li><a href="#imt">班級（校園、網站）公告</a></li> <li><a href="#classt">班級附件</a></li> <li><a href="https://boys-n-girls-in-213.blogspot.com/">班導網站</a></li> <li><a href="http://www.holdmean.org.tw/">弘明校網</a></li></p>
+            </div>
+        </details>
+    </div>
+    <div class="dc">
+        <h2>113.6.18 德行楷模（整潔）分享。育程：今天終於分享完了…很神奇的是，這次上台居然沒有上次在班上那樣緊張，可能是上一次剛睡起來（上課睡覺），昏沉而沒有準備，而突然上台吧！但今天在旁邊準備時，我只有一點小緊張，而上台後又更緊張了一些，但我想起主任的話，叫我心平氣和地慢慢唸。自我覺念得有些快，且麥克風拿得不夠近，導致後面的同學聽不清楚，這是我可以再進步的地方。 孟宸：我覺得今天兩位楷模都表現得不錯，都有修正上星期六所提出的缺點。鈞頡都是正眼看著大家，台詞也念得很順暢：而育程的稿子沒讀得很熟，但至少他不會像在練習時那樣動來動去，值得肯定。</h2>
+        <details>
+            <summary>查看更多</summary>
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/C0701m9lwk0?si=E3CP7K7CpB-8yNZX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/_rffeo_9om0?si=1q2MUwDGqvuD_Zdq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <a href="https://boys-n-girls-in-213.blogspot.com/2024/06/113618.html">原文</a>
             </div>
         </details>
     </div>
@@ -361,14 +386,39 @@
         <a href="https://boys-n-girls-in-213.blogspot.com/2024/05/11351.html" title="查看更多"><img src="IMG_0943.jpg" alt=""></a>
     </div>
     <a href="https://boys-n-girls-in-213.blogspot.com/search?updated-max=2024-04-25T02:16:00-07:00&max-results=7&start=1&by-date=false">更多內容</a>
-    <div class="dc" id="imt">
-        <h2>班級（校園）公告</h2>
+    <div class="dc0" id="imt">
+        <h2>班級（校園、網站）公告</h2>
+        <p>更多內容，向下滑動</p>
+        <li>[學校]113弘明大學錄取榜單</li>
+        <img src="1122大學榜單.jpg" alt="">
         <li>[學校]113弘明直升錄取榜單</li>
         <img src="29.弘明實中_普通科_page-0001.jpg" alt="" class="hm113hse">
         <li>[學校]112-2（國二下）學期結束時間於6/28。請注意，於8/4返校開始新學期（113-1）</li>
     </div>
-    <div class="dc" id="classt">
+    <div class="dc1" id="classt">
         <h2>班級附件</h2>
+        <p>更多內容，向下滑動</p>
+        <details>
+            <summary>數學立體平行八角星環製作說明書</summary>
+            <div>
+                <img src="img5.jpg" alt=""><a href="img5.jpg">放大查看</a><br>
+                <img src="img6.jpg" alt=""><a href="img6.jpg">放大查看</a>
+            </div>
+        </details>
+        <details>
+            <summary>三重腦學說</summary>
+            <div>
+                <img src="img1.jpg" alt=""><a href="img1.jpg">放大查看</a><br>
+                <img src="img2.jpg" alt=""><a href="img2.jpg">放大查看</a>
+            </div>
+        </details>
+        <details>
+            <summary>理化5~6章複習、解答</summary>
+            <div>
+                <img src="img3.jpg" alt=""><a href="img3.jpg">放大查看</a><br>
+                <img src="img4.jpg" alt=""><a href="img4.jpg">放大查看</a>
+            </div>
+        </details>
         <details>
             <summary>112-2國二智班課表（國二下，第六週修訂版）</summary>
             <div>
@@ -411,7 +461,7 @@
         <button onclick="document.getElementById('tt').style.display='none';">&times;</button>
         <p>此數字為自1970年1月1日00:00:00 UTC以來的毫秒數</p>
     </div>
-    <div class="footer"><p>&copy;<a href="index.htm">國二智班網</a> 許元洧製作 最後更新時間：中華台北標準時間2024/6/15 20:40</p></div>
+    <div class="footer"><p>&copy;<a href="index.htm">國二智班網</a> 許元洧製作 最後更新時間：中華台北標準時間2024/6/22 14:30</p></div>
     </div>
     
     <script>
@@ -528,15 +578,7 @@ function filterContent() {
             document.getElementById('sete').style.backgroundColor='white';
             toggleCountdownMode();
         }
-        function cbi(){
-            document.getElementById('d0').style.height='3000px';
-            document.getElementById('d0').style.width='4100px';
-        }
-        function cbin(){
-            document.getElementById('d0').style.height='auto';
-            document.getElementById('d0').style.width='auto';
-        }
-
+        
 
         document.addEventListener('DOMContentLoaded', function() {
     var popup = document.getElementById('popup');
@@ -554,6 +596,7 @@ function filterContent() {
     window.addEventListener('click', function(event) {
         if (event.target === popup) {
             popup.style.display = 'none';
+            location.href='#d0';
         }
     });
 });
