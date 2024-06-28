@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>國二智</title>
+    <title>國二智 | 放暑假中！</title>
     <style>
         button{
             text-decoration: none;
@@ -153,13 +153,6 @@
 </head>
 <body id="body">
     <div id="index">
-        <div id="popup" class="popup">
-            <div class="popup-content">
-                <span class="close-btn" id="close-btn" onclick="location.href='#d0'">&times;</span>
-                <h2>公告（點擊空白處關閉）</h2>
-                <img src="1122大學榜單.jpg" class="hm113hse">
-            </div>
-        </div>
     <div class="d0" id="d0">
     <div class="search-bar">
         <button class="button" id="osb" onclick="osb()">打開搜尋欄</button>
@@ -167,7 +160,7 @@
         <button class="button" id="sb" onclick="csb()">關閉搜尋欄</button>
     </div>
     <div class="head">
-        <h1><a href="index.htm" title="重置網頁">國二智</a></h1>
+        <h1><a href="index.htm" title="重置網頁"><span style="color: red;">暑</span><span style="color: blue;">假</span></a></h1>
         <button onclick="cpopa()">再次顯示公告</button>
         <button onclick="document.getElementById('set').style.display='block';">網頁設定</button>
     </div></div>
@@ -192,6 +185,10 @@
                 <p class="mp"> <li><a href="#imt">班級（校園、網站）公告</a></li> <li><a href="#classt">班級附件</a></li> <li><a href="https://boys-n-girls-in-213.blogspot.com/">班導網站</a></li> <li><a href="http://www.holdmean.org.tw/">弘明校網</a></li></p>
             </div>
         </details>
+    </div>
+    <div class="dc">
+        <h2>113.6.26 期末大掃除！ 無意間，我們多掃了一間小木屋。老師一時之間也沒注意，只覺得幫輔導是黃老師解決了一間搬遷雜物的事情。今天也完成了資訊教室的清理、222公用教室、221我們待了一年的老窩、也把224未來的國三智重新粉刷......很累、很累！但是，練起來的能力，全部都是我們自己的。果然當初『放手』是對的＾＾</h2>
+        <a href="https://boys-n-girls-in-213.blogspot.com/2024/06/113626-222221224.html" title="查看更多"><img src="IMG_1377 2.JPG" alt=""></a>
     </div>
     <div class="dc">
         <h2>113.6.18 德行楷模（整潔）分享。育程：今天終於分享完了…很神奇的是，這次上台居然沒有上次在班上那樣緊張，可能是上一次剛睡起來（上課睡覺），昏沉而沒有準備，而突然上台吧！但今天在旁邊準備時，我只有一點小緊張，而上台後又更緊張了一些，但我想起主任的話，叫我心平氣和地慢慢唸。自我覺念得有些快，且麥克風拿得不夠近，導致後面的同學聽不清楚，這是我可以再進步的地方。 孟宸：我覺得今天兩位楷模都表現得不錯，都有修正上星期六所提出的缺點。鈞頡都是正眼看著大家，台詞也念得很順暢：而育程的稿子沒讀得很熟，但至少他不會像在練習時那樣動來動去，值得肯定。</h2>
@@ -711,26 +708,7 @@ function filterContent() {
         }
         
 
-        document.addEventListener('DOMContentLoaded', function() {
-    var popup = document.getElementById('popup');
-    var closeBtn = document.getElementById('close-btn');
-
-    // 顯示彈出視窗
-    popup.style.display = 'flex';
-
-    // 點擊關閉按鈕關閉彈出視窗
-    closeBtn.addEventListener('click', function() {
-        popup.style.display = 'none';
-    });
-
-    // 點擊彈出視窗外部關閉彈出視窗
-    window.addEventListener('click', function(event) {
-        if (event.target === popup) {
-            popup.style.display = 'none';
-            location.href='#d0';
-        }
-    });
-});
+        
 
 
         function cpopa(){
