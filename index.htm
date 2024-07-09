@@ -3,716 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>國二智 | 放暑假中！</title>
+    <title>國三智</title>
     <style>
-        button{
-            text-decoration: none;
-            color: black;
+        body{
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
-        .d0{
-            overflow: auto;
-        }
-        .search-bar {
+        .header{
             text-align: center;
-            margin: 20px 0;
         }
-        .search-bar input {
-            padding: 10px;
-            font-size: 1em;
-            width: 80%;
-            max-width: 400px;
-            margin: 0 auto;
+        .openbutton{
+            text-align: left;
+            cursor: pointer;
+            border: 0.5px solid black;
+            width: 150px;
+        }
+        .closebutton{
+            margin-left: 140px;
+            cursor: pointer;
+            border: 0.5px solid black;
+        }
+        .header div{
+            text-align: left;
+            border: 0.5px solid black ;
+            width: 150px;
+            padding: 5px;
             display: none;
         }
-        #sb{
-            display: none;
-        }
-        a{
-            text-decoration: none;
-            color: black;
-        }
-        a:hover{
-            text-decoration: underline;
-            color: blue;
-        }
-        button{
-            text-decoration: none;
-            border: none;
-            margin: 5px;
-        }
-        button:hover{
-            background-color: black;
+        .header li{
             cursor: pointer;
         }
-        .head,.if,.menu{
+        .about h2{
             text-align: center;
         }
-        .if,.menu,.dc,.set{
+        .about{
+            background-color: rgb(221, 240, 161);
+            padding: 15px;
+        }
+        .a1d{
+            border: 1px solid black;
+            padding: 50px;
+            margin: 15px;
+            background-color: white;
+        }
+        .a1ds{
+            color: orange;
+            margin-left: 300px;
+        }
+        .leader{
+            display: flex;
+            justify-content: space-between;
+        }
+        .teacher,.classleader,.secondclassleader{
+            text-align: center;
             border: 0.5px solid black;
             border-radius: 10px;
             padding: 15px;
-            margin: 15px;
+        }
+        .post{
             text-align: center;
+            background-color: rgb(161, 239, 240);
+            padding: 15px;
         }
-        #menui,#menub{
-            display: none;
+        .data{
+            text-align: center;
+            background-color: rgb(227, 161, 240);
+            padding: 15px;
         }
-        img{
-            width: auto;
-            height: 250px;
+        .rider{
+            text-align: center;
+            background-color: rgb(240, 161, 161);
+            padding: 15px;
         }
-        summary:hover{
-            text-decoration: underline;
-            color: blue;
-            cursor: pointer;
-        }
-        .dc div{
-            overflow: auto;
-            max-width: 100%;
+        .rider li{
             text-align: left;
         }
-        pre{
-            white-space: pre-wrap;
+        .rider ol{
+            text-align: left;
         }
-        .testm{
-            border: 0.5px solid black;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 15px;
-            display: none;
-        }
-        .set0b{
-            color: green;
-            background-color: green;
-        }
-        .set{
-            display: none;
-        }
-        .mp li{
-            display: inline;
-        }
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        .popup {
-            display: none;
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .popup-content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            text-align: center;
-            width: 80%;
-            max-width: 400px;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 30px;
+        .rider p{
+            text-align: left;
             cursor: pointer;
-        }
-        .hm113hse{
-            height: 500px;
-            border: 1px solid black;
-            border-radius: 10px;
-        }
-        div{
-            overflow: auto;
-        }
-        .dc0{
-            height: 300px;
-            overflow: auto;
             border: 0.5px solid black;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 15px;
-            text-align: center;
+            padding: 5px;
+            width: 160px;
         }
-        .dc1{
-            height: 300px;
-            overflow: auto;
-            border: 0.5px solid black;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 15px;
+        .footer{
             text-align: center;
+            background-color: rgb(0, 0, 0);
+            padding: 15px;
+            color: white;
         }
-    </style>        
+        .classphoto{
+            text-align: center;
+            height: 250px;
+        }
+        .leader img{
+            height: 250px;
+        }
+        .leader div{
+            background-color: white;
+        }
+    </style>
 </head>
-<body id="body">
-    <div id="index">
-    <div class="d0" id="d0">
-    <div class="search-bar">
-        <button class="button" id="osb" onclick="osb()">打開搜尋欄</button>
-        <input type="text" id="searchInput" onkeyup="filterContent()" placeholder="輸入關鍵字進行搜索">
-        <button class="button" id="sb" onclick="csb()">關閉搜尋欄</button>
+<body>
+    <div class="header">
+        <h1>國三智</h1>
+        <p class="openbutton" id="openbutton" onclick="opennav()">選單（點擊打開）</p>
+        <div id="nav">
+            <p class="closebutton" onclick="closenav()">&times;</p>
+            <li onclick="location.href='#about'">簡介</li>
+            <li onclick="location.href='#post'">公告</li>
+            <li onclick="location.href='#data'">資料</li>
+            <li onclick="location.href='#rider'">附件</li>
+        </div>
     </div>
-    <div class="head">
-        <h1><a href="index.htm" title="重置網頁"><span style="color: red;">暑</span><span style="color: blue;">假</span></a></h1>
-        <button onclick="cpopa()">再次顯示公告</button>
-        <button onclick="document.getElementById('set').style.display='block';">網頁設定</button>
-    </div></div>
-    <div class="set" id="set">
-        <button onclick="document.getElementById('set').style.display='none';">&times;</button><h2>網頁設定</h2>
-        <h2>風格：</h2>
-        <button class="set0b" id="setw" onclick="setw()">淺色</button><button id="setb" onclick="setb()">深色</button>
-        <h2>會考倒數：</h2>
-        <button class="set0b" id="seti" onclick="seti()">詳細</button><button id="sete" onclick="sete()">精簡</button><br>
-        <p>你的時間：<p id="outt"></p></p>
-        <a href="#tt" onclick="document.getElementById('tt').style.display='block';">這串數字是什麼？</a><br>
-        <a href="index.htm">重置設定</a>
+    <hr>
+    <div class="main">
+        <div class="about" id="about">
+            <h2>簡介</h2>
+            <div class="a1d">
+            <h3>關於國三智</h3>
+            <p>國三智延續了歷屆學長姐的精神，持續堅持弘明「志於道，據於德，依於人，游於藝。」的理念，在學業上、品德上，認真、精進，永不停止，活到老學到老。弘明給予我們，更多是在日常生活、做人處事道理的琢磨。比起學業，品德也是佔有一大比例，希望所有同學能在如此環境之下，更加精進！ <br>
+                <br><br><span class="a1ds">網站製作者 敬上</span></p>
+                <img src="classphoto.jpg" alt="classphoto" class="classphoto">
+            </div>
+            <h3>管理層</h3>
+            <div class="leader">
+                <div class="teacher">
+                    <img src="teacher.png" alt="teacher">
+                    <p>班導：陳世懷 老師</p>
+                </div>
+                <div class="classleader">
+                    <img src="classleader.png" alt="classleader">
+                    <p>班長：江宗旺 同學</p>
+                </div>
+                <div class="secondclassleader">
+                    <img src="secondclassleader.png" alt="secondclassleader">
+                    <p>副班長：陳垣澔 同學</p>
+                </div>
+            </div>
+        </div>
+        <div class="post" id="post">
+            <h2>公告</h2>
+            <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR-Xf8oaex8_EZfgx7SqzbBi33JokTtHMHEkN-A-yOTowmaJQ0gX8ye3pyX4hIBU-3GfbUYfHTUgUE4/pubhtml?gid=1040775888&amp;single=true&amp;widget=true&amp;headers=false" width="80%" height="500px"></iframe>
+        </div>
+        <div class="data" id="data">
+            <h2>資料</h2>
+            <iframe src="https://boys-n-girls-in-213.blogspot.com" frameborder="0" width="70%" height="500px">外部網站載入中．．．（若未出現請試著刷新網頁）</iframe>
+        </div>
+        <div class="rider" id="rider">
+            <h2>附件</h2>
+            <li>本網站給予班級同學和相關人士更改、新增公告內容。但！請遵守以下規定</li>
+            <ol>
+                <li>更改、新增之內容，需有「真實性」和「重要性」。</li>
+                <li>更改、新增之內容，不可含有「腥、羶、色」以及違反道德倫理。</li>
+                <li>更改、新增內容者，必須為「國三智班級同學」及「相關人士如學校老師」等。</li>
+                <li>若違反以上規則，將刪除該條目並且剝奪此權利。</li>
+            </ol>
+            <p onclick="goedit()">前往編輯（點擊我前往）</p>
+        </div>
     </div>
-    <div class="if">
-        <h2 style="display: inline;">會考倒數 <h2 style="display: inline;" id="countdown"></h2></h2><button onclick="document.getElementById('testm').style.display='block';location.href='#testm'">了解會考</button>
+    <hr>
+    <div class="footer">
+        <p>&copy;許元洧製作 國三智</p>
     </div>
-    <div class="menu">
-        <h2 style="display: inline;">選單：</h2>
-        <details>
-            <summary>開關選單</summary>
-            <div>
-                <p class="mp"> <li><a href="#imt">班級（校園、網站）公告</a></li> <li><a href="#classt">班級附件</a></li> <li><a href="https://boys-n-girls-in-213.blogspot.com/">班導網站</a></li> <li><a href="http://www.holdmean.org.tw/">弘明校網</a></li></p>
-            </div>
-        </details>
-    </div>
-    <div class="dc">
-        <h2>113.6.26 期末大掃除！ 無意間，我們多掃了一間小木屋。老師一時之間也沒注意，只覺得幫輔導是黃老師解決了一間搬遷雜物的事情。今天也完成了資訊教室的清理、222公用教室、221我們待了一年的老窩、也把224未來的國三智重新粉刷......很累、很累！但是，練起來的能力，全部都是我們自己的。果然當初『放手』是對的＾＾</h2>
-        <a href="https://boys-n-girls-in-213.blogspot.com/2024/06/113626-222221224.html" title="查看更多"><img src="IMG_1377 2.JPG" alt=""></a>
-    </div>
-    <div class="dc">
-        <h2>113.6.18 德行楷模（整潔）分享。育程：今天終於分享完了…很神奇的是，這次上台居然沒有上次在班上那樣緊張，可能是上一次剛睡起來（上課睡覺），昏沉而沒有準備，而突然上台吧！但今天在旁邊準備時，我只有一點小緊張，而上台後又更緊張了一些，但我想起主任的話，叫我心平氣和地慢慢唸。自我覺念得有些快，且麥克風拿得不夠近，導致後面的同學聽不清楚，這是我可以再進步的地方。 孟宸：我覺得今天兩位楷模都表現得不錯，都有修正上星期六所提出的缺點。鈞頡都是正眼看著大家，台詞也念得很順暢：而育程的稿子沒讀得很熟，但至少他不會像在練習時那樣動來動去，值得肯定。</h2>
-        <details>
-            <summary>查看更多</summary>
-            <div>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/C0701m9lwk0?si=E3CP7K7CpB-8yNZX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/_rffeo_9om0?si=1q2MUwDGqvuD_Zdq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <a href="https://boys-n-girls-in-213.blogspot.com/2024/06/113618.html">原文</a>
-            </div>
-        </details>
-    </div>
-    <div class="dc">
-        <h2>113.6.11 讀經？我做了一件如果我是學生，我也會很討厭的事情！（哈）因為太久沒有被抽到舞台上讀經，加上又想要驗收讀經的成效。於是，硬是找了連假回來的第一天來驗收！其實，讀經，也是班級活動的一種，和打球一樣......如果班上同學們都張開口大聲讀誦，整體的氛圍也是很棒的喔＾＾</h2>
-        <details>
-            <summary>查看更多</summary>
-            <div>
-                <pre>
-                    秉錞：今天第八節的狀況算是普通，跟國三仁的學長姐比起來，還是有落差呀！他們在讀經觀摩或是晨會英文背誦時，都是很熟練的。這是老師口中所說的應該要有的樣子，或是標準更高。
-
-                    凱元：今天下午我們去明健堂讀經。這次，我們都有好好唸，雖然很熱，但是大家都有努力撐住。這次表現還不錯，希望以後上台讀經也能如此。之前有一次也是練得還可以，但上台後就失敗了。所以要準備得更充分、更熟，才能在正式的台上正常發揮。
-                    
-                    垣澔：我認為老師說得沒錯，每個人在台上面對觀眾，一定都是會緊張，只是多和少的差別。想要在台上發揮100分的本領，平常就要準備到120分。(請觀賞垣澔說唱藝術成果展的表現＾＾)
-                    
-                    家葦：下午第八節去明健堂補了上次讀經觀摩沒有抽上台的“機會”，我自己是覺得自己還沒有讀得很熟......我旁邊站的就是智一，她是我們班女生唸得最熟，也是念最大聲的人，站在她旁邊是一種幸運，也是一種壓力。這讓我覺得，我應該再多讀幾次，也可以讀到像她一樣，背得非常熟。這也是我覺得幸運的地方......
-                    
-                    鈞頡：今天我們利用了最後一節去明健堂把之前沒有抽到.......老師也是今天才跟我們說要上台，不過在之前我們就有準備，今天就是稍微再複習一下。這次上台比之前幾次好很多，或許跟我們有好好準備有關。
-                    
-                    庭碩：今天全班都到了明健堂練了讀經，我一開始以為，沒有被抽到就算了吧！如果班導在那一星期都沒有驗收，那之後班導就不會在做這件事。但沒想到，剛放完連假就突然要驗收。一聽到，就很擔心靠著臨時記憶會不會全都忘光了。我真覺得沒有僥倖這件事，在全校之下，班導沒有上來舞台驗收，還不如班導親自驗收，上來檢查來得緊張！
-                </pre>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/sMSPQ_DrIRE?si=h51LU8UH86ZJytrW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/vNCyhqheRLk?si=zzI6ODuBrBmKeUsj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/cNvsQk9sgvY?si=JHV4s9E4mMmugsjD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/vG-NDgfh_tE?si=mkbqDPy9Tfjjn31W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/tfEoJEYmQwc?si=4ABzRnmHVPkXNBt6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <a href="https://boys-n-girls-in-213.blogspot.com/2024/06/113611.html">原文</a>
-            </div>
-        </details>
-    </div>
-    <div class="dc">
-        <h2>113.6.12 說唱藝術成果發表會＾＾</h2>
-        <details>
-            <summary>查看更多</summary>
-            <div>
-                <pre>
-                    懿音：今天綜合社團我們有上台表演，一開始預演時，我還沒那麼緊張，直到看到台下有許多小二的學弟妹時，才驚覺原來上台是會緊張的。雖然不是中學部的同學，但還是無比緊張。不過最後還是成功下台。我覺得這次各組都表現得不錯，都有達到演出的效果（使台下觀眾哈哈大笑）
-
-                    垣澔：我在小學曾聽老師說過：台上一分鐘，台下十年功。別人在台上看短短一場表演，那都是他們在台下練習了很久才能展現出來的。我認為不管做任何事情都是需要準備，像今天說唱的表演，大家也都花了很多時間背文章、練習。
-                    
-                    孟宸：今天的說唱藝術發表會，雖然說與高二學長姐還有些差距，可是覺得自己表現得算不錯，比在台下念得還大聲，動作也是做得比上課流暢。就如蘇老師所說：我們就是欠表演......不過也真的很謝謝老師蘇老師能給予我們這次上台演出的機會，也謝謝小二的學弟妹能用掌聲捧場、鼓勵我們，更謝謝校長能抽空觀賞！
-                </pre>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/y0EAnCXVEDY?si=TyqcnuHyBwZy1ybt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/IFlvX7z3RwA?si=B1RqF1E7zj92Sl4k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/Cp40BQywuyg?si=cyucxyUvE07FiGBq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/PB7d27QD6bY?si=_RlCRobcxMTSzsNj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <a href="https://boys-n-girls-in-213.blogspot.com/2024/06/113612.html">原文</a>
-            </div>
-        </details>
-    </div>
-    <div class="dc">
-        <h2>113.6.1 一個星期六的下午----班際足壘球友誼賽。上了場，或許有很多的戰術（略）、激情：下了場，就絕不炫耀、失落、甚至指責......！這些在上星期討論過的事情，今天全班在球場上都有做到，這是比輸贏更重要的事＾＾</h2>
-        <a href="https://boys-n-girls-in-213.blogspot.com/2024/06/11361.html" title="查看更多"><img src="IMG_1162.JPG" alt=""></a>
-    </div>
-    <div class="dc">
-        <h2>113.5.28 感謝一群傻裡傻氣的主任和師長，只為了學生能喝到一杯真正由學校有機認證土地種植（黃豆）、由學生自行採摘、由學校老師（國文張老師）調製的豆漿。喝起來，特別美味！！學習，不該只有課業，課業到哪裡都有。除了課業，更應該有一份感動。</h2>
-        <details>
-            <summary>查看更多</summary>
-            <div>
-                <pre>
-                    智一：今天下午喝到了豆漿，感覺很神奇！這不像是一般的豆漿，如果是一般的豆漿，我不是很喜歡，說不定這是心理因素（學生自己動手採摘的），也有可能。......要謝謝很多老師，才讓我們有這次的體驗。
-
-羽忻：今天我們喝到了自己剝黃豆的豆漿，還滿好喝的，上面有一層泡沫，喝起來的口感不太一樣，而這次的豆漿是可以喝到黃豆味的，跟學校煮的不太一樣。......有同學在喝的時候還有吃到沒有用料理機打到的黃豆，而國文張老師也說，那就代表這真的是用黃豆下去打的。......我是第一次能喝到這麼純的豆漿，親手採摘的就是不一樣！
-
-昱瑤：今天下午一打掃完，就看到同學們都開心地喝著豆漿。這一鍋豆漿十分不簡單，這是我們全班在童軍課由梁老師帶著我們採摘豆子，再請張老師幫大家打成豆漿。另外，張老師也請國三的學長為大家挑掉雜質，最後由班導分發給全班。而正是因為是自己親自採摘的黃豆，所以更美味。謝謝老師們和學長！
-
-玟妡：今天下午有喝到自己剝的黃豆所打出來的豆漿。我有喝過用黃豆真材實料打出來的豆漿，但是自己剝的，還是第一次！喝到時感覺很有成就感，可以喝到一碗這樣子的豆漿，真是難得。謝謝張老師用自己的時間打豆漿給我們喝！
-
-庭碩：今天我們喝到了自己採摘的黃豆所製成的豆漿，味道明顯有別於早餐店（機器所做）的豆漿，味道非常地濃郁！但好的東西，也更需要時間和精力。正因如此，我們要更加珍惜！只能說早期不靠機械的農業，真是不簡單。我們二十個人剝了整節課的黃豆，這還不包括後續的處理（去掉雜質以及製成），每人才只能喝到一碗......很多東西都得來不易，我們應該要恆念物力維艱
-
-姿諭：昨天下午我們喝到了豆漿，這豆漿是我們班在童軍課時採收的黃豆所製成，把黃豆打成豆漿的是國文張老師，以及一些學長。很感謝老師跟學長們花時間來幫我們挑豆子、打豆漿，讓我們喝到純正、天然的豆漿。大家一起採黃豆所製成的豆漿，真的很好喝！
-
-曾筠：昨天下午我們喝到了上星期所挑的黃豆所打成的豆漿，它跟早餐店出現的豆漿不太一樣，比較好喝。學校從種植黃豆開始，一直到採收，由學生去挑豆子，最後到我們喝到的那一杯豆漿，都是經過許多人的付出才得到的。國文老師說：我們班雜質很多，請人挑了很久，我們應該珍惜這得知不易的東西。謝謝主任、老師和學長。
-
-秉錞：我覺得昨天的豆漿跟其他地方（學校）的豆漿不太一樣，它比較濃醇香......應該先感謝羅主任、梁老師、幫忙採摘的老師、同學，還有幫忙挑檢的學長、將豆子打成豆漿的張老師，要感謝的人太多了......
-                </pre>
-                <p>更多內容-></p>
-                <a href="https://boys-n-girls-in-213.blogspot.com/2024/05/113528.html">原文</a>
-            </div>
-        </details>
-    </div>
-    <div class="dc">
-        <h2>113.5.18 青銀共居</h2>
-        <details>
-            <summary>查看更多</summary>
-            <div>
-                <pre>
-                    這星期突發奇想，想來跟大家談談一個看似遙遠，卻又近在咫尺的議題—青銀共居。
-
-為什麼遠呢？這其實要很慶幸，因為各位同學們的父母或是祖父母都是健康，沒有急迫地需要照護：為什麼近呢？因為已經有同學開始經歷祖父母需要迫切照顧，或是已經離世的狀態了……此外，這類話題居然變成了會考和學測的作文題目！！
-
-        當時，有不少國文老師紛紛評論，這對國中的學生來說，因人生閱歷尚顯不足，加上若平時對於少對於時事與外界的關心，加上都只局限接觸課本的知識，實在難以發揮！
-
-        但不管你（妳）喜不喜歡，現行出題的方向就是素養導向。而何謂素養呢？就是著重「生活的感受力」，以及「閱讀的延展力」。所以，不是追星，就是生活感受力：不是把自己放到外面花花世界，就是感受生活。更需要靠閱讀來擴展他生命的深度，在閱讀中了解別人的生活面向，在閱讀中發現別人思考的延伸，有同理心有思考力，才是未來能夠運用A I的真正人才。
-
-2007年臺灣的弘道老人福利基金會執行長林依瑩推出「不老騎士」計畫
-
-（影片連結：不老騎士10年後：騎出精彩，夢想接棒）帶17位平均81歲的爺爺奶奶，花費 13 天自行騎著摩托車環島1139公里。這群「不老騎士」中，有2位曾罹患癌症、4位需戴助聽器、5位患有高血壓，即使其中有人三進三出醫院，但還是完成了險峻路途的挑戰。這些騎士們曾是警察、軍人、牧師、老師或理髮師等，在不同人生經驗的交流中，豐富了彼此的視野。2012 年在丹麥首都哥本哈根則有「樂齡卡打車」（Cycling Without Age）運動。
-
-哥本哈根一位中年上班族奧利（Ole Kassow）有感於安養機構的老人家行動不便，於是利用下班時間，用三輪車載老人家外出兜風（文章連結：載別人的媽媽去兜風！丹麥三輪自行車，讓銀髮族再度感受外出樂趣）老人開心地要求回到他們充滿回憶的地方，有些多年不說話的老人，開始滔滔不絕地說著自己與地方的故事；失智症患者變得不再暴躁；盲人對志工訴說他們聞到花香、聽到鳥鳴，感覺微風吹拂過耳際。志工駕駛員因此聽到許多生命故事，更進一步認識自己的城市，也彷彿和老人形成了某種奧秘的聯繫。樂齡：對 60 歲以上年齡段的別稱，本文 Without Age 譯為「樂齡」，為「樂以忘齡」之意
-
-        問題（一）：臺灣與丹麥的樂齡活動案例，都有堅定的推動者。請分析上文所述兩件案例，活動內容的關鍵差異是什麼？用意有何不同？文長限80 字以內（至多4行）。（占4分） 
-
-        問題（二）：如果要帶長者在臺灣進行樂齡之旅，一定有許多待注意事項。請以「樂齡出遊」為題，寫一篇短文，說明樂齡出遊的意義，並思考如何照顧到長者在生理與情感上的需求。文長限400字以內（至多19行）。（占21分）
-
-        沒有人會放棄會考的作文和未來高中作文的25分，因此要提升自己對於生活的觀察力（感受），更提升自己的思考層次（level）。雖然有些同學（或是家人）會認為：周記都不是周記……但是敏銳的同學一定有感受到，每星期的周記都在討論一些和大家生活有相關的議題。哪天，就不要真的出現在你（妳）的測驗卷上……
-
-       青銀共居！？不知道大家看到這四個字，你（妳）想到什麼？定義上來說，青銀同居是政府結合民間，嘗試推動青年與銀髮族共居，安排沒有血緣關係、不同年齡層、不同世代的人共享居住空間。而最主要是解決高齡化社會與高房價的議題，老年人將家中一些空下來的房間提供給年輕人居住，老年人有人陪伴，年輕人也可以用較便宜的租金來居住房子。
-
-        首先，我們先從『有形』的部分來探討，也就是說，這個社會（政府）到底為了青銀共居做了什麼準備。1. 三峽北大青銀共居計畫 2. 長庚養生文化村 環境上，滿清幽的：設備上，雖稱不上豪華，但也算是應有盡有。因此，社會（政府）的確是做了不少的準備以及規劃。但是，少了家人相伴，即使住在奢豪的房子會得到真正的開心嗎？
-
-        接下來，我們就要探討『無形』的心理層面問題了。心理層面又分成：當事人和非當事人。或許家裡有類似經驗的同學會分享：我的長輩（當事人）住在類似的地方，那裡有很棒的醫療設施、生活照護、甚至長輩在那裡結交到知心（聊得來）的朋友，我覺得他們過得很快樂呀！的確，老師不否認這樣的說法。但是，我們都不是當事人，也只能從表面來判斷。再者，以比例上來說，應該也不會是每位(100%)當事人都是如此吧！
-
-        那非當事人呢？非當事人泛指得就是家人、子女、兒孫……文章連結：不該只是兒女後盾！龍應台：後悔沒有把母親當一個女朋友看待『老師，後悔……這不就是段考題目嗎？』是呀，如果會考也出了類似『後悔』的題目，那你（妳）會不會也一邊寫『後悔』也一邊後悔呢！龍應台女士寫了一封可能會被已讀不回的書信給爸爸、媽媽……而老師相信，每位同學的心中，也有一封永遠寄不出去的信，就有待同學們讀完後的日誌吧！
-
-        看完這些文章，回想108學年會考青銀共居的題目吧！
-
-寫作不是兩邊選邊站，不一定只有贊成或反對，但應該有你個人的生活經驗或觀察，來支持你的觀點。
-
-1. 先從自己寫起：
-
-        先從個人經驗寫起，自己與家中長輩相處的經驗，或是生活觀察，總而言之你一定有個最初起點的想法，你喜歡與老年人相處嗎？和老年人相處有什麼好處或不自在的經驗？
-
-2. 群我關係別忘記：
-
-        台灣的高齡人口現象，你看到什麼？外在環境與老人的關係又產生怎樣的變化？老人是否更孤單？而年輕人又有怎樣世代的困難？與傳統世代相比，年輕人與長輩是否距離越來越遙遠？
-
-3. 一體兩面對比論述：
-
-        對於「青銀共居」寫出你認同的也可以寫出你不認同的，除了題本中提供的正反意見，更可寫出自己的觀察及看法。在認同中肯定支持，也寫出疑慮；在不認同中寫出缺失，但也提供建議，自己的想法有進一層的轉折思考，才能有更開闊的觀點。此處可以統整一些概念，如：「包容」、「合作」、「理解」、「陪伴」、「傳承」的好處，或是「安全」、「隔閡」、「陌生」的疑慮。
-
-4. 總結寫出期待：
-
-        任何議題都是對社會更美好的期待，你期待自己未來有不同的出發點嗎？期待我們的社會還有更和諧的多元相處嗎？即使不支持也該有正向的追求。
 
 
-
-                </pre>
-                <a href="https://boys-n-girls-in-213.blogspot.com/2024/05/113518.html">原文</a>
-            </div>
-        </details>
-    </div>
-    <div class="dc">
-        <h2>113.5.5 週記參考資料</h2>
-        <details>
-            <summary>查看更多</summary>
-            <div>
-                <pre>
-                    先分享一首歌曲：如願。年紀大一點的，應該會喜歡王菲的版本：《如愿》王菲：而年紀稍輕的，應該會喜歡周深的版本：《如愿》 周深
-
-    你是遙遙的路。山野大霧裡的燈。我是孩童啊，走在你的眼眸。
-
-你是明月清風。我是你照拂的夢。見與不見都一生與你相擁。
-
-你是歲月長河。星火燃起的天空。我是仰望者 就把你唱成歌。
-
-你是我之所來。也是我心之所歸。世間所有路都將與你相逢
-
-而我將愛你所愛的人間。願你所願的笑顏。你的手我蹣跚在牽。請帶我去明天
-
-如果說你曾苦過我的甜。我願活成你的願。願不枉啊，願勇往啊，這盛世每一天
-
-幾年前，曾經看過一個非常有趣的影片（世上唯一的問卷），這個影片是找了幾位父母親當作受試者，回答的問題卻是要他們回想當初還在唸書的經過（與父母親互動的過程）……關鍵在信任！身為父母跟老師的，哪個不知道要信任孩子和學生。但問題是，每個人也都經歷過『被信任』和『不被信任』的過程。但最困難的是要從『不被信任』要重回『被信任』的過程！！        
-
-看完影片後，試著針對下列幾個問題提出你（妳）的個人經驗與想法：
-
-1.     你（妳）曾經被信任過嗎？你（妳）覺得當時為什麼父母或是師長信任你（妳）？試著站在他們的立場想想，當時他們為什麼願意對你（妳）抱以信任的態度？
-
-2.     你（妳）曾經又不被信任過嗎？你（妳）覺得當時為什麼父母或是師長會失去對你（妳）的信任？試著站在他們的立場想想，當時他們為什麼會對你（妳）抱以不信任的態度？
-
-3.     你（妳）曾經從不被信任成功重回被信任的經驗嗎？回想一下，當初到底做了什麼事情又贏回父母或是師長對你（妳）的信任。站在他們的立場想想，為什麼又願意重回當初對你（妳）信任的態度呢？
-
-4.     影片的最後，這些父母看見了孩子給他們的回饋，紛紛感動地落下眼淚……原來是，我們的父母或是師長都曾經稱讚、讚美過我們！不過，老師差入另一項議題—稱讚（讚美）。什麼才是有效的稱讚（讚美）？1.評價式語言：焦點在對方的「人格」，或事件的「成果」。例如：這次的考試的成績，你得到很高的分數！（讚美成果）2. 鑑賞式語言：焦點在對方的「行為」，或事件的「過程」。例如：面對這次的考試，我看到你很努力準備。（讚美過程）
-
-先這樣，留一個伏筆，下星期繼續！
-                </pre>
-                <a href="https://boys-n-girls-in-213.blogspot.com/2024/05/11355.html">原文</a>
-            </div>
-        </details>
-    </div>
-    <div class="dc">
-        <h2>113.5.1 母親節暨浴佛祈福法會</h2>
-        <a href="https://boys-n-girls-in-213.blogspot.com/2024/05/11351.html" title="查看更多"><img src="IMG_0943.jpg" alt=""></a>
-    </div>
-    <a href="https://boys-n-girls-in-213.blogspot.com/search?updated-max=2024-04-25T02:16:00-07:00&max-results=7&start=1&by-date=false">更多內容</a>
-    <div class="dc0" id="imt">
-        <h2>班級（校園、網站）公告</h2>
-        <p>更多內容，向下滑動</p>
-        <li>[學校]113弘明大學錄取榜單</li>
-        <img src="1122大學榜單.jpg" alt="">
-        <li>[學校]113弘明直升錄取榜單</li>
-        <img src="29.弘明實中_普通科_page-0001.jpg" alt="" class="hm113hse">
-        <li>[學校]112-2（國二下）學期結束時間於6/28。請注意，於8/4返校開始新學期（113-1）</li>
-    </div>
-    <div class="dc1" id="classt">
-        <h2>班級附件</h2>
-        <p>更多內容，向下滑動</p>
-        <details>
-            <summary><span style="color: red;">搶先看！！</span>112-2 國二智 期末大掃除工作分配</summary>
-            <div>
-                <img src="112-2 國二智 期末大掃除工作分配.png" alt=""><a href="112-2 國二智 期末大掃除工作分配.png">放大查看</a>
-            </div>
-        </details>
-        <details>
-            <summary>數學立體平行八角星環製作說明書</summary>
-            <div>
-                <img src="img5.jpg" alt=""><a href="img5.jpg">放大查看</a><br>
-                <img src="img6.jpg" alt=""><a href="img6.jpg">放大查看</a>
-            </div>
-        </details>
-        <details>
-            <summary>三重腦學說</summary>
-            <div>
-                <img src="img1.jpg" alt=""><a href="img1.jpg">放大查看</a><br>
-                <img src="img2.jpg" alt=""><a href="img2.jpg">放大查看</a>
-            </div>
-        </details>
-        <details>
-            <summary>理化三段填充題</summary>
-            <div>
-                <img src="理化段三填充.jpg" alt=""><a href="理化段三填充.jpg">放大查看</a>
-            </div>
-        </details>
-        <details>
-            <summary>理化6-3~6-4解答</summary>
-            <div>
-                <pre>
-一、                
-A
-B
-A
-D
-B
-B
-C
-A
-D
-A
-C
-C
-A
-A
-C
-B
-A
-C
-A
-C
-二、
-C
-C
-C
-D
-?
-三、
-D
-A
-C
-B
-D
-                </pre>
-            </div>
-        </details>
-        <details>
-            <summary>理化6-1~6-2解答</summary>
-            <div>
-                <pre>
-                    一、
-                    D
-                    C
-                    C
-                    B
-                    A
-                    A
-                    C
-                    D
-                    D
-                    C
-                    A
-                    D
-                    C
-                    C
-                    C
-                    A
-                    C
-                    B
-                    C
-                    B
-                    二、
-                    A
-                    B
-                    C
-                    C
-                    三、
-                    C
-                    B
-                    C
-                    D
-                    D                    
-                </pre>
-            </div>
-        </details>
-        <details>
-            <summary>理化5-3~5-4解答</summary>
-            <div>
-                <pre>
-                    一、
-                    B
-                    C
-                    C
-                    C
-                    B
-                    D
-                    C
-                    D
-                    D
-                    D
-                    C
-                    C
-                    A
-                    C
-                    C
-                    C
-                    C
-                    B
-                    A
-                    D
-                    二、
-                    D
-                    D
-                    B
-                    A
-                    B
-                    三、
-                    B
-                    C
-                    D
-                    C
-                    D
-                </pre>
-            </div>
-        </details>
-        <details>
-            <summary>理化5~6章複習解答</summary>
-            <div>
-                <img src="img3.jpg" alt=""><a href="img3.jpg">放大查看</a><br>
-                <img src="img4.jpg" alt=""><a href="img4.jpg">放大查看</a>
-            </div>
-        </details>
-        <details>
-            <summary>112-2國二智班課表（國二下，第六週修訂版）</summary>
-            <div>
-                <img src="112-2classsu.jpeg">
-                <a href="112-2classsu.jpeg">放大查看</a>
-            </div>
-        </details>
-        <details>
-            <summary>112-2行事曆（國二下）</summary>
-            <div>
-                <img src="112-2ss.jpeg">
-                <a href="112-2ss.jpeg">放大查看</a>
-            </div>
-        </details>
-    </div>
-    <div class="testm" id="testm">
-        <button onclick="document.getElementById('testm').style.display='none';">&times;</button>
-        <h1>國中教育會考</h1>
-        <pre>
-一、依據：國民小學及國民中學學生成績評量準則第14條（中華民國108年6月28日教育部臺教授國部字第1080065377B號令修正）
- 
-二、相關規定：國中教育會考推動會設置要點108年7月29日臺教授國部字第1080079209號函修正）
-             
-三、目的：為確保學生學習品質並輔導學生適性入學。
-             
-四、業務重點：
-國中教育會考的目的除了讓學生、教師、學校、家長和主管機關了解學生的學習品質外；國中可參酌國中教育會考的結果，提供學生升學選擇之建議，輔導學生適性入學；並可作為高中、高職或五專新生學習輔導的參據。
-國中教育會考是在對國三學生基本、必要之學科能力門檻進行檢定，評量科目包含國文、英語、數學、社會、自然及寫作測驗，除國文與寫作測驗同屬語文學習領域本國語文（國語文）外，各科不跨學習領域，皆以十二年國民基本教育課程綱要學習表現與學習內容。國文、英語、數學、社會、自然五科之題型以選擇題為主，非選擇題為輔。教育會考英語科包含聽力試題，以進行國中生英語閱讀與聽力綜合評量，此將有助於提升英語科測驗評量效度，亦對國中英語教育產生正面影響。
-國中教育會考難易度為「難易適中」，並屬標準參照測驗，每一科目成績分為「精熟」、「基礎」及「待加強」3個等級，藉由各科成績等級減少來達到適度減低考試壓力的目的；透過標準參照的作法達到學力監控與提供具體學力訊息的目標。
-            
-為辦理國中教育會考各項工作規劃、協調及執行作業，教育部、各直轄市、縣（市）政府與臺師大心測中心組成教育會考推動會負責教育會考重要事項之審議、協調及指導。其推動會下設全國試務會，負責訂定各項全國試務工作規範、執行試務相關事宜及解決考試實施中所發生之問題等。至考區試務工作，則由考區所在地之直轄市、縣（市）政府辦理，並得委由考區所在地之學校設教育會考考區試務會辦理之。
-自民國103年起實施的教育會考，規劃於每年5月擇一周六、日實施，為期2天，由國立臺灣師範大學心理與教育測驗研究發展中心（以下簡稱臺師大心測中心）負責命題、組卷、閱卷、計分、題庫建置、試題研發等相關事宜，並自109年起由臺師大心測中心辦理國中教育會考全國試務會之全國試務會工作以達公平客觀並實踐國家課程目標。
-            
-相關連結：<a href="https://cap.rcpet.edu.tw/">國中教育會考網址</a>
-        </pre>
-    </div>    
-
-
-    <div class="dc" id="tt" style="display: none;">
-        <button onclick="document.getElementById('tt').style.display='none';">&times;</button>
-        <p>此數字為自1970年1月1日00:00:00 UTC以來的毫秒數</p>
-    </div>
-    <div class="footer"><p>&copy;<a href="index.htm">國二智班網</a> 許元洧製作 最後更新時間：中華台北標準時間2024/6/23 9:50</p></div>
-    </div>
-    
     <script>
-         // 設置倒計時的目標日期和時間
-const targetDate = new Date("2025-05-17T00:00:00").getTime();
-let detailedMode = true;
-
-// 更新倒計時的函數
-function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
-
-    if (distance < 0) {
-        document.getElementById("countdown").innerHTML = "倒計時結束";
-        return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    if (detailedMode) {
-        document.getElementById("countdown").innerHTML = days + "天 " + hours + "小時 " + minutes + "分鐘 " + seconds + "秒";
-    } else {
-        document.getElementById("countdown").innerHTML = days + "天";
-    }
-    document.getElementById('outt').innerHTML=now;
-}
-
-// 切換倒計時顯示模式的函數
-function toggleCountdownMode() {
-    detailedMode = !detailedMode;
-    updateCountdown();
-}
-
-// 每秒更新一次倒計時
-setInterval(updateCountdown, 1000);
-
-// 初始化倒計時顯示
-updateCountdown();
-
-
-function filterContent() {
-            const input = document.getElementById('searchInput');
-            const filter = input.value.toLowerCase();
-            const divs = document.querySelectorAll('.dc');
-
-            divs.forEach(div => {
-                const text = div.textContent || div.innerText;
-                if (text.toLowerCase().indexOf(filter) > -1) {
-                    div.style.display = "block";
-                } else {
-                    div.style.display = "none";
-                }
-            });
+        function goedit(){
+            location.href='https://forms.gle/NYkxKJQubj5HfxTFA';
         }
-
-        function osb(){
-            document.getElementById('sb').style.display='block';
-            document.getElementById('searchInput').style.display='block';
-            document.getElementById('searchInput').style.display='inline';
-            document.getElementById('osb').style.display='none';
-            location.href='#searchInput';
+        function opennav(){
+            document.getElementById('nav').style.display='block';
+            document.getElementById('openbutton').style.display='none';
         }
-        function csb(){
-            document.getElementById('sb').style.display='none';
-            document.getElementById('searchInput').style.display='none';
-            document.getElementById('osb').style.display='block';
-        }
-        function om(){
-            document.getElementById('menui').style.display='block';
-            document.getElementById('menub').style.display='block';
-            document.getElementById('menub').style.display='inline';
-            document.getElementById('menui').style.display='inline';
-            document.getElementById('mob').style.display='none';
-        }
-        function cm(){
-            document.getElementById('menui').style.display='none';
-            document.getElementById('menub').style.display='none';
-            document.getElementById('mob').style.display='block';
-        }
-        function setb(){
-            document.getElementById('index').style.backgroundColor='black';
-            document.getElementById('index').style.color='white';
-            document.getElementById('setb').style.color='green';  
-            document.getElementById('setb').style.backgroundColor='green';
-            document.getElementById('setw').style.color='black';
-            document.getElementById('setw').style.backgroundColor='white';
-            document.getElementById('body').style.backgroundColor='black';
-            document.getElementById('testm').style.color='white';
-        }
-        function setw(){
-            document.getElementById('index').style.backgroundColor='white';
-            document.getElementById('index').style.color='black';
-            document.getElementById('setw').style.color='green';  
-            document.getElementById('setw').style.backgroundColor='green';
-            document.getElementById('setb').style.color='black';
-            document.getElementById('setb').style.backgroundColor='white';
-            document.getElementById('body').style.backgroundColor='white';
-            document.getElementById('testm').style.color='black';
-        }
-        function sete(){
-            document.getElementById('sete').style.color='green';  
-            document.getElementById('sete').style.backgroundColor='green';
-            document.getElementById('seti').style.color='black';
-            document.getElementById('seti').style.backgroundColor='white';
-            toggleCountdownMode();
-        }
-        function seti(){
-            document.getElementById('seti').style.color='green';  
-            document.getElementById('seti').style.backgroundColor='green';
-            document.getElementById('sete').style.color='black';
-            document.getElementById('sete').style.backgroundColor='white';
-            toggleCountdownMode();
-        }
-        
-
-        
-
-
-        function cpopa(){
-            popup.style.display = 'flex';
+        function closenav(){
+            document.getElementById('nav').style.display='none';
+            document.getElementById('openbutton').style.display='block';
         }
     </script>
 </body>
