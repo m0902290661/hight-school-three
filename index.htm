@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>國三智</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <div class="header">
         <h1>國三智</h1>
+        <h2>會考倒數：<p id="out"></p></h2>
         <p class="openbutton" id="openbutton" onclick="opennav()">選單（點擊打開）</p>
         <div id="nav">
             <p class="closebutton" onclick="closenav()">&times;</p>
@@ -76,6 +76,34 @@
 
 
     <script>
+
+
+        //倒數程式碼
+        function updateCountdown() {
+            const targetDate = new Date(2025, 4, 18); // 民國114年 (2025年) 5月18日
+            const now = new Date();
+            const difference = targetDate - now;
+
+            if (difference <= 0) {
+                document.getElementById('out').innerHTML = "會考到了！";
+                return;
+            }
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('out').innerHTML = 
+                days + "天 " + 
+                hours + "小時 " + 
+                minutes + "分鐘 " + 
+                seconds + "秒";
+        }
+
+        setInterval(updateCountdown, 1000);
+    
+
         function goedit(){
             location.href='https://forms.gle/NYkxKJQubj5HfxTFA';
         }
