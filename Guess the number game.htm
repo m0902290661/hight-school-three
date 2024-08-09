@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>猜數字遊戲</title>
     <style>
-        body{
+        body {
             text-align: center;
         }
-        button{
+        button {
             margin: 15px;
         }
-        .b,.c,.a-b{
+        .hidden {
             display: none;
         }
     </style>
@@ -19,118 +19,76 @@
 <body>
     <h1>猜數字遊戲</h1>
     <a href="index.htm">回到班網</a>
-    <div class="a" id="a">
-        <button onclick="a()">開始一場遊戲</button>
+    <div id="start">
+        <button id="start-game">開始一場遊戲</button>
     </div>
-    <div class="b" id="b">
+    <div id="difficulty" class="hidden">
         <p>請選擇難度：</p>
-        <button onclick="b1()">簡單</button>
-        <button onclick="b2()">中等</button>
-        <button onclick="b3()">困難</button>
+        <button data-difficulty="easy">簡單</button>
+        <button data-difficulty="medium">中等</button>
+        <button data-difficulty="hard">困難</button>
     </div>
-    <div class="c" id="c1">
-        <p>你有<span id="oa1"></span>次猜測機會</p>
-        <input type="number" id="in1">
+    <div id="game" class="hidden">
+        <p>你有<span id="attempts-left"></span>次猜測機會</p>
+        <input type="number" id="guess-input">
+        <button id="guess-button">猜！</button>
+        <p id="result"></p>
+    </div>
+    <button id="exit" class="hidden" onclick="location.reload()">退出</button>
     
-        <button onclick="c1()" id="i1">猜！</button>
-        <p id="out1"></p>
-    </div>
-    <div class="c" id="c2">
-        <p>你有<span id="oa2"></span>次猜測機會</p>
-        <input type="number" id="in2">
-        <button id="i2" onclick="c2()">猜！</button>
-        <p id="out2"></p>
-    </div>
-    <div class="c" id="c3">
-        <p>你有<span id="oa3"></span>次猜測機會</p>
-        <input type="number" id="in3">
-        <button id="i3" onclick="c3()">猜！</button>
-        <p id="out3"></p>
-    </div>
-    <button class="a-b" id="a-b" onclick="location.reload()">exit</button>
-
     <script>
-        var ans=Math.floor(Math.random()*100)
-        var ans=String(ans);
-        
-        function a(){
-            document.getElementById('a').style.display='none';
-            document.getElementById('b').style.display='block';
-            document.getElementById('a-b').style.display='block';
-        }
-        function b1(){
-            document.getElementById('b').style.display='none';
-            document.getElementById('c1').style.display='block';
-            document.getElementById('oa1').innerHTML='10';
-        }
-        function b2(){
-            document.getElementById('b').style.display='none';
-            document.getElementById('c2').style.display='block';
-            document.getElementById('oa2').innerHTML='5';
-        }
-        function b3(){
-            document.getElementById('b').style.display='none';
-            document.getElementById('c3').style.display='block';
-            document.getElementById('oa3').innerHTML='3';
-        }
-        var i =0;
-        function c1(){
-            var u=document.getElementById('in1').value;
-            if(i>=9){
-                document.getElementById('out1').innerHTML='你失敗了！猜超過10次了！';
-                document.getElementById('i1').style.display='none';
+        let answer = Math.floor(Math.random() * 100).toString();
+        let attemptsLeft;
+        let maxAttempts;
+
+        document.getElementById('start-game').addEventListener('click', () => {
+            document.getElementById('start').classList.add('hidden');
+            document.getElementById('difficulty').classList.remove('hidden');
+            document.getElementById('exit').classList.remove('hidden');
+        });
+
+        document.getElementById('difficulty').addEventListener('click', (event) => {
+            if (event.target.tagName === 'BUTTON') {
+                const difficulty = event.target.dataset.difficulty;
+                switch(difficulty) {
+                    case 'easy':
+                        maxAttempts = 10;
+                        break;
+                    case 'medium':
+                        maxAttempts = 5;
+                        break;
+                    case 'hard':
+                        maxAttempts = 3;
+                        break;
+                }
+                attemptsLeft = maxAttempts;
+                document.getElementById('attempts-left').textContent = maxAttempts;
+                document.getElementById('difficulty').classList.add('hidden');
+                document.getElementById('game').classList.remove('hidden');
             }
-            else if(u>ans){
-                document.getElementById('out1').innerHTML='小一點！';
+        });
+
+        document.getElementById('guess-button').addEventListener('click', () => {
+            const guess = document.getElementById('guess-input').value;
+            attemptsLeft--;
+
+            if (guess > answer) {
+                document.getElementById('result').textContent = '小一點！';
+            } else if (guess < answer) {
+                document.getElementById('result').textContent = '大一點！';
+            } else {
+                document.getElementById('result').textContent = `你贏了！你猜了 ${maxAttempts - attemptsLeft} 次。`;
+                document.getElementById('guess-button').disabled = true;
+                return;
             }
-            else if(u<ans){
-                document.getElementById('out1').innerHTML='大一點！';
+
+            if (attemptsLeft <= 0) {
+                document.getElementById('result').textContent = `你失敗了！正確答案是 ${answer}。`;
+                document.getElementById('guess-button').disabled = true;
+            } else {
+                document.getElementById('attempts-left').textContent = attemptsLeft;
             }
-            else{
-                i++
-                document.getElementById('i1').style.display='none';
-                document.getElementById('out1').innerHTML='你贏了！你猜了'+String(i)+'次。';
-            }
-            i++
-        }
-        function c2(){
-            var u=document.getElementById('in1').value;
-            if(i>=4){
-                document.getElementById('out2').innerHTML='你失敗了！猜超過5次了！';
-                document.getElementById('i2').style.display='none';
-            }
-            else if(u>ans){
-                document.getElementById('out2').innerHTML='小一點！';
-            }
-            else if(u<ans){
-                document.getElementById('out2').innerHTML='大一點！';
-            }
-            else{
-                i++
-                document.getElementById('i2').style.display='none';
-                document.getElementById('out2').innerHTML='你贏了！你猜了'+String(i)+'次。';
-            }
-            i++
-        }
-        function c3(){
-            var u=document.getElementById('in3').value;
-            if(i>=2){
-                document.getElementById('out3').innerHTML='你失敗了！猜超過3次了！';
-                document.getElementById('i3').style.display='none';
-            }
-            else if(u>ans){
-                document.getElementById('out3').innerHTML='小一點！';
-            }
-            else if(u<ans){
-                document.getElementById('out3').innerHTML='大一點！';
-            }
-            else{
-                i++
-                document.getElementById('i3').style.display='none';
-                document.getElementById('out3').innerHTML='你贏了！你猜了'+String(i)+'次。';
-            }
-            i++
-        }
+        });
     </script>
 </body>
 </html>
