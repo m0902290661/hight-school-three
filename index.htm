@@ -4,107 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>國三智</title>
-    <style>
-        body{
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-        .header{
-            text-align: center;
-        }
-        .openbutton{
-            text-align: left;
-            cursor: pointer;
-            border: 0.5px solid black;
-            width: 150px;
-        }
-        .closebutton{
-            margin-left: 140px;
-            cursor: pointer;
-            border: 0.5px solid black;
-        }
-        .header div{
-            text-align: left;
-            border: 0.5px solid black ;
-            width: 150px;
-            padding: 5px;
-            display: none;
-        }
-        .header li{
-            cursor: pointer;
-        }
-        .about h2{
-            text-align: center;
-        }
-        .about{
-            background-color: rgb(221, 240, 161);
-            padding: 15px;
-        }
-        .a1d{
-            border: 1px solid black;
-            padding: 50px;
-            margin: 15px;
-            background-color: white;
-        }
-        .a1ds{
-            color: orange;
-            margin-left: 300px;
-        }
-        .leader{
-            display: flex;
-            justify-content: space-between;
-        }
-        .teacher,.classleader,.secondclassleader{
-            text-align: center;
-            border: 0.5px solid black;
-            border-radius: 10px;
-            padding: 15px;
-        }
-        .post{
-            text-align: center;
-            background-color: rgb(161, 239, 240);
-            padding: 15px;
-        }
-        .data{
-            text-align: center;
-            background-color: rgb(227, 161, 240);
-            padding: 15px;
-        }
-        .rider{
-            text-align: center;
-            background-color: rgb(240, 161, 161);
-            padding: 15px;
-        }
-        .rider li{
-            text-align: left;
-        }
-        .rider ol{
-            text-align: left;
-        }
-        .rider p{
-            text-align: left;
-            cursor: pointer;
-            border: 0.5px solid black;
-            padding: 5px;
-            width: 160px;
-        }
-        .footer{
-            text-align: center;
-            background-color: rgb(0, 0, 0);
-            padding: 15px;
-            color: white;
-        }
-        .classphoto{
-            text-align: center;
-            height: 250px;
-        }
-        .leader img{
-            height: 250px;
-        }
-        .leader div{
-            background-color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <div class="header">
@@ -116,6 +16,7 @@
             <li onclick="location.href='#post'">公告</li>
             <li onclick="location.href='#data'">資料</li>
             <li onclick="location.href='#rider'">附件</li>
+            <li onclick="location.href='#game'">小遊戲專區</li>
         </div>
     </div>
     <hr>
@@ -162,6 +63,10 @@
                 <li>若違反以上規則，將刪除該條目並且剝奪此權利。</li>
             </ol>
             <p onclick="goedit()">前往編輯（點擊我前往）</p>
+        </div>
+        <div class="game" id="game">
+            <h2 style="text-align: center;">小遊戲專區</h2>
+            <li><a href="Guess the number game.htm">猜數字遊戲</a></li>
         </div>
     </div>
     <hr>
