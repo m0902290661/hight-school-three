@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1A2B Game</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+            position: relative;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #444;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #666;
+        }
+        input[type="text"] {
+            width: 150px;
+            padding: 10px;
+            font-size: 1.2em;
+            text-align: center;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        input[type="text"]:focus {
+            border-color: #007bff;
+        }
+        button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            margin: 10px 5px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .history {
+            margin-top: 20px;
+            font-size: 1.1em;
+            max-height: 200px;
+            overflow-y: auto;
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .history-item {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        .info {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #555;
+        }
+        .settings {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.2em;
+            background-color: transparent;
+            color: #007bff;
+            cursor: pointer;
+        }
+        #settingsPage {
+            display: none;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        .settings-content {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            text-align: left;
+        }
+        .settings-content h2 {
+            margin-top: 0;
+        }
+        .settings-content label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .settings-content input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .settings-content button {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="settings" onclick="openSettings()">⚙️ 設定</button>
+
+    <h1>1A2B Game</h1>
+    <p>猜一個4位數字，每個數字都不同</p>
+
+    <button id="startButton" onclick="startOrRestartGame()">開始遊戲</button>
+    <br><br>
+    <input type="text" id="guess" maxlength="4" placeholder="輸入四位數字" disabled>
+    <br>
+    <button id="guessButton" onclick="checkGuess()" disabled>猜測</button>
+
+    <div class="result" id="result"></div>
+    <div class="history" id="history"></div>
+    <div class="info" id="info">
+        <p>猜測次數：<span id="attempts">0</span></p>
+        <p>已經用時：<span id="time">0</span> 秒</p>
+    </div>
+
+    <!-- 設定頁面 -->
+    <div id="settingsPage" onclick="closeSettings(event)">
+        <div class="settings-content">
+            <h2>遊戲設定</h2>
+            <label for="difficulty">選擇難度：</label>
+            <select id="difficulty" onchange="updateSettings()">
+                <option value="easy">簡單</option>
+                <option value="normal">普通</option>
+                <option value="hard">困難</option>
+                <option value="custom">自定義</option>
+            </select>
+
+            <div id="customSettings" style="display:none;">
+                <label for="customDigits">猜測位數：</label>
+                <input type="number" id="customDigits" min="1" max="10" placeholder="如4位">
+                
+                <label for="customAttempts">猜測次數：</label>
+                <input type="number" id="customAttempts" min="1" placeholder="如20次">
+                
+                <label for="customTime">時間限制 (秒)：</label>
+                <input type="number" id="customTime" min="1" placeholder="如300秒">
+            </div>
+
+            <button onclick="saveSettings()">保存設定</button>
+        </div>
+    </div>
+
+    <script>
+        let answer = [];
+        let attempts = 0;
+        let startTime;
+        let gameStarted = false;
+        let timeLimit;
+        let maxAttempts;
+
+        function openSettings() {
+            document.getElementById('settingsPage').style.display = 'flex';
+        }
+
+        function closeSettings(event) {
+            if (event.target.id === 'settingsPage') {
+                document.getElementById('settingsPage').style.display = 'none';
+            }
+        }
+
+        function updateSettings() {
+            const difficulty = document.getElementById('difficulty').value;
+            const customSettings = document.getElementById('customSettings');
+            customSettings.style.display = (difficulty === 'custom') ? 'block' : 'none';
+        }
+
+        function saveSettings() {
+            const difficulty = document.getElementById('difficulty').value;
+
+            if (difficulty === 'easy') {
+                timeLimit = null;
+                maxAttempts = 20;
+            } else if (difficulty === 'normal') {
+                timeLimit = 300;
+                maxAttempts = 24;
+            } else if (difficulty === 'hard') {
+                timeLimit = 150;
+                maxAttempts = 20;
+            } else if (difficulty === 'custom') {
+                const digits = document.getElementById('customDigits').value;
+                const attempts = document.getElementById('customAttempts').value;
+                const time = document.getElementById('customTime').value;
+
+                timeLimit = time || null;
+                maxAttempts = attempts || null;
+                // For simplicity, we keep 4 digits fixed
+                // You can add more logic here to handle custom digit length if needed
+            }
+
+            document.getElementById('settingsPage').style.display = 'none';
+        }
+
+        function startOrRestartGame() {
+            if (gameStarted) {
+                const confirmRestart = confirm('確定要重新開始遊戲嗎？');
+                if (!confirmRestart) return;
+            }
+
+            answer = generateAnswer();
+            attempts = 0;
+            startTime = Date.now();
+            gameStarted = true;
+            document.getElementById('guess').disabled = false;
+            document.getElementById('guessButton').disabled = false;
+            document.getElementById('history').innerHTML = '';
+            document.getElementById('result').innerText = '';
+            document.getElementById('attempts').innerText = attempts;
+            document.getElementById('time').innerText = 0;
+            document.getElementById('startButton').innerText = '重新開始遊戲';
+
+            if (timeLimit) {
+                setTimeout(endGame, timeLimit * 1000);
+            }
+        }
+
+        function generateAnswer() {
+            let digits = [];
+            while (digits.length < 4) {
+                const digit = Math.floor(Math.random() * 10);
+                if (!digits.includes(digit)) {
+                    digits.push(digit);
+                }
+            }
+            return digits;
+        }
+
+        function checkGuess() {
+            if (!gameStarted) {
+                alert('請先按下「開始遊戲」按鈕！');
+                return;
+            }
+
+            const guessInput = document.getElementById('guess').value;
+            if (guessInput.length !== 4 || isNaN(guessInput)) {
+                alert('請輸入四位有效數字');
+                return;
+            }
+
+            const guess = guessInput.split('').map(Number);
+
+            let A = 0, B = 0;
+
+            for (let i = 0; i < 4; i++) {
+                if (guess[i] === answer[i]) {
+                    A++;
+                } else if (answer.includes(guess[i])) {
+                    B++;
+                }
+            }
+
+            const resultText = `${A}A${B}B`;
+            document.getElementById('result').innerText = resultText;
+
+            const historyItem = document.createElement('div');
+            historyItem.className = 'history-item';
+            historyItem.innerText = `猜測: ${guess.join('')} 結果: ${resultText}`;
+            document.getElementById('history').appendChild(historyItem);
+
+            attempts++;
+            document.getElementById('attempts').innerText = attempts;
+
+            if (A === 4 || (maxAttempts && attempts >= maxAttempts)) {
+                const totalTime = Math.floor((Date.now() - startTime) / 1000);
+                if (A === 4) {
+                    alert(`恭喜你，猜中了！總共用時 ${totalTime} 秒，共進行了 ${attempts} 次猜測。`);
+                    document.getElementById('result').innerText += ` 恭喜你，猜中了！`;
+                } else {
+                    alert(`遊戲結束！超過 ${maxAttempts} 次嘗試，未能猜中正確答案。`);
+                }
+                endGame();
+            }
+        }
+
+        function updateTimer() {
+            if (gameStarted) {
+                const elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+                document.getElementById('time').innerText = elapsedTime;
+            }
+        }
+
+        function endGame() {
+            gameStarted = false;
+            document.getElementById('guess').disabled = true;
+            document.getElementById('guessButton').disabled = true;
+            document.getElementById('startButton').innerText = '開始遊戲';
+        }
+
+        setInterval(updateTimer, 1000);
+
+    </script>
+
+</body>
+</html>
