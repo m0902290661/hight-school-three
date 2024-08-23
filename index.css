@@ -64,3 +64,6 @@ a{
 .footer{
     border-top: 0.5px solid black;
 }
+summary{
+    cursor: pointer;
+}
