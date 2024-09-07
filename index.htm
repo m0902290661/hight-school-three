@@ -8,16 +8,7 @@
 <body>
     <div class="header">
         <h1>國三智</h1>
-        <h2>會考倒數：<p id="out"></p></h2>
-        <p class="openbutton" id="openbutton" onclick="opennav()">選單（點擊打開）</p>
-        <div id="nav">
-            <p class="closebutton" onclick="closenav()">&times;</p>
-            <li onclick="location.href='#about'">簡介</li>
-            <li onclick="location.href='#post'">公告</li>
-            <li onclick="location.href='#data'">資料</li>
-            <li onclick="location.href='#rider'">附件</li>
-            <li onclick="location.href='#game'">小遊戲專區</li>
-        </div>
+        <h2>會考倒數：<p id="out" style="display: inline;"></p><p>會考時間：114/5/17~5/18</p></h2>
     </div>
     
     <div class="main">
@@ -47,7 +38,8 @@
         </div>
         <div class="post" id="post">
             <h2>公告</h2>
-            <iframe src="https://docs.google.com/spreadsheets/d/1VFuUZb6dtrgYOk7sV2Ryo-PPXtXhfv8bj8_XgMRUQ68/pubhtml" width="80%" height="500px"></iframe>
+            <p>公告系統維護中，預計於113/9/14維護完成。</p>
+            <iframe src="https://docs.google.com/spreadsheets/d/1VFuUZb6dtrgYOk7sV2Ryo-PPXtXhfv8bj8_XgMRUQ68/pubhtml" width="80%" height="500px" style="display: none;"></iframe>
         </div>
         <div class="data" id="data">
             <h2><a href="https://boys-n-girls-in-213.blogspot.com">資料（按一下前往班導網站）</a></h2>
@@ -55,12 +47,6 @@
         </div>
         <div class="rider" id="rider">
             <h2>附件</h2>
-            <details>
-                <summary>英語週（ppt）</summary>
-                <div>
-                    <p onclick="location.href='https://docs.google.com/presentation/d/1FGHOSZWfYMj8NaURBsbkKmNJ0T_xUghCms_5mfXV3T0/edit?usp=share_link'">前往閱覽（google 雲端）</p>
-                </div>
-            </details>
             <details>
                 <summary>本網站給予班級同學和相關人士更改、新增公告內容。但！請遵守以下規定</summary>
                 <div>
@@ -70,20 +56,20 @@
                         <li>更改、新增內容者，必須為「國三智班級同學」及「相關人士如學校老師」等。</li>
                         <li>若違反以上規則，將刪除該條目並且剝奪此權利。</li>
                     </ol>
+                    <p onclick="goedit()">前往編輯（點擊我前往）</p>
                 </div>
             </details>
-            <p onclick="goedit()">前往編輯（點擊我前往）</p>
         </div>
         <div class="game" id="game">
-            <h2 style="text-align: center;">小程式專區</h2>
-            <li><a href="1a2b test.htm"><span style="color: red;">NEW!!</span> 1A2B</a></li>
+            <h2>小程式專區（點擊下列文字前往對應區域）</h2>
+            <li><a href="1a2b test.htm">1A2B</a></li>
             <li><a href="Guess the number game.htm">猜數字遊戲</a></li>
             <li><a href="計數器.htm">計數器</a></li>
             <li><a href="隨機數字.htm">隨機數字</a></li>
         </div>
     </div>
     <div class="footer">
-        <p>&copy;許元洧製作 國三智</p>
+        <p>&copy;許元洧製作 國三智 為了保障品質，建議您使用平板、電腦、筆記型電腦等較設備被橫向觀看體驗最為舒適。<br>可兼容瀏覽器：safrai、google chrome、edge等主流瀏覽器。</p>
     </div>
 
 
@@ -92,7 +78,7 @@
 
         //倒數程式碼
         function updateCountdown() {
-            const targetDate = new Date(2025, 4, 18); // 民國114年 (2025年) 5月18日
+            const targetDate = new Date(2025, 4, 17); // 民國114年 (2025年) 5月18日
             const now = new Date();
             const difference = targetDate - now;
 
@@ -118,14 +104,6 @@
 
         function goedit(){
             location.href='https://forms.gle/NYkxKJQubj5HfxTFA';
-        }
-        function opennav(){
-            document.getElementById('nav').style.display='block';
-            document.getElementById('openbutton').style.display='none';
-        }
-        function closenav(){
-            document.getElementById('nav').style.display='none';
-            document.getElementById('openbutton').style.display='block';
         }
     </script>
 </body>

@@ -6,12 +6,6 @@
     padding: 15px;
     margin: 15px;
 }
-#nav{
-    display: none;
-}
-#nav,.header p{
-    cursor: pointer;
-}
 .header li{
     cursor: pointer;
 }
@@ -63,6 +57,7 @@ a{
 }
 .footer{
     border-top: 0.5px solid black;
+    background-color: aliceblue;
 }
 summary{
     cursor: pointer;
