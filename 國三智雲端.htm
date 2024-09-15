@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <title>國三智雲端</title>
 </head>
@@ -12,13 +14,22 @@
     <div class="about">
         <h2>簡介</h2>
         <h3>關於國三智雲端：</h3>
-        <p>這個雲端的使用比較單向，不提供眾人將自己的檔案丟到上頭來。但你可以在這個雲端中，找到各種重要的資料。目前此雲端屬於測試功能，未完整製作完畢。</p>
+        <p>這個雲端的使用比較單向，不提供眾人將自己的檔案丟到上頭來。但你可以在這個雲端中，找到各種重要的資料。而這先資料，也可能放在下方熱搜區能讓你找到。目前此雲端屬於測試功能，未完整製作完畢。</p>
+        <h3>使用說明：</h3>
+        <p>請先於下方查詢欄中，輸入檔案名和副檔名，若輸入沒錯的話，將會跳轉到該檔案瀏覽頁面。若輸入錯誤，則會跳轉到錯誤頁面。</p>
     </div>
     <div class="div">
-        <h2>功能製作中．．．預計於：<span style="color: red;">無定期</span>製作完畢</h2>
+        <h2>在這個網站查詢：</h2>
+        <input type="text" placeholder="於這裡輸入檔案名" id="finder"><input type="text" placeholder="副檔名（ex:.htm）" id="adv">
+        <button onclick="find()">查詢</button>
+        <h2>熱搜：</h2>
+        <li>資料不足。</li>
+        <textarea name="" id="output">這裡會輸出</textarea>
     </div>
     <div class="footer">
         <p>&copy;許元洧製作 國三智 為了保障品質，建議您使用平板、電腦、筆記型電腦等較設備橫向觀看體驗最為舒適。<br>可兼容瀏覽器：safrai、google chrome、edge等主流瀏覽器。</p>
     </div>
+
+    <script src="find.js"></script>
 </body>
 </html>

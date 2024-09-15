@@ -62,3 +62,34 @@ a{
 summary{
     cursor: pointer;
 }
+.headerup{
+    padding: 15px;
+    border: 0.5px solid black;
+    border-radius: 15px;
+    margin: 15px;
+    background-color: rgb(181, 223, 119);
+}
+/*  */
+@media screen and (max-width:768px) {
+    .header h2{
+        font-size: 18px;
+    }
+    .about,.rider,.post,.game,.data,.div{
+        padding: 15px;
+    }
+    .about img{
+        height: 150px;
+    }
+    .post iframe{
+        width: 90%;
+    }
+    .data iframe{
+        width: 90%;
+    }
+    .game h2{
+        font-size: 16px;
+    }
+    .footer{
+        font-size: 12px;
+    }
+}
