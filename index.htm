@@ -71,6 +71,8 @@
             <li><a href="Guess the number game.htm">猜數字遊戲</a></li>
             <li><a href="計數器.htm">計數器</a></li>
             <li><a href="隨機數字.htm">隨機數字</a></li>
+            <li>按鍵偵測：</li>
+            <textarea name="" id="ko">這裡會輸出按鍵名稱（除左右鍵，請在小程式專區的區塊按按鍵）</textarea>
         </div>
     </div>
     <div class="footer">
@@ -110,6 +112,13 @@
         function goedit(){
             location.href='https://forms.gle/NYkxKJQubj5HfxTFA';
         }
+
+        const k = document.querySelector('body');
+        k.addEventListener('keyup',function(e){
+            const kn = e.key;
+            const o = document.getElementById('ko');
+            o.innerHTML=kn;
+        })
     </script>
 </body>
 </html>

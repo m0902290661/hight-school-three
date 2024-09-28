@@ -69,6 +69,10 @@ summary{
     margin: 15px;
     background-color: rgb(181, 223, 119);
 }
+#ko{
+    width: 100px;
+    height: 100px;
+}
 /*  */
 @media screen and (max-width:768px) {
     .header h2{
