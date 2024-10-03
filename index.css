@@ -9,8 +9,8 @@
 .header li{
     cursor: pointer;
 }
-.about img{
-    height: 300px;
+img{
+    width: 50%;
 }
 .about,.div{
     padding: 150px;
@@ -78,7 +78,6 @@ summary{
     width: 75%;
     height: 300px;
     font-size: 18px;
-    margin-bottom: 15px;
 }
 /*  */
 @media screen and (max-width:768px) {
@@ -87,9 +86,6 @@ summary{
     }
     .about,.rider,.post,.game,.data,.div{
         padding: 15px;
-    }
-    .about img{
-        height: 150px;
     }
     .post iframe{
         width: 90%;
