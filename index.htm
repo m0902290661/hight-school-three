@@ -1,91 +1,198 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>國三智</title>
-    <link rel="stylesheet" href="index.css">
+    <title>國三智班網</title>
+    <style>
+        .header{
+            text-align: center;
+            padding: 15px;
+            border-bottom: 1px black solid;
+        }
+        .time{
+            text-align: center;
+            padding: 5px;
+            margin: 5px;
+            border-bottom: 1px solid black;
+        }
+        .post{
+            text-align: center;
+            padding: 5px;
+            border-bottom: 1px solid black;
+        }
+        .menu{
+            text-align: center;
+            border-bottom: 1px solid black;
+        }
+        .menu h2{
+            border-bottom: 0.5px solid;
+            padding: 5px;
+        }
+        .mbutton{
+            width: 50%;
+            height: 50px;
+            border: 0.5px solid;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .show{
+            border-bottom: 1px solid;
+            text-align: center;
+        }
+        img{
+            height: 300px;   
+        }
+        .sd{
+            text-align: left;
+        }
+        .sd img{
+            text-align: center;
+        }
+        .sd{
+            display: none;
+        }
+        #d5:target{
+            display: block;
+        }
+        #d4:target{
+            display: block;
+        }
+        #d3:target{
+            display: block;
+        }
+        #d2:target{
+            display: block;
+        }
+        #d1:target{
+            display: block;
+        }
+        #d1,#d2,#d3,#d4,#d5{
+            display: none;
+        }
+        @media  (max-width:768px){
+                
+            img{
+                width: 45%;
+                height: auto;
+                transition: transform 0.3s ease;
+            }
+            img:hover{
+                transform: scale(3);
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="headerup" id="headerup" style="display: none;">
-        <p>回校考試時程<a href="#atyphoon" style="color: red;">按此看須知</a><button onclick="document.getElementById('headerup').style.display='none';">&times;</button></p>
+    <div class="header">
+        <h1>國三智班級網站</h1>
+        <li>提醒，若您使用較小的裝置瀏覽本站時，點擊圖片將會放大！</li>
+    </div>
+    <div class="time">
+        <h3>距離會考還有：<span id="out"></span></h3>
+        <a href="#d3">了解會考</a>
+    </div>
+    <div class="post">
+        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRv4HFiXNwAh4bAy6RkJ0Zmew5GpMeyIGfA_IoxU_c9dcF3eCP69fzeeeIqibsucVFzliqK9tqPRhSe/pubhtml?gid=2100849140&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+    </div>
+    <div class="menu">
+        <h2>網站內容選單</h2>
+        <div class="mbutton" onclick="location.href='login.htm'">
+            <p>國三智用戶系統</p>
+        </div>
+        <div class="mbutton" onclick="location.href='#d1'">
+            <p>班導網站（站內讀取）</p>
+            <a href="https://boys-n-girls-in-213.blogspot.com/">站外讀取請按這</a>
+        </div>
+        <div class="mbutton" onclick="location.href='#d2'">
+            <p>關於我們</p>
+        </div>
+        <div class="mbutton" onclick="location.href='#d3'">
+            <p>會考專區</p>
+        </div>
+        <div class="mbutton" onclick="location.href='#d4'">
+            <p>班級考試時程</p>
+        </div>
+        <div class="mbutton" onclick="location.href='#d5'">
+            <p>子網站專區</p>
+        </div>
         
     </div>
-    <div class="header">
-        <h1>國三智</h1>
-        <h2>會考倒數：<p id="out" style="display: inline;"></p><p>會考時間：114/5/17~5/18</p></h2>
-        <a href="login.htm">國三智用戶系統<span style="color: red;">(測試功能)</span></a>
-        <a href="國三智雲端.htm">國三智雲端<span style="color: red;">(測試功能)</span></a>
-    </div>
-    
-    <div class="main">
-        <div class="about" id="about">
-            <h2>簡介</h2>
-            <div class="a1d">
-            <h3>關於國三智</h3>
-            <p>國三智延續了歷屆學長姐的精神，持續堅持弘明「志於道，據於德，依於人，游於藝。」的理念，在學業上、品德上，認真、精進，永不停止，活到老學到老。弘明給予我們，更多是在日常生活、做人處事道理的琢磨。比起學業，品德也是佔有一大比例，希望所有同學能在如此環境之下，更加精進！ <br>
-                <br><br><span class="a1ds">網站製作者 敬上</span></p>
-                <img src="IMG_2491.jpg" alt="classphoto" class="classphoto">
-            </div>
-            <h3>管理層</h3>
-            <div class="leader">
-                <div class="teacher">
-                    <img src="teacher.png" alt="teacher">
-                    <p>班導：陳世懷 老師</p>
-                </div>
-                <div class="classleader">
-                    <img src="classleader.png" alt="classleader">
-                    <p>班長：江宗旺 同學</p>
-                </div>
-                <div class="secondclassleader">
-                    <img src="secondclassleader.png" alt="secondclassleader">
-                    <p>副班長：陳垣澔 同學</p>
-                </div>
-            </div>
+    <div class="show">
+        <h2>網站內容被選擇後將於此呈現<a href="#">clean</a></h2>
+        <div class="sd" id="d1">
+            <iframe src="https://boys-n-girls-in-213.blogspot.com/" frameborder="0" height="300px"></iframe>
         </div>
-        <div class="post" id="post">
-            <h2>公告</h2>
-            <a href="hp.htm">公告紀錄</a>
-            <iframe src="https://docs.google.com/spreadsheets/d/1VFuUZb6dtrgYOk7sV2Ryo-PPXtXhfv8bj8_XgMRUQ68/pubhtml" width="80%" height="500px" ></iframe>
+        <div class="sd" id="d2">
+            <h3>關於我們</h3>
+            <p>國三智延續了歷屆學長姐的精神，持續堅持弘明「志於道，據於德，依於人，游於藝。」的理念，在學業上、品德上，認真、精進，永不停止，活到老學到老。弘明給予我們，更多是在日常生活、做人處事道理的琢磨。比起學業，品德也是佔有一大比例，希望所有同學能在如此環境之下，更加精進！
+            </p>
+            <img src="IMG_2491.jpg" alt="" style="text-align: center;">
+            <h3>領導團隊</h3>
+            <li>班 導：陳世懷 老師<img src="teacher.png" alt=""></li>
+            <li>班 長：江宗旺 同學<img src="classleader.png" alt=""></li>
+            <li>副班長：陳垣澔 同學<img src="secondclassleader.png" alt=""></li>
         </div>
-        <div class="data" id="data">
-            <h2><a href="https://boys-n-girls-in-213.blogspot.com">資料（按一下前往班導網站）</a></h2>
-            <iframe src="https://boys-n-girls-in-213.blogspot.com" frameborder="0" width="70%" height="500px">外部網站載入中．．．（若未出現請試著刷新網頁）</iframe>
+        <div class="sd" id="d3">
+            <h3>會考專區</h3>
+            <h4>一一四年 會考日期：5/17~5/18</h4>
+            <textarea name="" id="" style="width: 100%; height: 300px;">
+一、 國中教育會考的意涵
+ 國中教育會考是十二年國民基本教育實施計畫中「落實國中教學正常化、適
+性輔導及品質提升方案」的重要配套措施之一。本測驗採標準參照的方式呈現國
+中畢業生各科學力表現，透過事先制定的標準，將國文、英語、數學、社會和自
+然5科評量結果分為「精熟」、「基礎」及「待加強」3個等級，寫作測驗則由劣
+至優區分為一至六級分。「精熟」表示學生精通熟習該科目國中階段所學習的知
+識與能力；「基礎」表示學生具備該科目國中階段之基本學力；「待加強」表示
+學生尚未具備該科目國中教育階段之基本學力。
+二、 國中教育會考的內容
+國中教育會考考試科目包含國文、英語、數學、社會、自然及寫作測驗，除
+國文與寫作測驗同屬語文學習領域本國語文（國語文）外，各科不跨學習領域，
+皆以國民中小學九年一貫課程綱要國中階段能力指標為命題依據，寫作測驗及英
+語科單題（含聽力、閱讀）需參酌部分國小階段能力指標。各考試科目之題型以
+選擇題為主，非選擇題為輔。
+103年國中教育會考除寫作測驗只考1篇作文、英語科聽力部分為3選1的選擇
+題型、數學科包含非選擇題型外，其他考試科目均為4選1的選擇題型。
+三、 報名方式
+(一)凡國民中學應屆畢業生，由所就讀學校於103年3月13日（星期四）至3
+月15日（星期六）報名期間代為辦理集體報名。
+(二)非應屆國民中學畢業生或持國外學歷、大陸學歷之學生，一律參加個別
+報名：
+(三)考生請於103年3月10日（星期一）8:00至3月12日（星期三）17:00自行
+上網填報個別報名表資料（網址：http://cap.ntnu.edu.tw），並於確
+認無誤後，以白色A4規格紙張單面列印，黏貼國民身分證影本（含正反
+面）在所列印個別報名表指定位置。使用戶口名簿者，應將影本浮貼於
+個別報名表。考生務必於103年3月13日（星期四）至3月15日（星期六）
+報名期間，攜帶應繳資料親自至考區主辦學校，現場繳交資料及報名費，
+經考區主辦學校審查完畢，始完成個別報名程序。
+(四)考區主辦學校採現場審件，並於個別報名現場提供電腦和印表機提供考
+生修改報名資料。
+四、 報名費
+(一)國民中學應屆畢業生：一律免收報名費。
+(二)非應屆國民中學畢業生：新臺幣500元整。
+五、 考區設置
+全國分為18個考區和大陸考場，考場由各考區主辦學校規劃公告。
+            </textarea>
         </div>
-        <div class="rider" id="rider">
-            <h2>附件</h2>
-            <details>
-                <summary>本網站給予班級同學和相關人士更改、新增公告內容。但！請遵守以下規定</summary>
-                <div>
-                    <ol>
-                        <li>更改、新增之內容，需有「真實性」和「重要性」。</li>
-                        <li>更改、新增之內容，不可含有「腥、羶、色」以及違反道德倫理。</li>
-                        <li>更改、新增內容者，必須為「國三智班級同學」及「相關人士如學校老師」等。</li>
-                        <li>若違反以上規則，將刪除該條目並且剝奪此權利。</li>
-                    </ol>
-                    <p onclick="goedit()">前往編輯（點擊我前往）</p>
-                </div>
-            </details>
+        <div class="sd" id="d4">
+            <h3>暫無最新班級考試時程</h3>
+            <li>113/10/6~10/9 <img src="image.png" alt=""></li>
         </div>
-        <div class="game" id="game">
-            <h2>小程式專區（點擊下列文字前往對應區域）</h2>
-            <li><a href="1a2b test.htm">1A2B</a></li>
+        <div class="sd" id="d5">
+            <li><a href="113-1行事曆(校外版).pdf">113-1校外版行事曆</a></li>
+            <li><a href="1a2b test.htm">1a2b</a></li>
             <li><a href="Guess the number game.htm">猜數字遊戲</a></li>
             <li><a href="計數器.htm">計數器</a></li>
             <li><a href="隨機數字.htm">隨機數字</a></li>
-            <li>按鍵偵測：</li>
-            <textarea name="" id="ko">這裡會輸出按鍵名稱（除左右鍵，請在小程式專區的區塊按按鍵）</textarea>
         </div>
     </div>
     <div class="footer">
-        <p>&copy;許元洧製作 國三智 為了保障品質，建議您使用平板、電腦、筆記型電腦等較設備橫向觀看體驗最為舒適。<br>可兼容瀏覽器：safrai、google chrome、edge等主流瀏覽器。</p>
+        <p>&copy;許元洧製作 國三智</p>
     </div>
 
-
     <script>
-
-
         //倒數程式碼
         function updateCountdown() {
             const targetDate = new Date(2025, 4, 17); // 民國114年 (2025年) 5月18日
@@ -110,18 +217,6 @@
         }
 
         setInterval(updateCountdown, 1000);
-    
-
-        function goedit(){
-            location.href='https://forms.gle/NYkxKJQubj5HfxTFA';
-        }
-
-        const k = document.querySelector('body');
-        k.addEventListener('keyup',function(e){
-            const kn = e.key;
-            const o = document.getElementById('ko');
-            o.innerHTML=kn;
-        })
     </script>
 </body>
 </html>
