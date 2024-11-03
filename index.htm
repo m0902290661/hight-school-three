@@ -69,6 +69,12 @@
         #d1:target{
             display: block;
         }
+        #lw:target{
+            display: block;
+        }
+        #d11:target{
+            display: block;
+        }
         #d1,#d2,#d3,#d4,#d5{
             display: none;
         }
@@ -97,14 +103,13 @@
     <div class="post">
         <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRv4HFiXNwAh4bAy6RkJ0Zmew5GpMeyIGfA_IoxU_c9dcF3eCP69fzeeeIqibsucVFzliqK9tqPRhSe/pubhtml?gid=2100849140&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
     </div>
-    <div class="menu">
+    <div class="menu" id="menu">
         <h2>網站內容選單</h2>
-        <div class="mbutton" onclick="location.href='login.htm'">
+        <div class="mbutton" onclick="location.href='#lw'">
             <p>國三智用戶系統</p>
         </div>
         <div class="mbutton" onclick="location.href='#d1'">
-            <p>班導網站（站內讀取）</p>
-            <a href="https://boys-n-girls-in-213.blogspot.com/">站外讀取請按這</a>
+            <p>班導網站（選擇頁面）</p>
         </div>
         <div class="mbutton" onclick="location.href='#d2'">
             <p>關於我們</p>
@@ -118,12 +123,16 @@
         <div class="mbutton" onclick="location.href='#d5'">
             <p>子網站專區</p>
         </div>
-        
+        <div class="mbutton" onclick="location.href='#menu'">
+            <p>清空下方區域</p>
+        </div>
     </div>
     <div class="show">
-        <h2>網站內容被選擇後將於此呈現<a href="#">clean</a></h2>
         <div class="sd" id="d1">
-            <iframe src="https://boys-n-girls-in-213.blogspot.com/" frameborder="0" height="300px"></iframe>
+            <h2>請選擇瀏覽方式<a href="#d11">站內瀏覽</a>or<a href="https://boys-n-girls-in-213.blogspot.com/">站外瀏覽</a></h2>
+        </div>
+        <div class="sd" id="d11">
+            <iframe src="https://boys-n-girls-in-213.blogspot.com/" frameborder="0" height="500px"></iframe>
         </div>
         <div class="sd" id="d2">
             <h3>關於我們</h3>
@@ -186,6 +195,9 @@
             <li><a href="Guess the number game.htm">猜數字遊戲</a></li>
             <li><a href="計數器.htm">計數器</a></li>
             <li><a href="隨機數字.htm">隨機數字</a></li>
+        </div>
+        <div class="sd" id="lw">
+            <h2>很抱歉，用戶系統暫時出現技術問題，目前封閉使用。造成不便請見諒</h2>
         </div>
     </div>
     <div class="footer">
