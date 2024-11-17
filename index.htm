@@ -3,151 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>國三智班網</title>
+    <title>new國三智班網</title>
     <style>
-        .header{
-            text-align: center;
-            padding: 15px;
-            border-bottom: 1px black solid;
-        }
-        .time{
-            text-align: center;
-            padding: 5px;
-            margin: 5px;
-            border-bottom: 1px solid black;
-        }
-        .post{
-            text-align: center;
-            padding: 5px;
-            border-bottom: 1px solid black;
-        }
-        .menu{
-            text-align: center;
-            border-bottom: 1px solid black;
-        }
-        .menu h2{
-            border-bottom: 0.5px solid;
-            padding: 5px;
-        }
-        .mbutton{
-            width: 50%;
-            height: 50px;
-            border: 0.5px solid;
-            border-radius: 5px;
-            padding: 5px;
-            margin: 5px;
-            cursor: pointer;
-        }
-        .show{
-            border-bottom: 1px solid;
-            text-align: center;
+        .div p{
+            width: 38%;
         }
         img{
-            height: 300px;   
+            height: 300px;
         }
-        .sd{
-            text-align: left;
+        .main{
+            display: flex;
+            width: 100%;
         }
-        .sd img{
-            text-align: center;
+        .left{
+            flex: 5%;
         }
-        .sd{
+        .right{
+            flex: 70%;
+            height: 800px;
+            padding: 15px;
+        }
+        a{
+            text-decoration: none;
+            color: green;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+        textarea{
+            width: 38%;
+        }
+        #p{
             display: none;
         }
-        #d5:target{
-            display: block;
+        .gt{
+            border: solid;
+            border-radius: 15px;
+            padding: 5px;
+            margin: 5px;
         }
-        #d4:target{
-            display: block;
-        }
-        #d3:target{
-            display: block;
-        }
-        #d2:target{
-            display: block;
-        }
-        #d1:target{
-            display: block;
-        }
-        #lw:target{
-            display: block;
-        }
-        #d11:target{
-            display: block;
-        }
-        #d1,#d2,#d3,#d4,#d5{
-            display: none;
-        }
+        
         @media  (max-width:768px){
-                
             img{
-                width: 45%;
+                width: 100%;
                 height: auto;
-                transition: transform 0.3s ease;
             }
-            img:hover{
-                transform: scale(3);
+            iframe{
+                width: 100%;
+            }
+            textarea{
+                width: 100%;
+            }
+            .main{
+                display: block;
+            }
+            .div p{
+                width: 100%;
+            }
+            #c{
+                display: none;
+            }
+            #p{
+                display: inline;
             }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>國三智班級網站</h1>
-        <li>提醒，若您使用較小的裝置瀏覽本站時，點擊圖片將會放大！</li>
-    </div>
-    <div class="time">
-        <h3>距離會考還有：<span id="out"></span></h3>
-        <a href="#d3">了解會考</a>
-    </div>
-    <div class="post">
-        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRv4HFiXNwAh4bAy6RkJ0Zmew5GpMeyIGfA_IoxU_c9dcF3eCP69fzeeeIqibsucVFzliqK9tqPRhSe/pubhtml?gid=2100849140&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
-    </div>
-    <div class="menu" id="menu">
-        <h2>網站內容選單</h2>
-        <div class="mbutton" onclick="location.href='#lw'">
-            <p>國三智用戶系統</p>
+    <div class="main">
+        <div class="left">
+            <h1><a href="#">國三智班網</a></h1>
+            <p style="display: inline;">距離會考還有：</p>
+            <span id="out"></span>
+            <li><a href="login.htm">國三智用戶系統（測試版）</a></li>
+            <li><a href="#about">簡介</a></li>
+            <li><a href="#hweb">班導網站</a></li>
+            <li><a href="#test">會考專區</a></li>
+            <li><a href="#testtime">班級考試時程</a></li>
+            <li><a href="#ourweb">子網站專區</a></li>
+            <span>&copy;國三智 許元洧製作</span><br>
+            <p style="display: inline;">瀏覽裝置：</p>
+            <span id="c">電腦</span><span id="p">手機or平板</span>
         </div>
-        <div class="mbutton" onclick="location.href='#d1'">
-            <p>班導網站（選擇頁面）</p>
-        </div>
-        <div class="mbutton" onclick="location.href='#d2'">
-            <p>關於我們</p>
-        </div>
-        <div class="mbutton" onclick="location.href='#d3'">
-            <p>會考專區</p>
-        </div>
-        <div class="mbutton" onclick="location.href='#d4'">
-            <p>班級考試時程</p>
-        </div>
-        <div class="mbutton" onclick="location.href='#d5'">
-            <p>子網站專區</p>
-        </div>
-        <div class="mbutton" onclick="location.href='#menu'">
-            <p>清空下方區域</p>
-        </div>
-    </div>
-    <div class="show">
-        <div class="sd" id="d1">
-            <h2>請選擇瀏覽方式<a href="#d11">站內瀏覽</a>or<a href="https://boys-n-girls-in-213.blogspot.com/">站外瀏覽</a></h2>
-        </div>
-        <div class="sd" id="d11">
-            <iframe src="https://boys-n-girls-in-213.blogspot.com/" frameborder="0" height="500px"></iframe>
-        </div>
-        <div class="sd" id="d2">
-            <h3>關於我們</h3>
-            <p>國三智延續了歷屆學長姐的精神，持續堅持弘明「志於道，據於德，依於人，游於藝。」的理念，在學業上、品德上，認真、精進，永不停止，活到老學到老。弘明給予我們，更多是在日常生活、做人處事道理的琢磨。比起學業，品德也是佔有一大比例，希望所有同學能在如此環境之下，更加精進！
-            </p>
-            <img src="IMG_2491.jpg" alt="" style="text-align: center;">
-            <h3>領導團隊</h3>
-            <li>班 導：陳世懷 老師<img src="teacher.png" alt=""></li>
-            <li>班 長：江宗旺 同學<img src="classleader.png" alt=""></li>
-            <li>副班長：陳垣澔 同學<img src="secondclassleader.png" alt=""></li>
-        </div>
-        <div class="sd" id="d3">
-            <h3>會考專區</h3>
-            <h4>一一四年 會考日期：5/17~5/18</h4>
-            <textarea name="" id="" style="width: 100%; height: 300px;">
+        <div class="right">
+            <div class="div" id="about">
+                <h2>關於我們</h2>
+                <p>國三智延續了歷屆學長姐的精神，持續堅持弘明「志於道，據於德，依於人，游於藝。」的理念，在學業上、品德上，認真、精進，永不停止，活到老學到老。弘明給予我們，更多是在日常生活、做人處事道理的琢磨。比起學業，品德也是佔有一大比例，希望所有同學能在如此環境之下，更加精進！
+                </p>
+                <img src="IMG_2491.jpg" alt="" style="text-align: center;">
+                <h3>領導團隊</h3>
+                <li>班 導：陳世懷 老師<img src="teacher.png" alt=""></li>
+                <li>班 長：江宗旺 同學<img src="classleader.png" alt=""></li>
+                <li>副班長：陳垣澔 同學<img src="secondclassleader.png" alt=""></li>
+            </div>
+            <div class="div" id="hweb">
+                <h2><a href="https://boys-n-girls-in-213.blogspot.com/">班導網站</a></h2>
+                <iframe src="https://boys-n-girls-in-213.blogspot.com/" frameborder="0" width="38%" height="300px"></iframe>
+            </div>
+            <div class="div" id="test">
+                <h2>會考專區</h2>
+                <textarea name="" id="" style="height: 300px;">
 一、 國中教育會考的意涵
  國中教育會考是十二年國民基本教育實施計畫中「落實國中教學正常化、適
 性輔導及品質提升方案」的重要配套措施之一。本測驗採標準參照的方式呈現國
@@ -184,28 +139,25 @@
 五、 考區設置
 全國分為18個考區和大陸考場，考場由各考區主辦學校規劃公告。
             </textarea>
+            </div>
+            <div class="div" id="testtime">
+                <h2>班級考試時程</h2>
+                <p>暫無最新班級考試時程</p>
+            </div>
+            <div class="div" id="ourweb">
+                <h2>子網站專區</h2>
+                <li><a href="113-1行事曆(校外版).pdf">113-1校外版行事曆</a></li>
+                <li><a href="1a2b test.htm">1a2b</a></li>
+                <li><a href="Guess the number game.htm">猜數字遊戲</a></li>
+                <li><a href="計數器.htm">計數器</a></li>
+                <li><a href="隨機數字.htm">隨機數字</a></li>
+                <li><a href="document.htm">測試網頁</a></li>
+            </div>
+            <a href="#" class="gt">回到頂部</a>
         </div>
-        <div class="sd" id="d4">
-            <h3>暫無最新班級考試時程</h3>
-            <li>113/10/6~10/9 <img src="image.png" alt=""></li>
-        </div>
-        <div class="sd" id="d5">
-            <li><a href="113-1行事曆(校外版).pdf">113-1校外版行事曆</a></li>
-            <li><a href="1a2b test.htm">1a2b</a></li>
-            <li><a href="Guess the number game.htm">猜數字遊戲</a></li>
-            <li><a href="計數器.htm">計數器</a></li>
-            <li><a href="隨機數字.htm">隨機數字</a></li>
-        </div>
-        <div class="sd" id="lw">
-            <h2>很抱歉，用戶系統暫時出現技術問題，目前封閉使用。造成不便請見諒</h2>
-        </div>
-    </div>
-    <div class="footer">
-        <p>&copy;許元洧製作 國三智</p>
     </div>
 
     <script>
-        //倒數程式碼
         function updateCountdown() {
             const targetDate = new Date(2025, 4, 17); // 民國114年 (2025年) 5月18日
             const now = new Date();
