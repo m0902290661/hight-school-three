@@ -46,7 +46,7 @@
             padding: 300px;
             text-align: center;
             background-color: gray;
-            background-image: url('IMG_2491.jpg');
+            background-image: url('IMG_3315 2.jpg');
             background-size: cover;
         }
         .header h1{
@@ -54,7 +54,7 @@
             background-color: white;
             opacity: 0.7;
         }
-        .div{
+        .div,.od{
             padding: 100px;
         }
         a{
@@ -72,6 +72,30 @@
         iframe{
             width: 85%;
             height: 500px;
+        }
+        .tt{
+            position: fixed;
+            margin:100px 10px;
+            text-decoration: none;
+            background-color: white;
+            border: 0.5px solid;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .tb{
+            position: fixed;
+            margin:150px 10px;
+            text-decoration: none;
+            background-color: white;
+            border: 0.5px solid;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .od{
+            display: none;
+        }
+        .od:target{
+            display: block;
         }
 
         @media (max-width:768px) {
@@ -93,7 +117,44 @@
     </style>
 </head>
 <body>
+    <button class="tt" id="tt" onclick="location.href='#header'">回頂部</button>
+    <button class="tb" id="tb" onclick="location.href='#footer'">到底部</button>
     <div class="menu" id="menu">
+        <li><a href="">國三智時事專區<span style="color: red;">本區於寒假時間暫時關閉</span></a></li>
+        <li><a href='https://whis.feis.cs.nthu.edu.tw/?p=323139323833317c313733333634353736317c73303030313735312e6e746374406d61696c2e6564752e74777ce58583e6b4a77ce8a8b1&q=f87831f99327e7e3ff57a7afb1e44c7c21713d38c5e98075b07a09275f84656d'>口說系統</a></li>
+        <li><a href="login.htm">國三智用戶系統（測試版）</a></li>
+        <li><span style="color: aqua;">其他功能不適用於此版本</span></li>
+        <button onclick="closemenu()">&times;</button>
+    </div>
+    <div class="main">
+        <button class="menubutton" id="menubutton" onclick="openmenu()">MENU</button>
+        <div class="header" id="header">
+            <h1>國三智<br>班級網站<br>寒假特別版</h1>
+        </div>
+        <div class="div" id="odd">
+            <a href="#od" style="border: 1px solid;">這個內容很刺激，你確定要觀看就按下這個按鈕（別怪我沒提醒你）</a>
+            <div class="od" id="od">
+                <p>寒假還有</p>
+                <p id="odo"></p>
+                <p>會考還有</p>
+                <p id="out"></p>
+                <a href="#odd" style="border: 1px solid;">好吧，你既然看了，就按這個按鈕關掉吧！</a>
+            </div>
+        </div>
+        <div class="div">
+            <h2>寒假作業內容</h2>
+            <p style="color: red;">許元洧還沒有把這裡做好（因為他要去集訓ＱＱ）</p>
+        </div>
+        <div class="div">
+            <a href="https://boys-n-girls-in-213.blogspot.com/2025/01/114124.html">高清照片請按此</a>
+            <img src="img01.jpg" alt="" style="width: 100%;">
+            <img src="img02.jpg" alt="" style="width: 100%;">
+        </div>
+    </div>
+    <div class="footer" id="footer">
+        <p>&copy;國三智 本站由許元洧設計與維護。</p>
+    </div>
+    <!-- <div class="menu" id="menu">
         <li><a href="時事.htm"><span style="color: red;">NEW!!</span>國三智時事專區</a></li>
         <li><a href='https://whis.feis.cs.nthu.edu.tw/?p=323139323833317c313733333634353736317c73303030313735312e6e746374406d61696c2e6564752e74777ce58583e6b4a77ce8a8b1&q=f87831f99327e7e3ff57a7afb1e44c7c21713d38c5e98075b07a09275f84656d'>口說系統</a></li>
         <li><a href="login.htm">國三智用戶系統（測試版）</a></li>
@@ -187,11 +248,10 @@
         <div class="footer">
             <p>&copy;國三智 本站由許元洧設計與維護。</p>
         </div>
-    </div>
+    </div> -->
 
 
     <script>
-
         function openmenu(){
             document.getElementById('menu').style.display='block';
             document.getElementById('menubutton').style.display='none';
@@ -202,12 +262,18 @@
         }
 
         function updateCountdown() {
+            const targetDate1= new Date(2025, 1, 9);
             const targetDate = new Date(2025, 4, 17); // 民國114年 (2025年) 5月18日
             const now = new Date();
             const difference = targetDate - now;
+            const difference1= targetDate1 - now;
 
             if (difference <= 0) {
                 document.getElementById('out').innerHTML = "會考到了！";
+                return;
+            }
+            if (difference1 <= 0) {
+                document.getElementById('odo').innerHTML = "開學了！";
                 return;
             }
 
@@ -216,11 +282,22 @@
             const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
+            const days1 = Math.floor(difference1 / (1000 * 60 * 60 * 24));
+            const hours1 = Math.floor((difference1 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes1 = Math.floor((difference1 % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds1 = Math.floor((difference1 % (1000 * 60)) / 1000);
+            
             document.getElementById('out').innerHTML = 
                 days + "天 " + 
                 hours + "小時 " + 
                 minutes + "分鐘 " + 
                 seconds + "秒";
+
+            document.getElementById('odo').innerHTML = 
+                days1 + "天 " + 
+                hours1 + "小時 " + 
+                minutes1 + "分鐘 " + 
+                seconds1 + "秒";
         }
 
         setInterval(updateCountdown, 1000);
