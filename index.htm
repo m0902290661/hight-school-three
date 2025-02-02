@@ -107,6 +107,16 @@
             cursor: pointer;
         }
 
+        .tc {
+            position: fixed;
+            margin: 200px 10px;
+            text-decoration: none;
+            background-color: white;
+            border: 0.5px solid;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
         .od,
         .fa {
             display: none;
@@ -115,6 +125,14 @@
         .od:target,
         .fa:target {
             display: block;
+        }
+
+        .內容{
+            height: 1000px;
+        }
+
+        .內容 iframe{
+            height: 90%;
         }
 
         @media (max-width:768px) {
@@ -144,150 +162,95 @@
 </head>
 
 <body>
-    <button class="tt" id="tt" onclick="location.href='#header'">回頂部</button>
-    <button class="tb" id="tb" onclick="location.href='#footer'">到底部</button>
-    <div class="menu" id="menu">
-        <li><a href="">國三智時事專區<span style="color: red;">本區於寒假時間暫時關閉</span></a></li>
-        <li><a
-                href='https://whis.feis.cs.nthu.edu.tw/?p=323139323833317c313733333634353736317c73303030313735312e6e746374406d61696c2e6564752e74777ce58583e6b4a77ce8a8b1&q=f87831f99327e7e3ff57a7afb1e44c7c21713d38c5e98075b07a09275f84656d'>口說系統</a>
-        </li>
-        <li><a href="login.htm">國三智用戶系統（測試版）</a></li>
-        <li><span style="color: aqua;">其他功能不適用於此版本</span></li>
-        <button onclick="closemenu()">&times;</button>
-    </div>
-    <div class="main">
-        <button class="menubutton" id="menubutton" onclick="openmenu()">MENU</button>
-        <div class="header" id="header">
-            <h1>國三智<br>班級網站<br>寒假特別版</h1>
+    <div class="彈出視窗" id="彈出視窗">
+        <div class="內容" id="彈出視窗">
+            <button style="color: red;" onclick="關掉彈出視窗()">怕有人眼凸，我把關閉按鈕變顏色</button>
+            <button onclick="不想再看到彈出視窗()">下次不要顯示</button>
+            <iframe src="文章/3.htm" frameborder="0"></iframe>
         </div>
-        <div class="div" id="odd">
-            <a href="#od" style="border: 1px solid;">這個內容很刺激，你確定要觀看就按下這個按鈕（別怪我沒提醒你）</a>
-            <div class="od" id="od">
-                <p>寒假還有</p>
-                <p id="odo"></p>
-                <p>會考還有</p>
-                <p id="out"></p>
-                <a href="#odd" style="border: 1px solid;">好吧，你既然看了，就按這個按鈕關掉吧！</a>
+    </div>
+    <div class="網站主體" id="網站主體">
+        <button class="tt" id="tt" onclick="location.href='#header'">回頂部</button>
+        <button class="tb" id="tb" onclick="location.href='#footer'">到底部</button>
+        <button class="tc"  onclick="善變的人()">我還是想看到彈出視窗</button>
+        <div class="menu" id="menu">
+            <li><a href="">國三智時事專區<span style="color: red;">本區於寒假時間暫時關閉</span></a></li>
+            <li><a
+                    href='https://whis.feis.cs.nthu.edu.tw/?p=323139323833317c313733333634353736317c73303030313735312e6e746374406d61696c2e6564752e74777ce58583e6b4a77ce8a8b1&q=f87831f99327e7e3ff57a7afb1e44c7c21713d38c5e98075b07a09275f84656d'>口說系統</a>
+            </li>
+            <li><a href="login.htm">國三智用戶系統（測試版）</a></li>
+            <li><span style="color: aqua;">其他功能不適用於此版本</span></li>
+            <button onclick="closemenu()">&times;</button>
+        </div>
+        <div class="main">
+            <button class="menubutton" id="menubutton" onclick="openmenu()">MENU</button>
+            <div class="header" id="header">
+                <h1>國三智<br>班級網站<br>寒假特別版</h1>
+            </div>
+            <div class="div" id="odd">
+                <a href="#od" style="border: 1px solid;">這個內容很刺激，你確定要觀看就按下這個按鈕（別怪我沒提醒你）</a>
+                <div class="od" id="od">
+                    <p>寒假還有</p>
+                    <p id="odo"></p>
+                    <p>會考還有</p>
+                    <p id="out"></p>
+                    <a href="#odd" style="border: 1px solid;">好吧，你既然看了，就按這個按鈕關掉吧！</a>
+                </div>
+            </div>
+            <div class="div">
+                <h2>寒假作業內容</h2>
+                <img src="img03.jpg" style="width: 100%;">
+                <img src="img04.jpg" style="width: 100%;">
+            </div>
+            <div class="div">
+                <h2>期末大掃除的神奇照片</h2>
+                <a href="https://boys-n-girls-in-213.blogspot.com/2025/01/114124.html">高清照片請按此</a><br>
+                <a href="https://boys-n-girls-in-213.blogspot.com">前往班導網站首頁請按此</a>
+                <p>為不影響網站加載速度，下方內容請按底下的吉祥物觀看</p>
+                <a href="#fa"><img src="image.png" alt="" height="50px"></a>
+                <div class="fa" id="fa">
+                    <img src="img01.jpg" alt="" style="width: 100%;">
+                    <img src="img02.jpg" alt="" style="width: 100%;">
+                </div>
             </div>
         </div>
-        <div class="div">
-            <h2>寒假作業內容</h2>
-            <img src="img03.jpg" style="width: 100%;">
-            <img src="img04.jpg" style="width: 100%;">
-        </div>
-        <div class="div">
-            <h2>期末大掃除的神奇照片</h2>
-            <a href="https://boys-n-girls-in-213.blogspot.com/2025/01/114124.html">高清照片請按此</a><br>
-            <a href="https://boys-n-girls-in-213.blogspot.com">前往班導網站首頁請按此</a>
-            <p>為不影響網站加載速度，下方內容請按底下的吉祥物觀看</p>
-            <a href="#fa"><img src="image.png" alt="" height="50px"></a>
-            <div class="fa" id="fa">
-                <img src="img01.jpg" alt="" style="width: 100%;">
-                <img src="img02.jpg" alt="" style="width: 100%;">
-            </div>
-        </div>
-    </div>
-    <div class="footer" id="footer">
-        <p>&copy;國三智 本站由許元洧設計與維護。</p>
-    </div>
-    <!-- <div class="menu" id="menu">
-        <li><a href="時事.htm"><span style="color: red;">NEW!!</span>國三智時事專區</a></li>
-        <li><a href='https://whis.feis.cs.nthu.edu.tw/?p=323139323833317c313733333634353736317c73303030313735312e6e746374406d61696c2e6564752e74777ce58583e6b4a77ce8a8b1&q=f87831f99327e7e3ff57a7afb1e44c7c21713d38c5e98075b07a09275f84656d'>口說系統</a></li>
-        <li><a href="login.htm">國三智用戶系統（測試版）</a></li>
-        <li><a href="#about">簡介</a></li>
-        <li><a href="#1131">113-1國三智期末專區</a></li>
-        <li><a href="#hweb">班導網站</a></li>
-        <li><a href="#test">會考專區</a></li>
-        <li><a href="#testtime">班級考試時程</a></li>
-        <li><a href="#ourweb">子網站專區</a></li>
-        <button onclick="closemenu()">&times;</button>
-    </div>
-    <div class="main">
-        <button class="menubutton" id="menubutton" onclick="openmenu()">MENU</button>
-        <div class="header">
-            <h1>國三智<br>班級網站</h1>
-        </div>
-        <div class="div" id="about">
-            <h2>關於我們</h2>
-            <p>國三智延續了歷屆學長姐的精神，持續堅持弘明「志於道，據於德，依於人，游於藝。」的理念，在學業上、品德上，認真、精進，永不停止，活到老學到老。弘明給予我們，更多是在日常生活、做人處事道理的琢磨。比起學業，品德也是佔有一大比例，希望所有同學能在如此環境之下，更加精進！</p>
-            <h3>校訓</h3>
-            <h4>「志於道，據於德，依於人，游於藝。」＿＿＿出自述而第七</h4>
-            <h3>精神</h3>
-            <h4>「希聖希賢，深信因果，敦倫盡份，學行利他。」</h4>
-        </div>
-        <div class="div" id="1131">
-            <h2>113-1國三智期末事項</h2>
-            <a href="https://drive.google.com/drive/folders/162w-437ma7wA7kvBXEFIXcMctH_w0-3n?usp=drive_link">前往</a>
-        </div>
-        <div class="div" id="hweb">
-            <h2><a href="https://boys-n-girls-in-213.blogspot.com/">班導網站</a></h2>
-            <iframe src="https://boys-n-girls-in-213.blogspot.com/" frameborder="0" height="300px"></iframe>
-        </div>
-        <div class="div" id="test">
-            <h2>會考專區</h2>
-            <p  style="display: inline;">會考倒數：</p><span id="out"></span><br>
-            <textarea name="" id="">
-一、 國中教育會考的意涵
-國中教育會考是十二年國民基本教育實施計畫中「落實國中教學正常化、適
-性輔導及品質提升方案」的重要配套措施之一。本測驗採標準參照的方式呈現國
-中畢業生各科學力表現，透過事先制定的標準，將國文、英語、數學、社會和自
-然5科評量結果分為「精熟」、「基礎」及「待加強」3個等級，寫作測驗則由劣
-至優區分為一至六級分。「精熟」表示學生精通熟習該科目國中階段所學習的知
-識與能力；「基礎」表示學生具備該科目國中階段之基本學力；「待加強」表示
-學生尚未具備該科目國中教育階段之基本學力。
-二、 國中教育會考的內容
-國中教育會考考試科目包含國文、英語、數學、社會、自然及寫作測驗，除
-國文與寫作測驗同屬語文學習領域本國語文（國語文）外，各科不跨學習領域，
-皆以國民中小學九年一貫課程綱要國中階段能力指標為命題依據，寫作測驗及英
-語科單題（含聽力、閱讀）需參酌部分國小階段能力指標。各考試科目之題型以
-選擇題為主，非選擇題為輔。
-103年國中教育會考除寫作測驗只考1篇作文、英語科聽力部分為3選1的選擇
-題型、數學科包含非選擇題型外，其他考試科目均為4選1的選擇題型。
-三、 報名方式
-(一)凡國民中學應屆畢業生，由所就讀學校於103年3月13日（星期四）至3
-月15日（星期六）報名期間代為辦理集體報名。
-(二)非應屆國民中學畢業生或持國外學歷、大陸學歷之學生，一律參加個別
-報名：
-(三)考生請於103年3月10日（星期一）8:00至3月12日（星期三）17:00自行
-上網填報個別報名表資料（網址：http://cap.ntnu.edu.tw），並於確
-認無誤後，以白色A4規格紙張單面列印，黏貼國民身分證影本（含正反
-面）在所列印個別報名表指定位置。使用戶口名簿者，應將影本浮貼於
-個別報名表。考生務必於103年3月13日（星期四）至3月15日（星期六）
-報名期間，攜帶應繳資料親自至考區主辦學校，現場繳交資料及報名費，
-經考區主辦學校審查完畢，始完成個別報名程序。
-(四)考區主辦學校採現場審件，並於個別報名現場提供電腦和印表機提供考
-生修改報名資料。
-四、 報名費
-(一)國民中學應屆畢業生：一律免收報名費。
-(二)非應屆國民中學畢業生：新臺幣500元整。
-五、 考區設置
-全國分為18個考區和大陸考場，考場由各考區主辦學校規劃公告。
-            </textarea>
-        </div>
-        <div class="div" id="testtime">
-            <h2>班級考試專區</h2>
-            <p>目前無最新消息</p>
-        </div>
-        <div class="div" id="ourweb">
-            <h2>子網站專區</h2>
-            <li><a href="113-1行事曆(校外版).pdf">113-1校外版行事曆</a></li>
-            <li><a href="1a2b test.htm">1a2b</a></li>
-            <li><a href="Guess the number game.htm">猜數字遊戲</a></li>
-            <li><a href="計數器.htm">計數器</a></li>
-            <li><a href="隨機數字.htm">隨機數字</a></li>
-            <li><a href="document.htm">測試網頁</a></li>
-        </div>
-       <div class="div">
-            <h2>時事專區搬家了！！！</h2>
-            <a href="時事.htm">前往</a>
-       </div>
-        <div class="footer">
+        <div class="footer" id="footer">
             <p>&copy;國三智 本站由許元洧設計與維護。</p>
         </div>
-    </div> -->
-
+    </div>
 
     <script>
+        //負責彈出視窗
+
+        let can = localStorage.getItem('can') || 'true';
+        console.log(can);
+        
+        if (can === 'true') {
+            document.getElementById('網站主體').style.display = 'none';
+        }
+        if (can === 'false') {
+            document.getElementById('彈出視窗').style.display = 'none';
+        }
+
+        function 關掉彈出視窗() {
+            document.getElementById('彈出視窗').style.display = 'none';
+            document.getElementById('網站主體').style.display = 'block';
+        }
+
+        function 不想再看到彈出視窗() {
+            關掉彈出視窗();
+            can = 'false';
+            localStorage.setItem('can', can);
+            console.log(can);
+        }
+
+        function 善變的人() {
+            can = 'true';
+            localStorage.setItem('can', can);
+            location.reload();
+        }
+
+        //主要
         function openmenu() {
             document.getElementById('menu').style.display = 'block';
             document.getElementById('menubutton').style.display = 'none';
@@ -310,7 +273,7 @@
             }
             if (difference1 <= 0) {
                 document.getElementById('odo').innerHTML = "開學了！";
-                location.href='index1.htm';
+                location.href = 'index1.htm';
                 return;
             }
 
