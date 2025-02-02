@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>國三智</title>
     <style>
-        .menu a{
+        .menu a {
             text-decoration: none;
             cursor: pointer;
             color: white;
         }
-        .menu{
+
+        .menu {
             position: fixed;
             padding: 15px;
             background-color: black;
@@ -21,7 +23,8 @@
             animation-name: open;
             animation-duration: 2s;
         }
-        .menu button{
+
+        .menu button {
             text-decoration: none;
             background-color: black;
             color: white;
@@ -29,7 +32,8 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        .menubutton{
+
+        .menubutton {
             text-decoration: none;
             background-color: white;
             color: black;
@@ -39,89 +43,114 @@
             cursor: pointer;
             padding: 20px;
         }
-        .main{
+
+        .main {
             padding: 10px;
         }
-        .header{
+
+        .header {
             padding: 300px;
             text-align: center;
             background-color: gray;
             background-image: url('IMG_3315 2.jpg');
             background-size: cover;
         }
-        .header h1{
+
+        .header h1 {
             color: black;
             background-color: white;
             opacity: 0.7;
         }
-        .div,.od{
+
+        .div,
+        .od {
             padding: 100px;
         }
-        a{
+
+        a {
             text-decoration: none;
             color: black;
             cursor: pointer;
         }
-        textarea{
+
+        textarea {
             width: 40%;
             height: 300px;
         }
-        .footer{
+
+        .footer {
             text-align: center;
         }
-        iframe{
+
+        iframe {
             width: 85%;
             height: 500px;
         }
-        .tt{
+
+        .tt {
             position: fixed;
-            margin:100px 10px;
+            margin: 100px 10px;
             text-decoration: none;
             background-color: white;
             border: 0.5px solid;
             border-radius: 5px;
             cursor: pointer;
         }
-        .tb{
+
+        .tb {
             position: fixed;
-            margin:150px 10px;
+            margin: 150px 10px;
             text-decoration: none;
             background-color: white;
             border: 0.5px solid;
             border-radius: 5px;
             cursor: pointer;
         }
-        .od,.fa{
+
+        .od,
+        .fa {
             display: none;
         }
-        .od:target,.fa:target{
+
+        .od:target,
+        .fa:target {
             display: block;
         }
 
         @media (max-width:768px) {
-            textarea{
+            textarea {
                 width: 100%;
             }
-            .header{
+
+            .header {
                 padding: 15px;
             }
-            .div{
+
+            .div {
                 padding: 15px;
             }
         }
 
-        @keyframes open{
-            0%{background-color: white;}
-            100%{background-color: black;}
+        @keyframes open {
+            0% {
+                background-color: white;
+            }
+
+            100% {
+                background-color: black;
+            }
         }
     </style>
 </head>
+
 <body>
     <button class="tt" id="tt" onclick="location.href='#header'">回頂部</button>
     <button class="tb" id="tb" onclick="location.href='#footer'">到底部</button>
     <div class="menu" id="menu">
         <li><a href="">國三智時事專區<span style="color: red;">本區於寒假時間暫時關閉</span></a></li>
-        <li><a href='https://whis.feis.cs.nthu.edu.tw/?p=323139323833317c313733333634353736317c73303030313735312e6e746374406d61696c2e6564752e74777ce58583e6b4a77ce8a8b1&q=f87831f99327e7e3ff57a7afb1e44c7c21713d38c5e98075b07a09275f84656d'>口說系統</a></li>
+        <li><a
+                href='https://whis.feis.cs.nthu.edu.tw/?p=323139323833317c313733333634353736317c73303030313735312e6e746374406d61696c2e6564752e74777ce58583e6b4a77ce8a8b1&q=f87831f99327e7e3ff57a7afb1e44c7c21713d38c5e98075b07a09275f84656d'>口說系統</a>
+        </li>
         <li><a href="login.htm">國三智用戶系統（測試版）</a></li>
         <li><span style="color: aqua;">其他功能不適用於此版本</span></li>
         <button onclick="closemenu()">&times;</button>
@@ -259,21 +288,21 @@
 
 
     <script>
-        function openmenu(){
-            document.getElementById('menu').style.display='block';
-            document.getElementById('menubutton').style.display='none';
+        function openmenu() {
+            document.getElementById('menu').style.display = 'block';
+            document.getElementById('menubutton').style.display = 'none';
         }
-        function closemenu(){
-            document.getElementById('menu').style.display='none';
-            document.getElementById('menubutton').style.display='block';
+        function closemenu() {
+            document.getElementById('menu').style.display = 'none';
+            document.getElementById('menubutton').style.display = 'block';
         }
 
         function updateCountdown() {
-            const targetDate1= new Date(2025, 1, 9);
+            const targetDate1 = new Date(2025, 1, 9);
             const targetDate = new Date(2025, 4, 17); // 民國114年 (2025年) 5月18日
             const now = new Date();
             const difference = targetDate - now;
-            const difference1= targetDate1 - now;
+            const difference1 = targetDate1 - now;
 
             if (difference <= 0) {
                 document.getElementById('out').innerHTML = "會考到了！";
@@ -281,6 +310,7 @@
             }
             if (difference1 <= 0) {
                 document.getElementById('odo').innerHTML = "開學了！";
+                location.href='index1.htm';
                 return;
             }
 
@@ -293,21 +323,22 @@
             const hours1 = Math.floor((difference1 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes1 = Math.floor((difference1 % (1000 * 60 * 60)) / (1000 * 60));
             const seconds1 = Math.floor((difference1 % (1000 * 60)) / 1000);
-            
-            document.getElementById('out').innerHTML = 
-                days + "天 " + 
-                hours + "小時 " + 
-                minutes + "分鐘 " + 
+
+            document.getElementById('out').innerHTML =
+                days + "天 " +
+                hours + "小時 " +
+                minutes + "分鐘 " +
                 seconds + "秒";
 
-            document.getElementById('odo').innerHTML = 
-                days1 + "天 " + 
-                hours1 + "小時 " + 
-                minutes1 + "分鐘 " + 
+            document.getElementById('odo').innerHTML =
+                days1 + "天 " +
+                hours1 + "小時 " +
+                minutes1 + "分鐘 " +
                 seconds1 + "秒";
         }
 
         setInterval(updateCountdown, 1000);
     </script>
 </body>
+
 </html>
