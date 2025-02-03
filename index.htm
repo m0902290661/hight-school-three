@@ -128,7 +128,7 @@
             display: block;
         }
 
-        .內容{
+        .內容 {
             padding: 15px;
             height: 1000px;
             width: 85%;
@@ -137,12 +137,12 @@
             border-radius: 15px;
         }
 
-        .內容 iframe{
+        .內容 iframe {
             height: 90%;
         }
 
         @media (max-width:768px) {
-            .內容{
+            .內容 {
                 margin: 15px;
             }
 
@@ -182,7 +182,7 @@
     <div class="網站主體" id="網站主體">
         <button class="tt" id="tt" onclick="location.href='#header'">回頂部</button>
         <button class="tb" id="tb" onclick="location.href='#footer'">到底部</button>
-        <button class="tc"  onclick="善變的人()">我還是想看到彈出視窗</button>
+        <button class="tc" onclick="善變的人()">我還是想看到彈出視窗</button>
         <div class="menu" id="menu">
             <li><a href="">國三智時事專區<span style="color: red;">本區於寒假時間暫時關閉</span></a></li>
             <li><a
@@ -234,7 +234,7 @@
 
         let can = localStorage.getItem('can') || 'true';
         console.log(can);
-        
+
         if (can === 'true') {
             document.getElementById('網站主體').style.display = 'none';
         }
@@ -248,10 +248,25 @@
         }
 
         function 不想再看到彈出視窗() {
-            關掉彈出視窗();
-            can = 'false';
-            localStorage.setItem('can', can);
-            console.log(can);
+            if (confirm('你忍心不再看到這麼可愛的東西嗎？（裡面有旼炡ㄟ）')) {
+                can = 'false';
+                localStorage.setItem('can', can);
+                console.log(can);
+                alert('這麼可愛的冬冬你跟我講你不想再看到！？');
+                alert('懲罰你去錯誤頁面');
+                關掉彈出視窗();
+                location.href = '404.htm';
+            }
+            else {
+                if (confirm('知道怎麼選擇了嗎？')) {
+                    return;
+                }
+                else {
+                    alert('當然就是把旼炡看好看滿啊！');
+                    alert('懲罰你去錯誤頁面');
+                    location.href = '404.htm';
+                }
+            }
         }
 
         function 善變的人() {
