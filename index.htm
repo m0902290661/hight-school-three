@@ -126,7 +126,22 @@
             border-radius: 15px;
         }
 
+        #testman{
+            display: none;
+            background-color: white;
+            border: 1px solid;
+            border-radius: 5px;
+            position: fixed;
+        }
+
+        #testman:target{
+            display: block;
+        }
+
         @media (max-width:768px) {
+            iframe{
+                width: 85%;
+            }
             textarea {
                 width: 100%;
             }
@@ -153,11 +168,19 @@
 </head>
 
 <body>
+    <div class="div" id="testman">
+        <a href="#">&times;</a>
+        <h2>Ｘ話區 測試頁面</h2>
+        <a href="chat.htm">chat</a><br>
+        <a href="chatans.htm">chatans</a><br>
+        <a href="https://docs.google.com/spreadsheets/d/120HcYBb9p3jpE81jFGF9EXqYv_hYL6GLSkPcRPz1PZU/edit?gid=0#gid=0">系統資料</a>
+    </div>
 
     <div class="menu" id="menu">
         <li><a
                 href='https://whis.feis.cs.nthu.edu.tw/?p=323139323833317c313733333634353736317c73303030313735312e6e746374406d61696c2e6564752e74777ce58583e6b4a77ce8a8b1&q=f87831f99327e7e3ff57a7afb1e44c7c21713d38c5e98075b07a09275f84656d'>口說系統</a>
         </li>
+        <a href="#chat">聊天室<span style="font-size: 18px;color: red;display: inline;">！！新功能！！</span></a>
         <li><a href="#about">簡介</a></li>
         <li><a href="#hweb">班導網站</a></li>
         <li><a href="#test">會考專區</a></li>
@@ -173,6 +196,13 @@
         <div class="div">
             <h2 class="很可怕的事" id="out" title="會考倒數"></h2>
         </div>
+        <div class="div" id="chat">
+            <h2>聊天室<p style="font-size: 18px;color: red;display: inline;">！！新功能！！</p> <a onclick="testmanenter()" style="font-size: 18px; color: blue;cursor: pointer;" title="點按進入">測試人員專區</a></h2>
+            <iframe src="chatans.htm" frameborder="0"></iframe>
+            <iframe src="chat.htm" frameborder="0" style="height: 100px;"></iframe><br><br>
+            <button onclick="location.reload()">強制刷新</button>
+            <p style="color: red;">＊本按鍵適用於網站無響應時，通常留言後會有一點點延遲才會出現在上面（相信我，這個延遲很短！≤1s）</p>
+        </div>
         <div class="div" id="about">
             <h2>關於我們</h2>
             <p>國三智延續了歷屆學長姐的精神，持續堅持弘明「志於道，據於德，依於人，游於藝。」的理念，在學業上、品德上，認真、精進，永不停止，活到老學到老。弘明給予我們，更多是在日常生活、做人處事道理的琢磨。比起學業，品德也是佔有一大比例，希望所有同學能在如此環境之下，更加精進！
@@ -186,6 +216,7 @@
             <h2><a href="https://boys-n-girls-in-213.blogspot.com/">班導網站</a></h2>
             <iframe src="https://boys-n-girls-in-213.blogspot.com/" frameborder="0" height="300px"></iframe>
         </div>
+        
         <div class="div" id="test">
             <h2>會考專區</h2>
             <div class="dt">
@@ -221,6 +252,17 @@
 
 
     <script>
+        function testmanenter(){
+            let input = prompt('密碼');
+            let password = '990607';
+            if(input===password){
+                location.href='#testman';
+            }
+            else{
+                alert('失敗！');
+            }
+        }
+
         function openmenu() {
             document.getElementById('menu').style.display = 'block';
             document.getElementById('menubutton').style.display = 'none';
@@ -257,12 +299,6 @@
                 hours + "小時 " +
                 minutes + "分鐘 " +
                 seconds + "秒";
-
-            document.getElementById('odo').innerHTML =
-                days1 + "天 " +
-                hours1 + "小時 " +
-                minutes1 + "分鐘 " +
-                seconds1 + "秒";
         }
 
         setInterval(updateCountdown, 1000);
