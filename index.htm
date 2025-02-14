@@ -22,7 +22,7 @@
             display: none;
             z-index: 9999;
             animation-name: open;
-            animation-duration: 2s;
+            animation-duration: 1s;
         }
 
         .menu button {
@@ -171,7 +171,7 @@
             <h1>國三智<br>班級網站</h1>
         </div>
         <div class="div">
-            <h2 class="很可怕的事">會考倒數不到一百天！！！</h2>
+            <h2 class="很可怕的事" id="out" title="會考倒數"></h2>
         </div>
         <div class="div" id="about">
             <h2>關於我們</h2>
@@ -190,7 +190,6 @@
             <h2>會考專區</h2>
             <div class="dt">
                 <div class="dt1">
-                    <p style="display: inline;">會考倒數：</p><span id="out"></span><br>
                     <iframe src="文章/2.htm" frameborder="0"></iframe>
                 </div>
                 <div class="dt2">
@@ -240,10 +239,6 @@
 
             if (difference <= 0) {
                 document.getElementById('out').innerHTML = "會考到了！";
-                return;
-            }
-            if (difference1 <= 0) {
-                document.getElementById('odo').innerHTML = "開學了！";
                 return;
             }
 
