@@ -53,7 +53,7 @@
             padding: 300px;
             text-align: center;
             background-color: gray;
-            background-image: url('IMG_3315 2.jpg');
+            background-image: url('IMG_2491.jpg');
             background-size: cover;
         }
 
@@ -84,8 +84,10 @@
         }
 
         iframe {
-            width: 85%;
+            width: 50%;
             height: 500px;
+            border: 1px solid;
+            border-radius: 15px;
         }
 
         .tt {
@@ -108,16 +110,6 @@
             cursor: pointer;
         }
 
-        .tc {
-            position: fixed;
-            margin: 200px 10px;
-            text-decoration: none;
-            background-color: white;
-            border: 0.5px solid;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
         .od,
         .fa {
             display: none;
@@ -128,19 +120,6 @@
             display: block;
         }
 
-        .內容 {
-            padding: 15px;
-            height: 1000px;
-            width: 85%;
-            margin: 50px;
-            border: 1px solid;
-            border-radius: 15px;
-        }
-
-        .內容 iframe {
-            height: 90%;
-        }
-
         .很可怕的事{
             color: white;
             background-color: red;
@@ -148,10 +127,6 @@
         }
 
         @media (max-width:768px) {
-            .內容 {
-                margin: 15px;
-            }
-
             textarea {
                 width: 100%;
             }
@@ -178,113 +153,75 @@
 </head>
 
 <body>
-    <div class="彈出視窗" id="彈出視窗">
-        <div class="內容" id="彈出視窗">
-            <button style="color: red;" onclick="關掉彈出視窗()">怕有人眼凸，我把關閉按鈕變顏色</button>
-            <button onclick="不想再看到彈出視窗()">下次不要顯示</button>
-            <iframe src="文章/3.htm" frameborder="0"></iframe>
-        </div>
+
+    <div class="menu" id="menu">
+        <li><a
+                href='https://whis.feis.cs.nthu.edu.tw/?p=323139323833317c313733333634353736317c73303030313735312e6e746374406d61696c2e6564752e74777ce58583e6b4a77ce8a8b1&q=f87831f99327e7e3ff57a7afb1e44c7c21713d38c5e98075b07a09275f84656d'>口說系統</a>
+        </li>
+        <li><a href="#about">簡介</a></li>
+        <li><a href="#hweb">班導網站</a></li>
+        <li><a href="#test">會考專區</a></li>
+        <li><a href="#testtime">班級考試時程</a></li>
+        <li><a href="#ourweb">子網站專區</a></li>
+        <button onclick="closemenu()">&times;</button>
     </div>
-    <div class="網站主體" id="網站主體">
-        <button class="tt" id="tt" onclick="location.href='#header'">回頂部</button>
-        <button class="tb" id="tb" onclick="location.href='#footer'">到底部</button>
-        <button class="tc" onclick="善變的人()">我還是想看到彈出視窗</button>
-        <div class="menu" id="menu">
-            <li><a href="">國三智時事專區<span style="color: red;">本區於寒假時間暫時關閉</span></a></li>
-            <li><a
-                    href='https://whis.feis.cs.nthu.edu.tw/?p=323139323833317c313733333634353736317c73303030313735312e6e746374406d61696c2e6564752e74777ce58583e6b4a77ce8a8b1&q=f87831f99327e7e3ff57a7afb1e44c7c21713d38c5e98075b07a09275f84656d'>口說系統</a>
-            </li>
-            <li><a href="login.htm">國三智用戶系統（測試版）</a></li>
-            <li><span style="color: aqua;">其他功能不適用於此版本</span></li>
-            <button onclick="closemenu()">&times;</button>
+    <div class="main">
+        <button class="menubutton" id="menubutton" onclick="openmenu()">MENU</button>
+        <div class="header">
+            <h1>國三智<br>班級網站</h1>
         </div>
-        <div class="main">
-            <button class="menubutton" id="menubutton" onclick="openmenu()">MENU</button>
-            <div class="header" id="header">
-                <h1>國三智<br>班級網站<br>寒假特別版</h1>
-            </div>
-            <div class="div">
-                <h2 class="很可怕的事">要開學了</h2>
-            </div>
-            <div class="div" id="odd">
-                <a href="#od" style="border: 1px solid;">這個內容很刺激，你確定要觀看就按下這個按鈕（別怪我沒提醒你）</a>
-                <div class="od" id="od">
-                    <p>寒假還有</p>
-                    <p id="odo"></p>
-                    <p>會考還有</p>
-                    <p id="out"></p>
-                    <a href="#odd" style="border: 1px solid;">好吧，你既然看了，就按這個按鈕關掉吧！</a>
+        <div class="div">
+            <h2 class="很可怕的事">會考倒數不到一百天！！！</h2>
+        </div>
+        <div class="div" id="about">
+            <h2>關於我們</h2>
+            <p>國三智延續了歷屆學長姐的精神，持續堅持弘明「志於道，據於德，依於人，游於藝。」的理念，在學業上、品德上，認真、精進，永不停止，活到老學到老。弘明給予我們，更多是在日常生活、做人處事道理的琢磨。比起學業，品德也是佔有一大比例，希望所有同學能在如此環境之下，更加精進！
+            </p>
+            <h3>校訓</h3>
+            <h4>「志於道，據於德，依於人，游於藝。」＿＿＿出自述而第七</h4>
+            <h3>精神</h3>
+            <h4>「希聖希賢，深信因果，敦倫盡份，學行利他。」</h4>
+        </div>
+        <div class="div" id="hweb">
+            <h2><a href="https://boys-n-girls-in-213.blogspot.com/">班導網站</a></h2>
+            <iframe src="https://boys-n-girls-in-213.blogspot.com/" frameborder="0" height="300px"></iframe>
+        </div>
+        <div class="div" id="test">
+            <h2>會考專區</h2>
+            <div class="dt">
+                <div class="dt1">
+                    <p style="display: inline;">會考倒數：</p><span id="out"></span><br>
+                    <iframe src="文章/2.htm" frameborder="0"></iframe>
                 </div>
-            </div>
-            <div class="div">
-                <h2>寒假作業內容</h2>
-                <img src="img03.jpg" style="width: 100%;">
-                <img src="img04.jpg" style="width: 100%;">
-            </div>
-            <div class="div">
-                <h2>期末大掃除的神奇照片</h2>
-                <a href="https://boys-n-girls-in-213.blogspot.com/2025/01/114124.html">高清照片請按此</a><br>
-                <a href="https://boys-n-girls-in-213.blogspot.com">前往班導網站首頁請按此</a>
-                <p>為不影響網站加載速度，下方內容請按底下的吉祥物觀看</p>
-                <a href="#fa"><img src="image.png" alt="" height="50px"></a>
-                <div class="fa" id="fa">
-                    <img src="img01.jpg" alt="" style="width: 100%;">
-                    <img src="img02.jpg" alt="" style="width: 100%;">
+                <div class="dt2">
+                    <p>＊為了防止班網太空太無聊，這裡放了一篇網路文章（我隨便找的，格式也懶得排了，有興趣的，排好格式傳給我）<br><img
+                            src="data:image/jpeg;base64,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"
+                            style="height: auto;"></p>
+                    <a href="https://flipedu.parenting.com.tw/article/008187" style="display: block;">原文</a>
+                    <iframe src="文章/1.htm" frameborder="0"></iframe>
                 </div>
             </div>
         </div>
-        <div class="footer" id="footer">
+        <div class="div" id="testtime">
+            <h2>班級考試專區</h2>
+            <p>目前無最新消息</p>
+        </div>
+        <div class="div" id="ourweb">
+            <h2>子網站專區</h2>
+            <li><a href="113-2行事曆(公告版) .pdf">113-2校外版行事曆</a></li>
+            <li><a href="1a2b test.htm">1a2b</a></li>
+            <li><a href="Guess the number game.htm">猜數字遊戲</a></li>
+            <li><a href="計數器.htm">計數器</a></li>
+            <li><a href="隨機數字.htm">隨機數字</a></li>
+            <li><a href="document.htm">測試網頁</a></li>
+        </div>
+        <div class="footer">
             <p>&copy;國三智 本站由許元洧設計與維護。</p>
         </div>
     </div>
 
+
     <script>
-        //負責彈出視窗
-
-        let can = localStorage.getItem('can') || 'true';
-        console.log(can);
-
-        if (can === 'true') {
-            document.getElementById('網站主體').style.display = 'none';
-        }
-        if (can === 'false') {
-            document.getElementById('彈出視窗').style.display = 'none';
-        }
-
-        function 關掉彈出視窗() {
-            document.getElementById('彈出視窗').style.display = 'none';
-            document.getElementById('網站主體').style.display = 'block';
-        }
-
-        function 不想再看到彈出視窗() {
-            if (confirm('你忍心不再看到這麼可愛的東西嗎？（裡面有旼炡ㄟ）')) {
-                can = 'false';
-                localStorage.setItem('can', can);
-                console.log(can);
-                alert('這麼可愛的冬冬你跟我講你不想再看到！？');
-                alert('懲罰你去錯誤頁面');
-                關掉彈出視窗();
-                location.href = '404.htm';
-            }
-            else {
-                if (confirm('知道怎麼選擇了嗎？')) {
-                    return;
-                }
-                else {
-                    alert('當然就是把旼炡看好看滿啊！');
-                    alert('懲罰你去錯誤頁面');
-                    location.href = '404.htm';
-                }
-            }
-        }
-
-        function 善變的人() {
-            can = 'true';
-            localStorage.setItem('can', can);
-            location.reload();
-        }
-
-        //主要
         function openmenu() {
             document.getElementById('menu').style.display = 'block';
             document.getElementById('menubutton').style.display = 'none';
@@ -307,7 +244,6 @@
             }
             if (difference1 <= 0) {
                 document.getElementById('odo').innerHTML = "開學了！";
-                location.href = 'index1.htm';
                 return;
             }
 
