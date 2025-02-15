@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>寫入 Google Sheets</title>
     <style>
-        #ow{
+        #ow,#oe{
             background-color: white;
             position: fixed;
             width: 100%;
@@ -19,9 +19,14 @@
 </head>
 
 <body>
+    <div class="" id="oe">
+        <img src="https://cliply.co/wp-content/uploads/2021/07/372107370_CROSS_MARK_400px.gif" alt="">
+        <p id="status"></p>
+        <p>一秒後刷新</p>
+    </div>
     <div id="ow">
         <img src="https://s1.aigei.com/src/img/gif/3f/3f9053be22a046158b96ebf5ecd8ef7c.gif?imageMogr2/auto-orient/thumbnail/!282x282r/gravity/Center/crop/282x282/quality/85/%7CimageView2/2/w/282&e=2051020800&token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:mOEzT_5_ben9riOGgWkYfaulEzc=" alt="">
-        <p id="status"></p>
+        <p id="status1"></p>
         <p>一秒後刷新</p>
     </div>
     <input type="text" id="name" placeholder="輸入名稱"><br>
@@ -31,6 +36,12 @@
 
     <script>
         function sendData() {
+            let nt = document.getElementById('name').value;
+            let mt = document.getElementById('message').value;
+            if(nt === ''||mt === ''){
+                gce();
+                return;
+            }
             var scriptURL = "https://script.google.com/macros/s/AKfycbzs6YeKc1UcvLuy17aCNljddGOtm_Dnj13I6P4qvfKRd8iKOQHC_f_tVahSkrBfsk-U/exec"; // GAS 部署網址
             var data = {
                 name: document.getElementById("name").value,
@@ -48,7 +59,12 @@
         }
         function ok(){
             ow();
-            document.getElementById("status").innerText = "留言成功！";
+            document.getElementById("status1").innerText = "留言成功！";
+            setTimeout(function(){location.reload();},1000);
+        }
+        function gce(){
+            oe();
+            document.getElementById("status").innerText = "不可提交空訊息！";
             setTimeout(function(){location.reload();},1000);
         }
         function ow(){
@@ -56,6 +72,12 @@
         }
         function cw(){
             document.getElementById('ow').style.display='none';
+        }
+        function oe(){
+            document.getElementById('oe').style.display='block';
+        }
+        function ce(){
+            document.getElementById('oe').style.display='none';
         }
     </script>
 </body>
