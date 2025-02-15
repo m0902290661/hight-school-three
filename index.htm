@@ -182,9 +182,10 @@
 <body>
     <div class="div" id="testman">
         <a href="#chat">&times;</a>
-        <h2>Ｘ話區 測試頁面</h2>
+        <h2>測試頁面</h2>
         <a href="chat.htm">chat</a><br>
         <a href="chatans.htm">chatans</a><br>
+        <a onclick="std()">發送測試訊息於聊天室</a><br>
         <a
             href="https://docs.google.com/spreadsheets/d/120HcYBb9p3jpE81jFGF9EXqYv_hYL6GLSkPcRPz1PZU/edit?gid=0#gid=0">系統資料</a>
     </div>
@@ -275,6 +276,24 @@
 
     <script>
 
+        //負責發送測試訊息於聊天室
+        function std(){
+            var scriptURL = "https://script.google.com/macros/s/AKfycbzs6YeKc1UcvLuy17aCNljddGOtm_Dnj13I6P4qvfKRd8iKOQHC_f_tVahSkrBfsk-U/exec"; // GAS 部署網址
+            var data = {
+                name: '測試人員',
+                message: '這是一條測試訊息'
+            };
+
+            fetch(scriptURL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            })
+            .then(() => console.log('ok'))
+            .catch(error => console.log("錯誤:", error));
+
+        }
 
         //負責版本更新彈出視窗
         function wsa() {

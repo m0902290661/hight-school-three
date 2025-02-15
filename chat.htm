@@ -39,7 +39,13 @@
             let nt = document.getElementById('name').value;
             let mt = document.getElementById('message').value;
             if(nt === ''||mt === ''){
-                gce();
+                document.getElementById("status").innerText = "不可提交空訊息！";
+                ge();
+                return;
+            }
+            if(nt === '測試'||nt === '測試人員'||nt === '國三智'){
+                document.getElementById("status").innerText = "你沒有權限用這個名字！";
+                ge();
                 return;
             }
             var scriptURL = "https://script.google.com/macros/s/AKfycbzs6YeKc1UcvLuy17aCNljddGOtm_Dnj13I6P4qvfKRd8iKOQHC_f_tVahSkrBfsk-U/exec"; // GAS 部署網址
@@ -62,9 +68,8 @@
             document.getElementById("status1").innerText = "留言成功！";
             setTimeout(function(){location.reload();},1000);
         }
-        function gce(){
+        function ge(){
             oe();
-            document.getElementById("status").innerText = "不可提交空訊息！";
             setTimeout(function(){location.reload();},1000);
         }
         function ow(){
