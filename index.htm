@@ -120,13 +120,13 @@
             display: block;
         }
 
-        .很可怕的事{
+        .很可怕的事 {
             color: white;
             background-color: red;
             border-radius: 15px;
         }
 
-        #testman{
+        #testman {
             display: none;
             background-color: white;
             border: 1px solid;
@@ -134,14 +134,26 @@
             position: fixed;
         }
 
-        #testman:target{
+        #testman:target {
             display: block;
         }
 
+        #upm {
+            display: none;
+            background-color: white;
+            border: 1px solid;
+            border-radius: 5px;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+
         @media (max-width:768px) {
-            iframe{
+            iframe {
                 width: 85%;
             }
+
             textarea {
                 width: 100%;
             }
@@ -173,7 +185,14 @@
         <h2>Ｘ話區 測試頁面</h2>
         <a href="chat.htm">chat</a><br>
         <a href="chatans.htm">chatans</a><br>
-        <a href="https://docs.google.com/spreadsheets/d/120HcYBb9p3jpE81jFGF9EXqYv_hYL6GLSkPcRPz1PZU/edit?gid=0#gid=0">系統資料</a>
+        <a
+            href="https://docs.google.com/spreadsheets/d/120HcYBb9p3jpE81jFGF9EXqYv_hYL6GLSkPcRPz1PZU/edit?gid=0#gid=0">系統資料</a>
+    </div>
+    <div class="div" id="upm">
+        <button onclick="cupm1()">&times;</button>
+        <input type="checkbox" name="nupma" id="nupma">
+        <p style="display: inline;">下次不顯示這個彈出視窗（原因：沒有Winter）</p><br>
+        <iframe src="文章/4.htm" frameborder="0"></iframe>
     </div>
 
     <div class="menu" id="menu">
@@ -186,9 +205,10 @@
         <li><a href="#test">會考專區</a></li>
         <li><a href="#testtime">班級考試時程</a></li>
         <li><a href="#ourweb">子網站專區</a></li>
+        <li><a onclick="wsa()">版本更新要點</a></li>
         <button onclick="closemenu()">&times;</button>
     </div>
-    <div class="main">
+    <div class="main" id="main">
         <button class="menubutton" id="menubutton" onclick="openmenu()">MENU</button>
         <div class="header">
             <h1>國三智<br>班級網站</h1>
@@ -197,7 +217,8 @@
             <h2 class="很可怕的事" id="out" title="會考倒數"></h2>
         </div>
         <div class="div" id="chat">
-            <h2>聊天室<p style="font-size: 18px;color: red;display: inline;">！！新功能！！</p> <a onclick="testmanenter()" style="font-size: 18px; color: blue;cursor: pointer;" title="點按進入">測試人員專區</a></h2>
+            <h2>聊天室<p style="font-size: 18px;color: red;display: inline;">！！新功能！！</p> <a onclick="testmanenter()"
+                    style="font-size: 18px; color: blue;cursor: pointer;" title="點按進入">測試人員專區</a></h2>
             <p style="color: red;">＊時間戳記是英格蘭標準時間(GMT0)，台北市GMT8時區</p>
             <iframe src="chatans.htm" frameborder="0"></iframe>
             <iframe src="chat.htm" frameborder="0" style="height: 100px;"></iframe><br><br>
@@ -217,7 +238,7 @@
             <h2><a href="https://boys-n-girls-in-213.blogspot.com/">班導網站</a></h2>
             <iframe src="https://boys-n-girls-in-213.blogspot.com/" frameborder="0" height="300px"></iframe>
         </div>
-        
+
         <div class="div" id="test">
             <h2>會考專區</h2>
             <div class="dt">
@@ -253,17 +274,50 @@
 
 
     <script>
-        function testmanenter(){
+
+
+        //負責版本更新彈出視窗
+        function wsa() {
+            localStorage.setItem('hideUpdatePopup', ' ');
+            location.reload();
+        }
+
+        function cupm1() {
+            // 如果使用者勾選了「下次不顯示」
+            if (document.getElementById('nupma').checked) {
+                localStorage.setItem('hideUpdatePopup', 'true');
+                document.getElementById('upm').innerHTML = '<p>下次將不再顯示</p>'
+            }
+
+            setTimeout(function () {
+                document.getElementById('upm').style.display = 'none';
+                document.getElementById('main').style.display = 'block';
+            }, 1000);
+
+        }
+
+        window.onload = function () {
+            if (localStorage.getItem('hideUpdatePopup') === 'true') {
+                document.getElementById('upm').style.display = 'none';
+            } else {
+                document.getElementById('upm').style.display = 'block';
+                document.getElementById('main').style.display = 'none';
+            }
+        }
+
+        //負責測試人員專區
+        function testmanenter() {
             let input = prompt('密碼');
             let password = '990607';
-            if(input===password){
-                location.href='#testman';
+            if (input === password) {
+                location.href = '#testman';
             }
-            else{
+            else {
                 alert('失敗！');
             }
         }
 
+        //負責選單
         function openmenu() {
             document.getElementById('menu').style.display = 'block';
             document.getElementById('menubutton').style.display = 'none';
@@ -273,6 +327,7 @@
             document.getElementById('menubutton').style.display = 'block';
         }
 
+        //負責倒數
         function updateCountdown() {
             const targetDate1 = new Date(2025, 1, 9);
             const targetDate = new Date(2025, 4, 17); // 民國114年 (2025年) 5月18日
