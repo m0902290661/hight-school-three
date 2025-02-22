@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>國三智</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div class="header">
+        <h1>國三智</h1>
+        <p>知識補給—其他</p>
+    </div>
+    <a href="index.htm">回上級選單</a>
+    <div class="push">
+        <h2>精選</h2>
+        <div class="p1"></div>
+        <div class="p2"></div>
+        <div class="p3"></div>
+    </div>
+    <div class="search">
+        <h2>查詢</h2>
+        <input type="text" id="search" placeholder="輸入關鍵字">
+        <button onclick="searchDiv()">查詢</button><button onclick="resetSearch()">重置</button>
+    </div>
+    
+    <h2>閱讀</h2>
+    
+    <div class="div">
+        <h3>k-pop</h3>
+        <p>更新時間：2025.2.22</p>
+        <p>關鍵字： K-pop 韓國流行音樂 舞曲、現代節奏藍調、流行電音、嘻哈音樂 偶像團體 SM娛樂、STARSHIP娛樂、YG娛樂、JYP娛樂和HYBE娛樂</p>
+        <iframe src="https://zh.wikipedia.org/wiki/%E9%9F%93%E5%9C%8B%E6%B5%81%E8%A1%8C%E9%9F%B3%E6%A8%82" frameborder="0"></iframe>
+    </div>
+
+    <div class="div">
+        <h3>SM娛樂</h3>
+        <p>更新時間：2025.2.22</p>
+        <p>關鍵字：SMT smt SM Entertainment K-pop </p>
+        <iframe src="https://zh.wikipedia.org/wiki/SM%E5%A8%9B%E6%A8%82" frameborder="0"></iframe>
+    </div>
+
+    <div class="div">
+        <h3>範例</h3>
+        <p>更新時間：</p>
+        <p>關鍵字：</p>
+        <iframe src="" frameborder="0"></iframe>
+    </div>
+
+    <div class="div">
+        <h3>範例</h3>
+        <p>更新時間：</p>
+        <p>關鍵字：</p>
+        <iframe src="" frameborder="0"></iframe>
+    </div>
+
+    <script>
+        function searchDiv() {
+            let keyword = document.getElementById("search").value.trim();
+            let divs = document.querySelectorAll(".div");
+            
+            divs.forEach(div => {
+                if (keyword === "" || div.textContent.includes(keyword)) {
+                    div.style.display = "block"; // 顯示符合的內容
+                } else {
+                    div.style.display = "none"; // 隱藏不符合的內容
+                }
+            });
+        }
+
+        function resetSearch() {
+            document.getElementById("search").value = "";
+            let divs = document.querySelectorAll(".div");
+            divs.forEach(div => div.style.display = "block"); // 顯示所有內容
+        }
+    </script>
+    
+</body>
+</html>

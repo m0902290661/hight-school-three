@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>國三智</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1>國三智</h1>
+        <p>知識補給—科技</p>
+    </div>
+    <a href="index.htm">回上級選單</a>
+    <div class="push">
+        <h2>精選</h2>
+        <div class="p1"></div>
+        <div class="p2"></div>
+        <div class="p3"></div>
+    </div>
+    <div class="search">
+        <h2>查詢</h2>
+        <input type="text" id="search" placeholder="輸入關鍵字">
+        <button onclick="searchDiv()">查詢</button><button onclick="resetSearch()">重置</button>
+    </div>
+
+    <h2>閱讀</h2>
+    <div class="div">
+        <h3>人工智能 AI</h3>
+        <p>更新時間：2025.2.22</p>
+        <p>關鍵字：ai 人工智能智慧智障</p>
+        <iframe src="https://zh.wikipedia.org/wiki/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD" frameborder="0"></iframe>
+    </div>
+
+    <div class="div">
+        <h3>Apple inc 蘋果公司</h3>
+        <p>更新時間：2025.2.23</p>
+        <p>關鍵字：apple 蘋果電腦公司（英語：Apple Computer, Inc.）史蒂夫·賈伯斯、史蒂夫·沃茲尼亞克和羅納德·韋恩</p>
+        <iframe src="https://zh.wikipedia.org/wiki/%E8%98%8B%E6%9E%9C%E5%85%AC%E5%8F%B8" frameborder="0"></iframe>
+    </div>
+
+    <div class="div">
+        <h3>Apple 晶片</h3>
+        <p>更新時間：2025.2.22</p>
+        <p>關鍵字：apple a c s h t w r u m</p>
+        <iframe src="https://zh.wikipedia.org/wiki/Apple%E6%99%B6%E7%89%87" frameborder="0"></iframe>
+    </div>
+
+    <div class="div">
+        <h3>電子學</h3>
+        <p>更新時間：2025.2.22</p>
+        <p>關鍵字：類比電路 數位電路 邏輯閘
+            加法器
+            正反器
+            計數器
+            暫存器
+            數據多工器
+            施密特觸發器微處理器
+            微控制器
+            特定應用積體電路（ASIC）
+            數位訊號處理器（DSP）
+            現場可程式邏輯閘陣列（FPGA）
+            </p>
+        <iframe src="https://zh.wikipedia.org/wiki/%E7%94%B5%E5%AD%90%E5%AD%A6" frameborder="0"></iframe>
+    </div>
+
+    <div class="div">
+        <h3>windows 10</h3>
+        <p>更新時間：2025.2.22</p>
+        <p>關鍵字：windows 微軟 Microsoft 	IA-32、x64、ARM64（1709）</p>
+        <iframe src="https://zh.wikipedia.org/wiki/Windows_10" frameborder="0"></iframe>
+    </div>
+
+    <div class="div">
+        <h3>windows 11</h3>
+        <p>更新時間：2025.2.22</p>
+        <p>關鍵字：windows 微軟 Microsoft 	IA-32、x64、ARM64（1709）</p>
+        <iframe src="https://zh.wikipedia.org/wiki/Windows_11" frameborder="0"></iframe>
+    </div>
+
+    <div class="div">
+        <h3>範例</h3>
+        <p>更新時間：</p>
+        <p>關鍵字：</p>
+        <iframe src="" frameborder="0"></iframe>
+    </div>
+
+    <script>
+        function searchDiv() {
+            let keyword = document.getElementById("search").value.trim();
+            let divs = document.querySelectorAll(".div");
+
+            divs.forEach(div => {
+                if (keyword === "" || div.textContent.includes(keyword)) {
+                    div.style.display = "block"; // 顯示符合的內容
+                } else {
+                    div.style.display = "none"; // 隱藏不符合的內容
+                }
+            });
+        }
+
+        function resetSearch() {
+            document.getElementById("search").value = "";
+            let divs = document.querySelectorAll(".div");
+            divs.forEach(div => div.style.display = "block"); // 顯示所有內容
+        }
+    </script>
+
+</body>
+
+</html>

@@ -41,6 +41,15 @@
             color: black;
             text-decoration: underline;
         }
+
+        @media (max-width:768px) {
+            .header{
+                padding: 15px;
+            }
+            .chose{
+                display: block;
+            }
+        }
     </style>
 </head>
 
@@ -52,15 +61,15 @@
     <h2>選擇類別</h2>
     <div class="chose">
         <div class="c1">
-            <button><img src="https://i.pinimg.com/474x/28/ea/1e/28ea1ef796b8dece056693eae97933e2.jpg"></button><br>
+            <button onclick="location.href='c1.htm'"><img src="https://i.pinimg.com/474x/28/ea/1e/28ea1ef796b8dece056693eae97933e2.jpg"></button><br>
             <p>科技</p>
         </div>
         <div class="c2">
-            <button><img src="https://i.pinimg.com/474x/47/7c/ee/477cee8325c6c0e83f420b2c4ce0fbe9.jpg" alt=""></button>
+            <button onclick="location.href='c2.htm'"><img src="https://i.pinimg.com/474x/47/7c/ee/477cee8325c6c0e83f420b2c4ce0fbe9.jpg" alt=""></button>
             <p>時事</p>
         </div>
         <div class="c3">
-            <button><img src="https://www.reise.com.tw/wp-content/uploads/2019/01/recyclelogo7.png" alt=""></button>
+            <button onclick="location.href='c3.htm'"><img src="https://www.reise.com.tw/wp-content/uploads/2019/01/recyclelogo7.png" alt=""></button>
             <p>其他</p>
         </div>
     </div>
