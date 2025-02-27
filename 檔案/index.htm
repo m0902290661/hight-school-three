@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>國三智 ｜ 檔案</title>
+    <style>
+        body{
+            margin: 5px;
+        }
+        img{
+            height: 300px;
+            border: 1px solid;
+            border-radius: 5px;
+        }
+        .header{
+            text-align: center;
+            padding: 300px;
+            background-color: gray;
+            border-radius: 5px;
+            background-image: url('https://static.vecteezy.com/system/resources/previews/000/421/699/non_2x/vector-documents-icon.jpg');
+        }
+        .header h1{
+            background-color: white;
+            border-radius: 50px;
+        }
+        .header a{
+            background-color: white;
+            border-radius: 50px;
+        }
+        .div{
+            padding: 5px;
+            margin: 5px;
+        }
+        summary{
+            cursor: pointer;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>國三智 ｜ 檔案</h1>
+        <a href="/hight-school-three/">返回班網首頁</a>
+    </div>
+    <div class="div">
+        <h2>說明</h2>
+        <details>
+            <summary>展開</summary>
+            <div>
+                <p>本站提供關於校務、班務等公共事務之公共檔案瀏覽</p>
+                <p>&copy;Copy all right. 2025 國三智 許元洧製作</p>
+            </div>
+        </details>
+    </div>
+    <div class="div">
+        <input type="text" id="search" placeholder="輸入關鍵字">
+        <button onclick="searchDiv()">查詢</button><button onclick="resetSearch()">重置</button>
+        <br><br>
+        <h2>分類類別</h2>
+        <h3>新增日期分類</h3>
+        <details>
+            <summary>2025</summary>
+            <div>
+                <li><a href="#生物科＿複習卷布告欄解答">生物科＿複習卷布告欄解答</a></li>
+                <li><a href="#113-2行事曆(公告版)">113-2行事曆(公告版)</a></li>
+            </div>
+        </details>
+        <details>
+            <summary>2024</summary>
+            <div>
+                <li><a href="#113-1行事曆(校外版)">113-1行事曆(校外版)</a></li>
+            </div>
+        </details>
+    </div>
+    <div class="div">
+        <div class="document" id="生物科＿複習卷布告欄解答">
+            <h3>生物科＿複習卷布告欄解答</h3>
+            <img src="檔案/生物科＿複習卷布告欄解答.png" title="預覽圖"><br>
+            <a href="檔案/生物科＿複習卷布告欄解答.pdf">watch</a>
+        </div>
+        <div class="document" id="113-2行事曆(公告版)">
+            <h3>113-2行事曆(公告版)</h3>
+            <img src="檔案/113-2行事曆(公告版).png" title="預覽圖"><br>
+            <a href="檔案/113-2行事曆(公告版) .pdf">watch</a>
+        </div>
+        <div class="document" id="113-1行事曆(校外版)">
+            <h3>113-1行事曆(校外版)</h3>
+            <img src="檔案/113-1行事曆(校外版).png" title="預覽圖"><br>
+            <a href="檔案/113-1行事曆(校外版).pdf">watch</a>
+        </div>
+    </div>
+
+    <script>
+        function searchDiv() {
+            let keyword = document.getElementById("search").value.trim();
+            let divs = document.querySelectorAll(".document");
+
+            divs.forEach(div => {
+                if (keyword === "" || div.textContent.includes(keyword)) {
+                    div.style.display = "block"; // 顯示符合的內容
+                } else {
+                    div.style.display = "none"; // 隱藏不符合的內容
+                }
+            });
+        }
+
+        function resetSearch() {
+            document.getElementById("search").value = "";
+            let divs = document.querySelectorAll(".div");
+            divs.forEach(div => div.style.display = "block"); // 顯示所有內容
+        }
+    </script>
+</body>
+</html>
