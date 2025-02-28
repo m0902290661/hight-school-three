@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拼圖遊戲</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #puzzle-container {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 5px;
+            margin: 20px auto;
+            width: 315px;
+            background: lightgray;
+            padding: 10px;
+        }
+        .piece {
+            width: 100px;
+            height: 100px;
+            cursor: grab;
+        }
+        .drop-zone {
+            width: 100px;
+            height: 100px;
+            border: 2px dashed #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+<h2>拖放拼圖到正確的位置</h2>
+<div id="puzzle-container"></div>
+<button onclick="resetGame()">重新開始</button>
+<p id="message"></p>
+
+<script>
+    const pieces = [
+        { id: "1", src: "piece1.png" },
+        { id: "2", src: "piece2.png" },
+        { id: "3", src: "piece3.png" },
+        { id: "4", src: "piece4.png" },
+        { id: "5", src: "piece5.png" },
+        { id: "6", src: "piece6.png" },
+        { id: "7", src: "piece7.png" },
+        { id: "8", src: "piece8.png" },
+        { id: "9", src: "piece9.png" }
+    ];
+
+    function createPuzzle() {
+        const container = document.getElementById("puzzle-container");
+        container.innerHTML = "";
+
+        // 生成放置區域
+        pieces.forEach(piece => {
+            let dropZone = document.createElement("div");
+            dropZone.classList.add("drop-zone");
+            dropZone.dataset.id = piece.id;
+            dropZone.ondrop = drop;
+            dropZone.ondragover = allowDrop;
+            container.appendChild(dropZone);
+        });
+
+        // 打亂拼圖塊順序
+        let shuffledPieces = [...pieces].sort(() => Math.random() - 0.5);
+        shuffledPieces.forEach(piece => {
+            let img = document.createElement("img");
+            img.src = piece.src;
+            img.id = piece.id;
+            img.classList.add("piece");
+            img.draggable = true;
+            img.ondragstart = drag;
+            container.appendChild(img);
+        });
+    }
+
+    function allowDrop(event) {
+        event.preventDefault();
+    }
+
+    function drag(event) {
+        event.dataTransfer.setData("text", event.target.id);
+    }
+
+    function drop(event) {
+        event.preventDefault();
+        let data = event.dataTransfer.getData("text");
+        let draggedPiece = document.getElementById(data);
+        if (event.target.dataset.id === draggedPiece.id) {
+            event.target.appendChild(draggedPiece);
+            checkWin();
+        }
+    }
+
+    function checkWin() {
+        let allPlaced = document.querySelectorAll(".drop-zone");
+        let completed = Array.from(allPlaced).every(zone => zone.children.length > 0 && zone.children[0].id === zone.dataset.id);
+        if (completed) {
+            document.getElementById("message").textContent = "恭喜！拼圖完成！";
+        }
+    }
+
+    function resetGame() {
+        document.getElementById("message").textContent = "";
+        createPuzzle();
+    }
+
+    window.onload = createPuzzle;
+</script>
+
+</body>
+</html>
