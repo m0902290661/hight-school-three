@@ -3,149 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>國三智</title>
-    <style>
-        .header{
-            text-align: center;
-        }
-        .header a{
-            border: 1px solid;
-            border-radius: 15px;
-            padding: 15px;
-            color: white;
-            text-decoration: none;
-            background-color: rgb(255, 171, 53);
-        }
-        .header a:hover{
-            background-color: rgb(205, 255, 135);
-            color: rgb(2, 251, 255);
-        }
-        body{
-            padding: 15px;
-        }
-        table{
-            border: 1px solid;
-            border-radius: 15px;
-            padding: 5px;
-            text-align: center;
-            width: 100%;
-        }
-        td{
-            border: 1px solid;
-            padding: 15px;
-        }
-        .someh{
-            text-align: center;
-        }
-    </style>
+    <title>國三智班網</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="image.png" type="png">
 </head>
 <body>
     <div class="header">
-        <h1>國三智</h1>
-        <br>
-        <a href="index1.htm">進入班網</a>
+        <h1>國三智班網</h1>
     </div>
-    <div class="someh">
-        <h2>快速連結</h2>
-        <p><li>相關網站</li></p>
-        <table>
-            <tr>
-                <td>主旨</td>
-                <td>內容簡介</td>
-                <td>動作按鈕</td>
-                <td>備註</td>
-            </tr>
-            <tr>
-                <td>弘明校網</td>
-                <td>弘明實驗高級中學的官方網站</td>
-                <td><a href="http://www.holdmean.org.tw/">前往</a></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>國三智班網（班導）</td>
-                <td>班導所擁有的部落格網站</td>
-                <td><a href="https://boys-n-girls-in-213.blogspot.com/">前往</a></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>口說系統</td>
-                <td>由酷英網站所擁有的口說練習系統</td>
-                <td><a href="https://whis.feis.cs.nthu.edu.tw/?p=323139323833317c313733333634353736317c73303030313735312e6e746374406d61696c2e6564752e74777ce58583e6b4a77ce8a8b1&q=f87831f99327e7e3ff57a7afb1e44c7c21713d38c5e98075b07a09275f84656d">前往</a></td>
-                <td>登入方式：GO帳號</td>
-            </tr>
-        </table>
-        <p><li>本站</li></p>
-        <table>
-            <tr>
-                <td>主旨</td>
-                <td>內容簡介</td>
-                <td>動作按鈕</td>
-                <td>備註</td>
-            </tr>
-            <tr>
-                <td>首頁</td>
-                <td>國三智學生版網站首頁</td>
-                <td><a href="index1.htm">前往</a></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>知識補給</td>
-                <td>冷的、熱的知識都有</td>
-                <td><a href="知識補給/index.htm">前往</a></td>
-                <td>暫時關閉</td>
-            </tr>
-            <tr>
-                <td>檔案</td>
-                <td>很多檔案的地方</td>
-                <td><a href="檔案/index.htm">前往</a></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>拼圖</td>
-                <td>把本屆智班第六任班長的頭像做成一個趣味拼圖</td>
-                <td><a href="測試品1/index.htm">前往</a></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>113-2校外版行事曆</td>
-                <td>本校113-2校外版行事曆</td>
-                <td><a href="檔案/檔案/113-2行事曆(公告版) .pdf">前往</a></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>1a2b</td>
-                <td>一個數字邏輯推理遊戲</td>
-                <td><a href="1a2b test.htm">前往</a></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>猜數字遊戲</td>
-                <td>一個數字邏輯推理遊戲</td>
-                <td><a href="Guess the number game.htm">前往</a></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>計數器</td>
-                <td>你可以拿它來念佛等多種用途</td>
-                <td><a href="計數器.htm">前往</a></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>隨機數字</td>
-                <td>他可以隨機生產指定翻圍內的數字，你可以拿它來抽籤等多種用途</td>
-                <td><a href="隨機數字.htm">前往</a></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>測試網頁</td>
-                <td>測試一些未上架的功能</td>
-                <td><a href="document.htm">前往</a></td>
-                <td></td>
-            </tr>
-        </table>
-
+    <div class="chose">
+        <button onclick="turn(2)">關於我們</button>
+        <button onclick="turn(1)">功能區</button>
+    </div>
+    <div class="body_1" id="body_1">
+        <div class="bvideo">
+            <video src="mp4_1.mp4" autoplay muted>
+                <source src="mp4_1.mp4" type="video/mp4">
+            </video>
+            <p class="bvideo_p">隸屬：南投縣私立弘明實驗高級中學</p>
+        </div>
+        <div class="b_1">
+            <h2 class="b_1_h2">核心價值</h2>
+            <p>尊重、責任、合作</p>
+            <p>誠信、努力、關懷</p>
+        </div>
+        <div class="b_2">
+            <h2 class="b_1_h2">一心向佛</h2>
+            <p>學會慈悲與寬容，對人友善，常懷善念。</p>
+            <p class="b_2_p">＊備註：這項內容可能並非真實</p>
+        </div>
+        <div class="b_3">
+            <h2 class="b_1_h2">本校校訓</h2>
+            <p><em>志於道、據於德、依於仁、游於藝</em></p>
+            <br>
+            <h3 class="b_3_h3">校名題字：李炳南老居士</h3>
+            <p>雪廬老人說，論語述而篇中孔子所提出的志於道、據於德、依於仁、游於藝四句，可以說是整個中華文化的精隨。因此弘明創校，便以此四句立為校訓。並依此校訓衍伸出弘明精神--希聖希賢、敦倫盡分、深信因果、學行利他，做為全校師生學習的圭臬。 </p>
+        </div>
+        <div class="b_4">
+            <h2 class="b_1_h2">本校精神</h2>
+            <p><em>希聖希賢，深信因果，敦倫盡份，學行利他。</em></p>
+        </div>
     </div>
 
-    <p>&copy;國三智班網</p>
+    <div class="body_2" id="body_2">
+        <div class="b2_1">
+            <h2>會考倒數：<span id="b2_1out"></span>天</h2>
+            <h2>畢業倒數：<span id="b2_1out_1"></span>天</h2>
+        </div>
+        <div class="b2_2" id="b2_2">
+            <h2>班導網站</h2>
+            <iframe src="https://boys-n-girls-in-213.blogspot.com/" frameborder="0"></iframe>
+            <br>
+            <a href="https://boys-n-girls-in-213.blogspot.com/">放大查看</a>
+        </div>
+        <div class="b2_3">
+            <h2>行事曆</h2>
+            <img src="檔案/檔案/113-2行事曆(公告版).png" alt="">
+            <a href="#b2_3_1">放大查看</a>
+            <div id="b2_3_1">
+                <a onclick="history.back()" style="font-size: 34px;">&times;</a>
+                <img src="檔案/檔案/113-2行事曆(公告版).png" id="b2_3_1_img" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy;許元洧製作 國三智班網 哈哈嗨</p>
+    </div>
+
+
+    <script>
+        function turn(x){
+            x = String(x);
+            if(x==='1'){
+                document.getElementById('body_1').style.display='none';
+                document.getElementById('body_2').style.display='block';
+            }
+            else if(x==='2'){
+                document.getElementById('body_2').style.display='none';
+                document.getElementById('body_1').style.display='block';
+            }
+            else{
+                console.log('turn(x) 404')
+            }
+        }
+
+        function time517(){
+            const now = new Date();
+            const time = new Date('2025-5-17')
+            let days = time-now;
+            console.log(days);
+            days = Math.round(days/1000/60/60/24);
+            console.log(days);
+            document.getElementById('b2_1out').innerHTML=days; 
+        }
+        function time621(){
+            const now = new Date();
+            const time = new Date('2025-6-21')
+            let days = time-now;
+            console.log(days);
+            days = Math.round(days/1000/60/60/24);
+            console.log(days);
+            document.getElementById('b2_1out_1').innerHTML=days; 
+        }
+        window.onload=function(){
+            time517();
+            time621();
+        }
+    </script>
 </body>
 </html>

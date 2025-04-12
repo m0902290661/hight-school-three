@@ -1,310 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>國三智</title>
-    <link rel="wedsite icon" type="png" href="image.png">
     <style>
-        .menu a {
-            text-decoration: none;
-            cursor: pointer;
-            color: white;
+        .header{
+            text-align: center;
         }
-
-        .menu {
-            position: fixed;
+        .header a{
+            border: 1px solid;
+            border-radius: 15px;
             padding: 15px;
-            background-color: black;
-            color: greenyellow;
-            height: 100%;
-            display: none;
-            z-index: 9999;
-            animation-name: open;
-            animation-duration: 1s;
-        }
-
-        .menu button {
-            text-decoration: none;
-            background-color: black;
             color: white;
-            border: 0.3px solid white;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .menubutton {
             text-decoration: none;
-            background-color: white;
-            color: black;
-            border: 0.3px solid black;
-            border-radius: 5px;
-            position: fixed;
-            cursor: pointer;
-            padding: 20px;
+            background-color: rgb(255, 171, 53);
         }
-
-        .main {
-            padding: 10px;
+        .header a:hover{
+            background-color: rgb(205, 255, 135);
+            color: rgb(2, 251, 255);
         }
-
-        .header {
-            padding: 300px;
-            text-align: center;
-            background-color: gray;
-            background-image: url('IMG_2491.jpg');
-            background-size: cover;
+        body{
+            padding: 15px;
         }
-
-        .header h1 {
-            color: black;
-            background-color: white;
-            opacity: 0.7;
-        }
-
-        .div,
-        .od {
-            padding: 100px;
-        }
-
-        a {
-            text-decoration: none;
-            color: black;
-            cursor: pointer;
-        }
-
-        textarea {
-            width: 40%;
-            height: 300px;
-        }
-
-        .footer {
-            text-align: center;
-        }
-
-        iframe {
-            width: 50%;
-            height: 500px;
+        table{
             border: 1px solid;
             border-radius: 15px;
-        }
-
-        .tt {
-            position: fixed;
-            margin: 100px 10px;
-            text-decoration: none;
-            background-color: white;
-            border: 0.5px solid;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .tb {
-            position: fixed;
-            margin: 150px 10px;
-            text-decoration: none;
-            background-color: white;
-            border: 0.5px solid;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .od,
-        .fa {
-            display: none;
-        }
-
-        .od:target,
-        .fa:target {
-            display: block;
-        }
-
-        .很可怕的事 {
-            color: white;
-            background-color: red;
-            border-radius: 15px;
-        }
-
-        #testman {
-            display: none;
-            background-color: white;
-            border: 1px solid;
-            border-radius: 5px;
-            position: fixed;
-        }
-
-        #testman:target {
-            display: block;
-        }
-
-        #upm {
-            display: none;
-            background-color: white;
-            border: 1px solid;
-            border-radius: 5px;
-            position: fixed;
+            padding: 5px;
+            text-align: center;
             width: 100%;
-            height: 100%;
+        }
+        td{
+            border: 1px solid;
+            padding: 15px;
+        }
+        .someh{
             text-align: center;
-        }
-
-        @media (max-width:768px) {
-            iframe {
-                width: 85%;
-            }
-
-            textarea {
-                width: 100%;
-            }
-
-            .header {
-                padding: 15px;
-            }
-
-            .div {
-                padding: 15px;
-            }
-        }
-
-        @keyframes open {
-            0% {
-                background-color: rgb(255, 255, 255);
-            }
-
-            100% {
-                background-color: rgb(255, 186, 38);
-            }
         }
     </style>
 </head>
-
 <body>
-    <div class="menu" id="menu">
-        <li><a
-                href='https://whis.feis.cs.nthu.edu.tw/?p=323139323833317c313733333634353736317c73303030313735312e6e746374406d61696c2e6564752e74777ce58583e6b4a77ce8a8b1&q=f87831f99327e7e3ff57a7afb1e44c7c21713d38c5e98075b07a09275f84656d'>口說系統</a>
-        </li>
-        <li><a href="知識補給/index.htm">知識補給</a></li>
-        <li><a href="檔案/index.htm">檔案</a></li>
-        <li><a href="#about">簡介</a></li>
-        <li><a href="#hweb">班導網站</a></li>
-        <li><a href="#test">會考專區</a></li>
-        <li><a href="#testtime">班級考試時程</a></li>
-        <li><a href="#ourweb">子網站專區</a></li>
-        <li><a href="#chat">聊天室</a></li>
-        <button onclick="closemenu()">&times;</button>
+    <div class="header">
+        <h1>國三智</h1>
+        <br>
+        <a href="index1.htm">進入班網</a>
     </div>
-    <div class="main" id="main">
-        <button class="menubutton" id="menubutton" onclick="openmenu()">MENU</button>
-        <div class="header">
-            <h1>國三智<br>班級網站</h1>
-        </div>
-        <div class="div">
-            <h2 class="很可怕的事" id="out" title="會考倒數"></h2>
-            <h2 class="很可怕的是" id="out1" title="畢業倒數"></h2>
-            <p>本網站訪問人數<a href="https://www.stylemap.co.jp/counter/taiwan/"><img
-                        src="https://www.f-counter.net/j/65/1740148123/" alt="網站計數器"></a></p>
-        </div>
-        <div class="div" id="about">
-            <h2>關於我們</h2>
-            <p>國三智延續了歷屆學長姐的精神，持續堅持弘明「志於道，據於德，依於人，游於藝。」的理念，在學業上、品德上，認真、精進，永不停止，活到老學到老。弘明給予我們，更多是在日常生活、做人處事道理的琢磨。比起學業，品德也是佔有一大比例，希望所有同學能在如此環境之下，更加精進！
-            </p>
-            <h3>校訓</h3>
-            <h4>「志於道，據於德，依於人，游於藝。」＿＿＿出自述而第七</h4>
-            <h3>精神</h3>
-            <h4>「希聖希賢，深信因果，敦倫盡份，學行利他。」</h4>
-        </div>
-        <div class="div" id="hweb">
-            <h2><a href="https://boys-n-girls-in-213.blogspot.com/">班導網站</a></h2>
-            <iframe src="https://boys-n-girls-in-213.blogspot.com/" frameborder="0" height="300px"></iframe>
-        </div>
+    <div class="someh">
+        <h2>快速連結</h2>
+        <p><li>相關網站</li></p>
+        <table>
+            <tr>
+                <td>主旨</td>
+                <td>內容簡介</td>
+                <td>動作按鈕</td>
+                <td>備註</td>
+            </tr>
+            <tr>
+                <td>弘明校網</td>
+                <td>弘明實驗高級中學的官方網站</td>
+                <td><a href="http://www.holdmean.org.tw/">前往</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>國三智班網（班導）</td>
+                <td>班導所擁有的部落格網站</td>
+                <td><a href="https://boys-n-girls-in-213.blogspot.com/">前往</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>口說系統</td>
+                <td>由酷英網站所擁有的口說練習系統</td>
+                <td><a href="https://whis.feis.cs.nthu.edu.tw/?p=323139323833317c313733333634353736317c73303030313735312e6e746374406d61696c2e6564752e74777ce58583e6b4a77ce8a8b1&q=f87831f99327e7e3ff57a7afb1e44c7c21713d38c5e98075b07a09275f84656d">前往</a></td>
+                <td>登入方式：GO帳號</td>
+            </tr>
+        </table>
+        <p><li>本站</li></p>
+        <table>
+            <tr>
+                <td>主旨</td>
+                <td>內容簡介</td>
+                <td>動作按鈕</td>
+                <td>備註</td>
+            </tr>
+            <tr>
+                <td>首頁</td>
+                <td>國三智學生版網站首頁</td>
+                <td><a href="index1.htm">前往</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>知識補給</td>
+                <td>冷的、熱的知識都有</td>
+                <td><a href="知識補給/index.htm">前往</a></td>
+                <td>暫時關閉</td>
+            </tr>
+            <tr>
+                <td>檔案</td>
+                <td>很多檔案的地方</td>
+                <td><a href="檔案/index.htm">前往</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>拼圖</td>
+                <td>把本屆智班第六任班長的頭像做成一個趣味拼圖</td>
+                <td><a href="測試品1/index.htm">前往</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>113-2校外版行事曆</td>
+                <td>本校113-2校外版行事曆</td>
+                <td><a href="檔案/檔案/113-2行事曆(公告版) .pdf">前往</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>1a2b</td>
+                <td>一個數字邏輯推理遊戲</td>
+                <td><a href="1a2b test.htm">前往</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>猜數字遊戲</td>
+                <td>一個數字邏輯推理遊戲</td>
+                <td><a href="Guess the number game.htm">前往</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>計數器</td>
+                <td>你可以拿它來念佛等多種用途</td>
+                <td><a href="計數器.htm">前往</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>隨機數字</td>
+                <td>他可以隨機生產指定翻圍內的數字，你可以拿它來抽籤等多種用途</td>
+                <td><a href="隨機數字.htm">前往</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>測試網頁</td>
+                <td>測試一些未上架的功能</td>
+                <td><a href="document.htm">前往</a></td>
+                <td></td>
+            </tr>
+        </table>
 
-        <div class="div" id="test">
-            <h2>會考專區</h2>
-            <div class="dt">
-                <div class="dt1">
-                    <iframe src="文章/2.htm" frameborder="0"></iframe>
-                </div>
-            </div>
-        </div>
-        <div class="div" id="testtime">
-            <h2>班級考試專區</h2>
-            <p>目前無最新消息</p>
-        </div>
-        <div class="div" id="ourweb">
-            <h2>子網站專區</h2>
-            <li><a href="測試品1/index.htm">拼圖</a></li>
-            <li><a href="檔案/檔案/113-2行事曆(公告版) .pdf">113-2校外版行事曆</a></li>
-            <li><a href="1a2b test.htm">1a2b</a></li>
-            <li><a href="Guess the number game.htm">猜數字遊戲</a></li>
-            <li><a href="計數器.htm">計數器</a></li>
-            <li><a href="隨機數字.htm">隨機數字</a></li>
-            <li><a href="document.htm">測試網頁</a></li>
-        </div>
-        <div class="div" id="chat">
-            <h2>聊天室</h2>
-            <p style="color: red;">＊時間戳記是英格蘭標準時間(GMT0)，台北市GMT8時區</p>
-            <iframe src="chatans.htm" frameborder="0"></iframe>
-            <iframe src="chat.htm" frameborder="0" style="height: 100px;"></iframe><br><br>
-            <button onclick="location.reload()">強制刷新</button>
-            <p style="color: red;">＊本按鍵適用於網站無響應時，通常留言後會有一點點延遲才會出現在上面（相信我，這個延遲很短！≤1s）</p>
-        </div>
-        <div class="footer">
-            <p>&copy;國三智 本站由許元洧設計與維護。</p>
-        </div>
     </div>
 
-
-    <script>
-
-        //負責選單
-        function openmenu() {
-            document.getElementById('menu').style.display = 'block';
-            document.getElementById('menubutton').style.display = 'none';
-        }
-        function closemenu() {
-            document.getElementById('menu').style.display = 'none';
-            document.getElementById('menubutton').style.display = 'block';
-        }
-
-        //負責倒數
-        function updateCountdown() {
-            const targetDate1 = new Date(2025, 6, 21);
-            const targetDate = new Date(2025, 4, 17); // 民國114年 (2025年) 5月18日
-            const now = new Date();
-            const difference = targetDate - now;
-            const difference1 = targetDate1 - now;
-
-            if (difference <= 0) {
-                document.getElementById('out').innerHTML = "會考到了！";
-                return;
-            }
-
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-            const days1 = Math.floor(difference1 / (1000 * 60 * 60 * 24));
-            const hours1 = Math.floor((difference1 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes1 = Math.floor((difference1 % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds1 = Math.floor((difference1 % (1000 * 60)) / 1000);
-
-            document.getElementById('out').innerHTML =
-                days + "天 " +
-                hours + "小時 " +
-                minutes + "分鐘 " +
-                seconds + "秒";
-
-            document.getElementById('out1').innerHTML =
-                days1 + "天 " +
-                hours1 + "小時 " +
-                minutes1 + "分鐘 " +
-                seconds1 + "秒";
-        }
-
-        setInterval(updateCountdown, 1000);
-    </script>
+    <p>&copy;國三智班網</p>
 </body>
-
 </html>
