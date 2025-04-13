@@ -18,6 +18,7 @@ body{
     margin: 15px;
     cursor: pointer;
     font-size: 14px;
+    color: white;
 }
 .chose button:hover{
     border-top: 1px solid greenyellow;

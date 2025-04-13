@@ -93,7 +93,7 @@
             const time = new Date('2025-5-17')
             let days = time-now;
             console.log(days);
-            days = Math.round(days/1000/60/60/24);
+            days = Math.floor(days/1000/60/60/24);
             console.log(days);
             document.getElementById('b2_1out').innerHTML=days; 
         }
@@ -102,7 +102,7 @@
             const time = new Date('2025-6-21')
             let days = time-now;
             console.log(days);
-            days = Math.round(days/1000/60/60/24);
+            days = Math.floor(days/1000/60/60/24);
             console.log(days);
             document.getElementById('b2_1out_1').innerHTML=days; 
         }
