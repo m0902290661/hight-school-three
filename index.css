@@ -25,8 +25,8 @@ body {
 }
 
 .chose button:hover {
-    transition: border-top 0.3s ease;
     border-top: 1px solid greenyellow;
+    transition: border-top 1s ease;
 }
 
 .bvideo video {
@@ -100,7 +100,7 @@ a {
 
 a:hover {
     border-top: 1px solid yellowgreen;
-    transition: border-top 0.3s ease;
+    transition: border-top 1s ease;
 }
 
 .b2_2 iframe {
