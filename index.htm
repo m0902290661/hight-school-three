@@ -78,6 +78,8 @@
             if(x==='1'){
                 document.getElementById('body_1').style.display='none';
                 document.getElementById('body_2').style.display='block';
+                time517();
+                time621();
             }
             else if(x==='2'){
                 document.getElementById('body_2').style.display='none';
@@ -105,10 +107,6 @@
             days = Math.floor(days/1000/60/60/24);
             console.log(days);
             document.getElementById('b2_1out_1').innerHTML=days; 
-        }
-        window.onload=function(){
-            time517();
-            time621();
         }
     </script>
 </body>
