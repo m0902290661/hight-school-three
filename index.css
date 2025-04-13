@@ -46,18 +46,7 @@ body {
 .b2_3,
 #b2_3_1 {
     height: 500px;
-    animation-name: animation_1;
-    animation-duration: 1s;
-}
-
-@keyframes animation_1 {
-    0% {
-        padding-top: 500px;
-    }
-
-    100% {
-        padding: 0px;
-    }
+    animation: fadeIn 1s ease-in;
 }
 
 .b_1_h2 {
@@ -84,7 +73,9 @@ body {
 
 .b2_1 {
     text-align: center;
-    padding-top: 300px;
+    background-image: url('img2.png');
+    background-size: cover;
+    color: red;
 }
 
 .b2_1 h2 {
@@ -139,4 +130,15 @@ a:hover {
     height: 100%;
     z-index: 999;
     text-align: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
