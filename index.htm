@@ -1,114 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>國三智班網</title>
+    <title>國三智 （耍廢狀態）</title>
     <link rel="stylesheet" href="index.css">
-    <link rel="icon" href="image.png" type="png">
 </head>
+
 <body>
     <div class="header">
-        <h1>國三智班網</h1>
+        <h1 style="cursor: pointer;" onclick="location.reload()">國三智</h1>
     </div>
-    <div class="chose">
-        <button onclick="turn(2)">關於我們</button>
-        <button onclick="turn(1)">功能區</button>
+    <div class="happy">
+        <h2 class="h1">狂賀</h2>
+        <h2 class="h2">114年 國中教育會考 圓滿結束！</h2>
     </div>
-    <div class="body_1" id="body_1">
-        <div class="bvideo">
-            <video autoplay muted playsinline>
-                <source src="mp4_1.mp4" type="video/mp4">
-                <source src="mp4_1.webm" type="video/webm">
-            </video>
-            <p class="bvideo_p">隸屬：南投縣私立弘明實驗高級中學</p>
-        </div>
-        <div class="b_1">
-            <h2 class="b_1_h2">核心價值</h2>
-            <p>尊重、責任、合作</p>
-            <p>誠信、努力、關懷</p>
-        </div>
-        <div class="b_2">
-            <h2 class="b_1_h2">一心向佛</h2>
-            <p>學會慈悲與寬容，對人友善，常懷善念。</p>
-            <p class="b_2_p">＊備註：這項內容可能並非真實</p>
-        </div>
-        <div class="b_3">
-            <h2 class="b_1_h2">本校校訓</h2>
-            <p><em>志於道、據於德、依於仁、游於藝</em></p>
-            <br>
-            <h3 class="b_3_h3">校名題字：李炳南老居士</h3>
-            <p>雪廬老人說，論語述而篇中孔子所提出的志於道、據於德、依於仁、游於藝四句，可以說是整個中華文化的精隨。因此弘明創校，便以此四句立為校訓。並依此校訓衍伸出弘明精神--希聖希賢、敦倫盡分、深信因果、學行利他，做為全校師生學習的圭臬。 </p>
-        </div>
-        <div class="b_4">
-            <h2 class="b_1_h2">本校精神</h2>
-            <p><em>希聖希賢，深信因果，敦倫盡份，學行利他。</em></p>
-        </div>
+    <div class="time">
+        <h2>現在時間：<span id="out1"></span></h2>
+        <h2>畢業倒數：<span id="out2"></span></h2>
+        <p>6/21</p>
     </div>
-
-    <div class="body_2" id="body_2">
-        <div class="b2_1">
-            <h2>會考倒數：<span id="b2_1out"></span>天</h2>
-            <h2>畢業倒數：<span id="b2_1out_1"></span>天</h2>
-        </div>
-        <div class="b2_2" id="b2_2">
-            <h2>班導網站</h2>
-            <iframe src="https://boys-n-girls-in-213.blogspot.com/" frameborder="0"></iframe>
-            <br>
-            <a href="https://boys-n-girls-in-213.blogspot.com/">放大查看</a>
-        </div>
-        <div class="b2_3">
-            <h2>行事曆</h2>
-            <img src="檔案/檔案/113-2行事曆(公告版).png" alt="">
-            <a href="#b2_3_1">放大查看</a>
-            <div id="b2_3_1">
-                <a onclick="history.back()" style="font-size: 34px;">&times;</a>
-                <img src="檔案/檔案/113-2行事曆(公告版).png" id="b2_3_1_img" alt="">
+    <div class="aboutus">
+        <h2>關於我們</h2>
+        <p>本班由陳世懷老師擔任導師，秉持「和平、友善、包容」的核心精神，致力於打造一個溫暖、有愛、互相扶持的學習環境。</p>
+        <p>在這裡，我們尊重每一位同學的獨特性，鼓勵多元發展，不僅重視課業表現，也重視品格教育與人際關係的培養。同學們彼此關懷、互助合作，讓國三智成為一個充滿正能量的大家庭。</p>
+        <img src="IMG_2491.jpg" alt="">
+        <p>面對升學挑戰，我們堅定目標、攜手前行；在日常生活中，我們用笑容與善意，讓每一天都充滿希望與成長。</p>
+        <p>歡迎一同見證國三智的精彩與進步！</p>
+    </div>
+    <div class="list">
+        <h2>行事曆</h2>
+        <img src="113-2行事曆(公告版).jpg" alt="">
+    </div>
+    <div class="homeroomteacher">
+        <h2 onclick="location.href='https://boys-n-girls-in-213.blogspot.com/'" title="點按前往">班導網站</h2>
+        <iframe src="https://boys-n-girls-in-213.blogspot.com/" frameborder="0"></iframe>
+    </div>
+    <div class="qa">
+        <h2>Q&A</h2>
+        <details>
+            <summary>畢業時間？</summary>
+            <div class="">
+                <p>2025/6/21</p>
             </div>
-        </div>
+        </details>
+        <details>
+            <summary>山野教育要帶什麼？</summary>
+            <div class="">
+                <p>中型背包25~30升(雙背的背包)、健行鞋(齒纹深的即即可)、工作手套、帽、點心(自備)、
+                    午餐(海苔飯捲,學校準備)、排汗衣、運動長褲、薄外套、簡易型雨衣(可多帶一支雨傘備用)、
+                    個人藥品、小包衛生紙、飲用水2000CC(温水瓶+礦泉水)、擦汗毛巾、替換衣服(下山用)等。</p>
+                <p style="text-align: right;">額外補充：一顆快樂的心</p>
+            </div>
+        </details>
     </div>
-
+    <div class="file">
+        <h2>檔案櫃</h2>
+    </div>
     <div class="footer">
-        <p>&copy;許元洧製作 國三智班網 哈哈嗨</p>
+        <p>&copy;國三智班網</p>
     </div>
 
-
-    <script defer>
-        function turn(x){
-            x = String(x);
-            if(x==='1'){
-                document.getElementById('body_1').style.display='none';
-                document.getElementById('body_2').style.display='block';
-                time517();
-                time621();
+    <script>
+        function time() {
+            var now = new Date();
+            document.getElementById('out1').innerHTML = now;
+            var graduate = new Date(2025, 5, 21);
+            var atime = graduate - now;
+            var day = Math.trunc(atime / (1000 * 60 * 60 * 24));
+            var hour = Math.trunc((atime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minut = Math.trunc((atime % (1000 * 60 * 60)) / (1000 * 60));
+            var second = Math.trunc((atime % (1000 * 60)) / 1000);
+            if (atime <= 0) {
+                document.getElementById('out2').innerHTML = '！恭喜畢業！';
             }
-            else if(x==='2'){
-                document.getElementById('body_2').style.display='none';
-                document.getElementById('body_1').style.display='block';
+            else {
+                document.getElementById('out2').innerHTML = day + '天' + hour + '時' + minut + '分' + second + "秒";
             }
-            else{
-                console.log('turn(x) 404')
-            }
+            setTimeout(() => { time(); }, 1000)
         }
-
-        function time517(){
-            const now = new Date();
-            const time = new Date(2025, 4, 17);
-            let days = time-now;
-            console.log(days);
-            days = Math.floor(days/1000/60/60/24);
-            console.log(days);
-            document.getElementById('b2_1out').innerHTML=days; 
-        }
-        function time621(){
-            const now = new Date();
-            const time = new Date(2025, 5, 21);
-            let days = time-now;
-            console.log(days);
-            days = Math.floor(days/1000/60/60/24);
-            console.log(days);
-            document.getElementById('b2_1out_1').innerHTML=days; 
-        }
+        window.onload=function(){
+            time();
+        };
     </script>
 </body>
+
 </html>
