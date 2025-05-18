@@ -1,6 +1,6 @@
 body{
     margin: 15px;
-    /* animation: a1 2s ; */
+    animation: a1 2s ;
 }
 @keyframes a1 {
     from{ padding: 200px;}
