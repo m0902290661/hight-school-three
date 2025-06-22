@@ -1,90 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+<title>28級 國三智</title>
+<link rel="icon" href="image.png" type="png">
+<div class="video" id="video">
+    <h1>28級 國三智</h1>
+    <p>畢業影片內部版</p>
+    <img src="video.png" style="cursor: pointer; width: 50%;" alt="" title="點擊前往" onclick="location.href='https://drive.google.com/file/d/1vOKkvMHCTPtFs_Au0Xg-yEgj7-1OWdVZ/view?usp=drive_link'">
+    <br><br>
+    <a onclick="location.href='index1.htm'" style="cursor: pointer;border: 1px solid;">進入最後更新版班網</a>
+</div>
+<style>
+    .video {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        background-color: rgb(72, 2, 72);
+        text-align: center;
+        color: white;
+    }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>國三智 （耍廢狀態）</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="icon" href="image.png" type="png">
-</head>
-
-<body>
-    <div class="header">
-        <h1 style="cursor: pointer;" onclick="location.reload()">國三智</h1>
-    </div>
-    <div class="happy">
-        <h2 class="h1">狂賀</h2>
-        <h2 class="h2">114年 國中教育會考 圓滿結束！</h2>
-    </div>
-    <div class="time">
-        <h2>現在時間：<span id="out1"></span></h2>
-        <h2>畢業倒數：<span id="out2"></span></h2>
-        <p>6/21</p>
-    </div>
-    <div class="aboutus">
-        <h2>關於我們</h2>
-        <p>本班由陳世懷老師擔任導師，秉持「和平、友善、包容」的核心精神，致力於打造一個溫暖、有愛、互相扶持的學習環境。</p>
-        <p>在這裡，我們尊重每一位同學的獨特性，鼓勵多元發展，不僅重視課業表現，也重視品格教育與人際關係的培養。同學們彼此關懷、互助合作，讓國三智成為一個充滿正能量的大家庭。</p>
-        <img src="IMG_2491.jpg" alt="">
-        <p>面對升學挑戰，我們堅定目標、攜手前行；在日常生活中，我們用笑容與善意，讓每一天都充滿希望與成長。</p>
-        <p>歡迎一同見證國三智的精彩與進步！</p>
-    </div>
-    <div class="list">
-        <h2>行事曆</h2>
-        <img src="113-2行事曆(公告版).jpg" alt="">
-    </div>
-    <div class="homeroomteacher">
-        <h2 onclick="location.href='https://boys-n-girls-in-213.blogspot.com/'" title="點按前往">班導網站</h2>
-        <iframe src="https://boys-n-girls-in-213.blogspot.com/" frameborder="0"></iframe>
-    </div>
-    <div class="qa">
-        <h2>Q&A</h2>
-        <details>
-            <summary>畢業時間？</summary>
-            <div class="">
-                <p>2025/6/21</p>
-            </div>
-        </details>
-        <details>
-            <summary>山野教育要帶什麼？</summary>
-            <div class="">
-                <p>中型背包25~30升(雙背的背包)、健行鞋(齒纹深的即即可)、工作手套、帽、點心(自備)、
-                    午餐(海苔飯捲,學校準備)、排汗衣、運動長褲、薄外套、簡易型雨衣(可多帶一支雨傘備用)、
-                    個人藥品、小包衛生紙、飲用水2000CC(温水瓶+礦泉水)、擦汗毛巾、替換衣服(下山用)等。</p>
-                <p style="text-align: right;">額外補充：一顆快樂的心</p>
-            </div>
-        </details>
-    </div>
-    <div class="file">
-        <h2>檔案櫃</h2>
-    </div>
-    <div class="footer">
-        <p>&copy;國三智班網</p>
-    </div>
-
-    <script>
-        function time() {
-            var now = new Date();
-            document.getElementById('out1').innerHTML = now;
-            var graduate = new Date(2025, 5, 21);
-            var atime = graduate - now;
-            var day = Math.trunc(atime / (1000 * 60 * 60 * 24));
-            var hour = Math.trunc((atime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minut = Math.trunc((atime % (1000 * 60 * 60)) / (1000 * 60));
-            var second = Math.trunc((atime % (1000 * 60)) / 1000);
-            if (atime <= 0) {
-                document.getElementById('out2').innerHTML = '！恭喜畢業！';
-            }
-            else {
-                document.getElementById('out2').innerHTML = day + '天' + hour + '時' + minut + '分' + second + "秒";
-            }
-            setTimeout(() => { time(); }, 1000)
-        }
-        window.onload=function(){
-            time();
-        };
-    </script>
-</body>
-
-</html>
+    .video p {
+        font-size: 28px;
+    }
+</style>
