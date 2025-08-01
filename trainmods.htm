@@ -1,52 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ＭＴＲ伺服器模組需求</title>
+  <meta charset="UTF-8">
+  <title>minecraft離線啟動暨模組安裝、伺服器進入教學網站</title>
 </head>
+<body style="padding-left: 25%;background-image: url('TMimg/img6.png');">
+  <h1>minecraft離線啟動暨模組安裝、伺服器進入教學網站</h1>
+  <br>
+  <h2>離線啟動原理示意圖</h2>
+  <img src="TMimg/img1.png" alt="正版驗證方式開啟遊戲（連線啟動）">
+  <p>正版驗證方式開啟遊戲（連線啟動）{連接Mojang(mc官方)伺服器動}</p>
+  <img src="TMimg/img2.png" alt="無正版驗證方式開啟遊戲（離線啟動）">
+  <p>無正版驗證方式開啟遊戲（離線啟動）{不連接Mojang(mc官方)伺服器動}</p>
+  <p>．可支援離線啟動的啟動器：<a href="https://tlauncher.org/">TLauncher（簡稱ＴＬ）</a></p>
+  <br>
+  <h2>TL安裝方式教學</h2>
+  <p>至官網選擇正確系統版本安裝，並跟隨系統指示。</p>
+  <a href="https://youtu.be/UOhkhtHU1Us">影片教學(2023/12/29版)</a>
+  <br>
+  <h2>進入許元洧自架IR(TRA)伺服器</h2>
+  <p>首先須有以下必備模組及列車包（安裝模組教學請至<a href="#h2_1">模組安裝教學</a>，列車包安裝教學請至<a href="#h2_2">列車包安裝教學</a>）</p>
+  <details>
+    <summary style="cursor: pointer;">展開</summary>
+    <div>
+      <p>Immersive Railroading</p>
+      <p>Universal Mod Core(Immersive Railroading之依賴項)</p>
+      <p>Track API(Immersive Railroading之依賴項)</p>
+      <p>WorldEdit</p>
+      <p>[IR] Taiwan Train Pack For Immersive Railroading(列車包 請至<a href="https://www.curseforge.com/minecraft/texture-packs/ir-taiwan-train-pack/files/6817584">curseforge</a>下載)</p>
+    </div>
+  </details>
+  <p>於遊戲內多人模式中新增服務器，並於伺服器地址中填入下列地址：m0902290661.aternos.me:39151<a style="color: blue;text-decoration: underline;cursor: pointer;" onclick="copyText('m0902290661.aternos.me:39151')">點我複製</a></p>
+  <p>加入遊戲！！</p>
+  <br>
+  <h2 id="h2_1">模組安裝教學</h2>
+  <h3>使用外部第三方模組網站安裝(擁有minecraft正版啟動器推薦，較複雜)</h3>
+  <h4>使用forge啟動器</h4>
+  <p>至外部第三方模組網站(ex:curseforge,modrinth等等)下載你需要的模組對應的啟動器和版本</p>
+  <p>前往 <a href="https://files.minecraftforge.net/net/minecraftforge/forge/">Forge</a> 網站，左邊 Minecraft Version 列表中選擇版本。</p>
+  <p>點擊 Download Latest 方格中的 Installer，建議下載最新版較不會遇到問題。</p>
+  <p>接著會跳轉到廣告頁面，等待倒數後，點擊 SKIP 按鈕即可完成下載。</p>
+  <p>開啟從 Forge 下載回來的安裝檔案。</p>
+  <p>選擇 Install client 選項，安裝位置使用預設即可，如果當初 Minecraft 安裝時是選擇其他位置，則需要更改成相對應的位置。</p>
+  <p>出現這個通知訊息代表安裝完成。</p>
+  <img src="TMimg/img3.png" alt="安裝完成通知訊息">
+  <p style="font-size: 12px;">安裝完成通知訊息</p>
+  <p>開啟 Minecraft Launcher，切換到安裝檔頁面，點擊新安裝檔。</p>
+  <p>版本選擇剛才安裝的 Forge 版本，如果沒有出現可以重開 Minecraft Launcher 試試，名稱和遊戲資料夾可以根據自己需求做更改。</p>
+  <p>點擊開始遊戲，先讓 Minecraft 產生 Mod 需要的資料夾。</p>
+  <p>Minecraft 啟動完畢後，點擊模組按鈕，然後點擊開啟模組資料夾，將從 CurseForge 下載回來的 Mod 丟進去。</p>
+  <p>重新啟動遊戲就會看到 Mod 增加，建立一個新的世界，就會看到 Mod 安裝成功囉。</p>
+  <h4>使用fabric啟動器</h4>
+  <p>...此安裝方式教學敬請期待...</p>
+  <h3>啟動器自動配置(第三方連線啟動器、離線啟動器推薦，叫簡單)</h4>
+  <p style="font-size: 12px;">此條目目前只提供TL啟動器之離線教學，更多內容請稍待</p>
+  <a href="https://youtu.be/ps29opIGviw">TL裝模組教學影片(2024/1/13版)</a>
+  <p> 在 TLMods 的「模組包」頁籤建立一個模組包資料夾（建議取名跟模組包一樣），然後執行遊戲一次，讓資料夾建立起來。</p>
+  <p>開啟資料夾目錄 (C:/< 使用者 < 使用者名稱 < AppData < Roaming < .minecraft){此目錄只適用Windows系統}，或按 TLMods 按鈕（一個資料夾圖示）</p>
+  <p> 從 .minecraft 資料夾，找到「versions」資料夾，然後選擇你剛建立的資料夾。</p>
+  <p>把模組放入。</p>
+  <br>
+  <h2 id="h2_2">列車包安裝教學</h2>
+  <p>至<a href="https://www.curseforge.com/minecraft/texture-packs/ir-taiwan-train-pack/files/6817584">curseforge</a>下載[IR] Taiwan Train Pack For Immersive Railroading v9.0(本服務器支援版本，直接點選連結頁面之下載按鈕)</p>
+  <p>將下載的壓縮檔放入資源包檔案夾中<a href="#h4_1">放置教學</a></p>
+  <p>按完成後稍待片刻進行加載(1.12.2版本沒有加在進度條，會卡在一個畫面不動，請耐心等待。)</p>
+  <h4 id="h4_1">資源包放置教學</h4>
+  <p>在遊戲首頁點擊「選項」按鈕，然後點擊「資源包」按鈕。</p>
+  <p>之後你會看到資源包選擇頁面。你需要將要加入的資源包拖入遊戲視窗。你也可以點擊「開啟壓縮包資料夾」按鈕，將資源包放入開啟的資料夾。開啟的資料夾的路徑為.minecraft/resourcepacks。</p>
+  <img src="TMimg/img4.webp" alt="Java版資源包選擇頁面">
+  <p style="font-size: 12px;">Java版資源包選擇頁面</p>
+  <p>在左側應該會顯示你加入的資源包。將滑鼠懸浮在資源包圖示上，點擊向右的箭頭，它將會移動至右側。</p>
+  <p>如果你安裝了多個資源包，你可以點擊上下箭頭調整資源包的載入順序。</p>
+  <p>擊「完成」按鈕。等待遊戲載入資源完畢即可。</p>
+  <br>
 
-<body>
-    <h1>ＭＴＲ伺服器模組需求</h1>
-    <table cellspacing="0" cellpadding="8">
-  <thead>
-    <tr>
-      <th>項目</th>
-      <th>連結</th>
-      <th>操作</th>
-    </tr>
-  </thead>
-  <tbody style="text-align: center;">
-    <tr>
-      <td>Forge 模組驅動</td>
-      <td><p>https://files.minecraftforge.net/net/minecraftforge/forge/index_1.19.2.html</p></td>
-      <td><a href="https://files.minecraftforge.net/net/minecraftforge/forge/index_1.19.2.html" target="_blank">前往</a></td>
-    </tr>
-    <tr>
-      <td>WorldEdit 小木斧模組</td>
-      <td><p>https://www.curseforge.com/minecraft/mc-mods/worldedit/files/3922622</p></td>
-      <td><a href="https://www.curseforge.com/minecraft/mc-mods/worldedit/files/3922622" target="_blank">前往</a></td>
-    </tr>
-    <tr>
-      <td>Architectury API (MTR前置模組)</td>
-      <td><p>https://www.curseforge.com/minecraft/mc-mods/architectury-api/files/5137942</p></td>
-      <td><a href="https://www.curseforge.com/minecraft/mc-mods/architectury-api/files/5137942" target="_blank">前往</a></td>
-    </tr>
-    <tr>
-      <td>Minecraft Transit Railway 火車模組</td>
-      <td><p>https://www.curseforge.com/minecraft/mc-mods/minecraft-transit-railway/files/6685303</p></td>
-      <td><a href="https://www.curseforge.com/minecraft/mc-mods/minecraft-transit-railway/files/6685303" target="_blank">前往</a></td>
-    </tr>
-    <tr>
-      <td>伺服器地址</td>
-      <td>m0902290661-7MHE.aternos.me:42857</td>
-      <td><a onclick="navigator.clipboard.writeText('m0902290661-7MHE.aternos.me:42857');document.getElementById('out').innerHTML='已複製連結';" style="color: blue;cursor: pointer;text-decoration: underline;">複製伺服器位置</a></td>
-    </tr>
-  </tbody>
-</table>
-    <p id="out" style="background-color: greenyellow;border-radius: 5px;width: 20%;margin-left: 45%;"></p>
-    <p style="text-align: center;">&copy;m0902290661-7MHE.aternos.me:42857</p>
+
+  <p style="text-align: center;">&copy;許元洧製作 最後更新時間：2025/8/1</p>
+
+
+  <script>
+    function copyText(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        alert("已複製：" + text);
+    }).catch(err => {
+        console.error("複製失敗：", err);
+    });
+    }
+  </script>
 </body>
-
 </html>
